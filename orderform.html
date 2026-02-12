@@ -122,7 +122,7 @@
 <div class="panel">
   <h2>Place Your Order Here</h2>
 
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="orderForm">
+  <form id="orderForm" method="post">
     <!-- PayPal variables -->
     <input type="hidden" name="cmd" value="_xclick">
     <input type="hidden" name="business" value="8LF2NJAGZW5EG">
@@ -152,15 +152,14 @@
 <input id="email" type="email" name="email" placeholder="yourname@example.com" autocomplete="email" required>
 
 <p class="note">
-  We’ll only use this address to send your licensed score — it won’t be shared with anyone else.
+  We will send a confirmation button to this email address. — Click it to confirm your order.
 </p>
 
-<button type="submit" id="submitBtn" class="price">Submit Order & Continue to PayPal</button>
+<button type="submit" id="submitBtn" class="price">Send me my confirmation email.</button>
 
 
 <p class="note">
-  PayPal might ask you to repeat your password for additional security.<br>
-  You won’t be charged twice for your purchase.
+  No payment will be taken until you confirm your email address.
 </p>
 </form>
 </div>
@@ -234,9 +233,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 10000);
 
     // Now go to PayPal
-    form.submit();
+    /*form.submit();*/
   });
 });
 </script>
+
+<script>
+  document.getElementById("orderForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+  
+    const form = e.target;
+    const data = new FormData(form);
+    const payload = Object.fromEntries(data.entries());
+  
+    try {
+      const res = await fetch(
+        "/send-email",
+        {
+
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }
+      );
+  
+      const text = await res.text();
+      alert("DEV worker replied:\n\n" + text);
+    } catch (err) {
+      alert("Error talking to DEV worker:\n\n" + err.message);
+    }
+  });
+  </script>
+  
+  <script>
+    const form = document.getElementById("orderForm");
+    const host = window.location.hostname;
+    const businessField = form.querySelector('input[name="business"]');
+  
+    if (host.startsWith("dev.")) {
+      form.action = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+      businessField.value = "sb-6bkuc46652199@business.example.com";
+    } else {
+      form.action = "https://www.paypal.com/cgi-bin/webscr";
+      businessField.value = "BLF2NJAGZW5EG";
+    }
+  </script>
+  
+    
 </body>
 </html>
