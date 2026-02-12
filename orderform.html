@@ -242,9 +242,22 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("orderForm").addEventListener("submit", async function (e) {
     e.preventDefault();
   
-    const form = e.target;
-    const data = new FormData(form);
-    const payload = Object.fromEntries(data.entries());
+    const title = document.getElementById("title").value.trim();
+const choir = document.getElementById("choir").value.trim();
+const copies = Math.min(30, Math.max(1, parseInt(document.getElementById("copy").value || "1", 10)));
+const pricePerCopy = 1.25;
+const total = (copies * pricePerCopy).toFixed(2);
+const orderNum = generateOrderNumber();
+const email = document.getElementById("email").value.trim();
+
+const payload = {
+  title,
+  choir,
+  copies,
+  amount: total,
+  order: orderNum,
+  email
+};
   
     try {
       const res = await fetch(
