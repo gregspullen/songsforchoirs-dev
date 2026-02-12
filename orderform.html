@@ -267,13 +267,17 @@ document.addEventListener("DOMContentLoaded", () => {
   <script>
     const form = document.getElementById("orderForm");
     const host = window.location.hostname;
+    const businessField = form.querySelector('input[name="business"]');
   
     if (host.startsWith("dev.")) {
       form.action = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+      businessField.value = "sb-6bkuc46652199@business.example.com";
     } else {
       form.action = "https://www.paypal.com/cgi-bin/webscr";
+      businessField.value = "BLF2NJAGZW5EG";
     }
   </script>
+  
     
 </body>
 </html>
