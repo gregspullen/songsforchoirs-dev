@@ -58,66 +58,79 @@ If you prefer to save ink (and possibly paper), you can start printing from page
   </footer>
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const title = params.get("title") || "";
-  const choir = params.get("choir") || "";
-  const order = params.get("order") || "";
-  const amount = params.get("amount") || "";
-  const copies = params.get("copies") || "—";
-  const email = params.get("email") || "";
-  const currency = params.get("currency") || "GBP";
-
-  // populate visible fields
-  document.getElementById("title").textContent = title;
-  document.getElementById("choir").textContent = choir;
-  document.getElementById("order").textContent = order;
-  document.getElementById("amount").textContent = amount;
-  document.getElementById("copies").textContent = copies;
-
-  // identify button and storage key
-  const sendBtn = document.getElementById("sendEmail");
-  const emailSentKey = `emailSent_${order}`;
-
-  // Only send once per order
-  if (!localStorage.getItem(emailSentKey)) {
-    fetch("https://sfc-watermark-worker.lyra-6b2.workers.dev/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title, choir, copies, email, order, amount, currency }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          localStorage.setItem(emailSentKey, "true");
-          if (sendBtn) {
-            sendBtn.disabled = true;
-            sendBtn.textContent = "✅ Delivered to your email";
-            sendBtn.style.cursor = "default";
-            sendBtn.style.opacity = "0.75";
+    document.addEventListener("DOMContentLoaded", () => {
+    
+      const params = new URLSearchParams(window.location.search);
+      const order = params.get("order");
+      if (!order) return;
+    
+      fetch(`/get-order?order=${order}`)
+        .then(res => {
+          if (!res.ok) throw new Error("Order not found");
+          return res.json();
+        })
+        .then(data => {
+    
+          // Populate receipt fields
+          document.getElementById("title").textContent = data.title;
+          document.getElementById("choir").textContent = data.choir;
+          document.getElementById("order").textContent = order;
+          document.getElementById("amount").textContent = data.amount;
+          document.getElementById("copies").textContent = data.copies;
+    
+          // Only send fulfilment email once per order
+          const sendBtn = document.getElementById("sendEmail");
+          const emailSentKey = `emailSent_${order}`;
+    
+          if (!localStorage.getItem(emailSentKey)) {
+    
+            fetch("/send-email", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                title: data.title,
+                choir: data.choir,
+                copies: data.copies,
+                email: data.email,
+                order: order,
+                amount: data.amount,
+                currency: "GBP"
+              })
+            })
+            .then(res => {
+              if (!res.ok) throw new Error("Email failed");
+    
+              localStorage.setItem(emailSentKey, "true");
+    
+              if (sendBtn) {
+                sendBtn.textContent = "✅ Delivered to your email";
+                sendBtn.disabled = true;
+                sendBtn.style.opacity = "0.75";
+                sendBtn.style.cursor = "default";
+              }
+            })
+            .catch(err => {
+              console.error(err);
+              if (sendBtn) {
+                sendBtn.textContent = "Problem sending — please try again";
+              }
+            });
+    
+          } else {
+            if (sendBtn) {
+              sendBtn.textContent = "✅ Delivered to your email";
+              sendBtn.disabled = true;
+            }
           }
-        } else {
-          console.error("Email failed:", res.status);
-          if (sendBtn) {
-            sendBtn.textContent = "⚠️ Problem sending — please try again later";
-          }
-        }
-      })
-      .catch((err) => {
-        console.error("Email send error:", err);
-        if (sendBtn) {
-          sendBtn.textContent = "⚠️ Network issue — please refresh and retry";
-        }
-      });
-  } else {
-    // already sent before — show gentle confirmation
-    if (sendBtn) {
-      sendBtn.disabled = true;
-      sendBtn.textContent = "✅ Your licensed score has already been emailed";
-      sendBtn.style.cursor = "default";
-      sendBtn.style.opacity = "0.75";
-    }
-  }
-});
-</script>
+    
+        })
+        .catch(err => {
+          console.error(err);
+          document.body.innerHTML = "<h2>Unable to load receipt.</h2>";
+        });
+    
+    });
+    </script>
+    
 </body>
 </html>
