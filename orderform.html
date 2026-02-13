@@ -271,7 +271,7 @@ const payload = {
       );
   
       const text = await res.text();
-      alert("DEV worker replied:\n\n" + text);
+      alert("Confirmation email sent. Please check your inbox before proceeding to payment.");
     } catch (err) {
       alert("Error talking to DEV worker:\n\n" + err.message);
     }
