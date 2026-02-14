@@ -85,7 +85,20 @@ If you prefer to save ink (and possibly paper), you can start printing from page
     
           if (!localStorage.getItem(emailSentKey)) {
     
-            
+          // Trigger fulfilment via ZIP route
+          fetch(`/${encodeURIComponent(data.title)}.zip?choir=${encodeURIComponent(data.choir)}&order=${encodeURIComponent(order)}&copies=${data.copies}&amount=${encodeURIComponent(data.amount)}`)
+            .then(res => {
+              if (!res.ok) throw new Error("ZIP generation failed");
+              return res.blob(); // We don't actually need the blob, but this ensures execution
+            })
+            .then(() => {
+              localStorage.setItem(emailSentKey, "true");
+              console.log("Fulfilment triggered");
+            })
+            .catch(err => {
+              console.error("Fulfilment error:", err);
+            });
+  
             //fetch("/send-email", {
             //method: "POST",
             //headers: { "Content-Type": "application/json" },
