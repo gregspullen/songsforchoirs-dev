@@ -27,6 +27,7 @@
       <li><a href="choral.html">Choral</a></li>
       <li><a href="children.html">Children</a></li>
       <li><a href="other.html">Other</a></li>
+      <li><a href="news.html">News</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -84,37 +85,39 @@ If you prefer to save ink (and possibly paper), you can start printing from page
     
           if (!localStorage.getItem(emailSentKey)) {
     
-            fetch("/send-email", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                title: data.title,
-                choir: data.choir,
-                copies: data.copies,
-                email: data.email,
-                order: order,
-                amount: data.amount,
-                currency: "GBP"
-              })
-            })
-            .then(res => {
-              if (!res.ok) throw new Error("Email failed");
+            
+            //fetch("/send-email", {
+            //method: "POST",
+            //headers: { "Content-Type": "application/json" },
+            //body: JSON.stringify({
+            //title: data.title,
+            //choir: data.choir,
+            //copies: data.copies,
+            //email: data.email,
+            //order: order,
+            //amount: data.amount,
+            //currency: "GBP"
+            //})
+            //})
+            
+            //.then(res => {
+            //if (!res.ok) throw new Error("Email failed");
     
-              localStorage.setItem(emailSentKey, "true");
+            //localStorage.setItem(emailSentKey, "true");
     
-              if (sendBtn) {
-                sendBtn.textContent = "✅ Delivered to your email";
-                sendBtn.disabled = true;
-                sendBtn.style.opacity = "0.75";
-                sendBtn.style.cursor = "default";
-              }
-            })
-            .catch(err => {
-              console.error(err);
-              if (sendBtn) {
-                sendBtn.textContent = "Problem sending — please try again";
-              }
-            });
+            //if (sendBtn) {
+            //sendBtn.textContent = "✅ Delivered to your email";
+            //sendBtn.disabled = true;
+            //sendBtn.style.opacity = "0.75";
+            //sendBtn.style.cursor = "default";
+            //}
+            //})
+            //.catch(err => {
+            //console.error(err);
+            //if (sendBtn) {
+            //sendBtn.textContent = "Problem sending — please try again";
+            //}
+            //});
     
           } else {
             if (sendBtn) {
@@ -128,8 +131,8 @@ If you prefer to save ink (and possibly paper), you can start printing from page
           console.error(err);
           document.body.innerHTML = "<h2>Unable to load receipt.</h2>";
         });
-    
     });
+
     </script>
     
 </body>
