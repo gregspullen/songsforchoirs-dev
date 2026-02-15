@@ -79,65 +79,24 @@ If you prefer to save ink (and possibly paper), you can start printing from page
           document.getElementById("amount").textContent = data.amount;
           document.getElementById("copies").textContent = data.copies;
     
-          // Only send fulfilment email once per order
-          const sendBtn = document.getElementById("sendEmail");
+          // Trigger fulfilment once per order
           const emailSentKey = `emailSent_${order}`;
     
           if (!localStorage.getItem(emailSentKey)) {
     
-          // Trigger fulfilment via ZIP route
-          fetch(`/fulfil?title=${encodeURIComponent(data.title)}&choir=${encodeURIComponent(data.choir)}&order=${encodeURIComponent(order)}&copies=${data.copies}&amount=${encodeURIComponent(data.amount)}`)
-            .then(res => {
-              if (!res.ok) throw new Error("Fulfilment failed");
-              return res.text();
-            })
-            .then(() => {
-              localStorage.setItem(emailSentKey, "true");
-              console.log("Fulfilment triggered");
-            })
-            .catch(err => {
-              console.error("Fulfilment error:", err);
-            });
-
-  
-            fetch("/send-email", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-            title: data.title,
-            choir: data.choir,
-            copies: data.copies,
-            email: data.email,
-            order: order,
-            amount: data.amount,
-            currency: "GBP"
-            })
-            })
-            
-            .then(res => {
-            if (!res.ok) throw new Error("Email failed");
+            fetch(`/fulfil?order=${order}`)
+              .then(res => {
+                if (!res.ok) throw new Error("Fulfil failed");
+                return res.json();
+              })
+              .then(() => {
+                localStorage.setItem(emailSentKey, "true");
+                console.log("Fulfilment triggered");
+              })
+              .catch(err => {
+                console.error("Fulfilment error:", err);
+              });
     
-            localStorage.setItem(emailSentKey, "true");
-    
-            if (sendBtn) {
-            sendBtn.textContent = "✅ Delivered to your email";
-            sendBtn.disabled = true;
-            sendBtn.style.opacity = "0.75";
-            sendBtn.style.cursor = "default";
-            }
-            })
-            .catch(err => {
-            console.error(err);
-            if (sendBtn) {
-            sendBtn.textContent = "Problem sending — please try again";
-            }
-            });
-    
-          } else {
-            if (sendBtn) {
-              sendBtn.textContent = "✅ Delivered to your email";
-              sendBtn.disabled = true;
-            }
           }
     
         })
@@ -145,9 +104,7 @@ If you prefer to save ink (and possibly paper), you can start printing from page
           console.error(err);
           document.body.innerHTML = "<h2>Unable to load receipt.</h2>";
         });
+    
     });
-
     </script>
     
-</body>
-</html>
