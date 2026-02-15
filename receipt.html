@@ -89,7 +89,7 @@ If you prefer to save ink (and possibly paper), you can start printing from page
           fetch(`/fulfil?title=${encodeURIComponent(data.title)}&choir=${encodeURIComponent(data.choir)}&order=${encodeURIComponent(order)}&copies=${data.copies}&amount=${encodeURIComponent(data.amount)}`)
             .then(res => {
               if (!res.ok) throw new Error("Fulfilment failed");
-              return res.json();
+              return res.text();
             })
             .then(() => {
               localStorage.setItem(emailSentKey, "true");
