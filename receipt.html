@@ -100,38 +100,38 @@ If you prefer to save ink (and possibly paper), you can start printing from page
             });
 
   
-            //fetch("/send-email", {
-            //method: "POST",
-            //headers: { "Content-Type": "application/json" },
-            //body: JSON.stringify({
-            //title: data.title,
-            //choir: data.choir,
-            //copies: data.copies,
-            //email: data.email,
-            //order: order,
-            //amount: data.amount,
-            //currency: "GBP"
-            //})
-            //})
+            fetch("/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+            title: data.title,
+            choir: data.choir,
+            copies: data.copies,
+            email: data.email,
+            order: order,
+            amount: data.amount,
+            currency: "GBP"
+            })
+            })
             
-            //.then(res => {
-            //if (!res.ok) throw new Error("Email failed");
+            .then(res => {
+            if (!res.ok) throw new Error("Email failed");
     
-            //localStorage.setItem(emailSentKey, "true");
+            localStorage.setItem(emailSentKey, "true");
     
-            //if (sendBtn) {
-            //sendBtn.textContent = "✅ Delivered to your email";
-            //sendBtn.disabled = true;
-            //sendBtn.style.opacity = "0.75";
-            //sendBtn.style.cursor = "default";
-            //}
-            //})
-            //.catch(err => {
-            //console.error(err);
-            //if (sendBtn) {
-            //sendBtn.textContent = "Problem sending — please try again";
-            //}
-            //});
+            if (sendBtn) {
+            sendBtn.textContent = "✅ Delivered to your email";
+            sendBtn.disabled = true;
+            sendBtn.style.opacity = "0.75";
+            sendBtn.style.cursor = "default";
+            }
+            })
+            .catch(err => {
+            console.error(err);
+            if (sendBtn) {
+            sendBtn.textContent = "Problem sending — please try again";
+            }
+            });
     
           } else {
             if (sendBtn) {
