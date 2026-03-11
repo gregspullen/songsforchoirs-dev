@@ -84,7 +84,18 @@ If you prefer to save ink (and possibly paper), you can start printing from page
     
           if (!localStorage.getItem(emailSentKey)) {
     
-            fetch(`/fulfil?order=${order}`)
+            fetch("/fulfil", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    title: data.title,
+    choir: data.choir,
+    copies: data.copies,
+    amount: data.amount,
+    order: order,
+    email: data.email
+  })
+})
               .then(res => {
                 if (!res.ok) throw new Error("Fulfil failed");
                 return res.json();
