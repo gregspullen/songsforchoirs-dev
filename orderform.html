@@ -149,25 +149,21 @@
 
     <label for="copy">Number of copies:</label>
 
-<div style="margin-top:4px;">
+<div style="display:flex; align-items:center; gap:16px; margin-top:6px;">
+
   <input id="copy" name="copies" required type="number" min="1" max="30"
-         style="width:80px; float:left; margin-right:12px;">
+         style="width:80px;">
 
-  <p class="note" style="margin-top:12px; line-height:1.3;">
+  <div class="note">
     Orders are limited to 30 copies per transaction as a simple safeguard.
-  </p>
+  </div>
 
-  <div style="clear:both;"></div>
 </div>
 
-  <div style="clear:both;"></div>
-</div>
-
-<p class="note" style="margin-top:6px;">
+<p class="note" style="margin-top:8px;">
   If you require more copies you can place multiple orders or you are welcome to contact us at
   <a href="mailto:lyra@songsforchoirs.com">lyra@songsforchoirs.com</a>.
 </p>
-
 <label for="email">Where would you like your music to be delivered?</label>
 <input id="email" type="email" name="email" placeholder="yourname@example.com" autocomplete="email" required>
 
