@@ -149,15 +149,17 @@
 
     <label for="copy">Number of copies:</label>
 
-    <div style="display:grid; grid-template-columns: 90px 1fr; column-gap:16px; align-items:start; margin-top:6px; margin-left:80px;">
+<div style="display:flex; align-items:flex-start; gap:16px; margin-top:6px;">
 
-      <input id="copy" name="copies" required type="number" min="1" max="30" style="width:80px;">
-    
-      <div class="note" style="margin-top:6px; grid-column:2 / -1; text-align:left; word-break:normal; overflow-wrap:normal;">
-        Orders are limited to 30 copies per transaction as a simple safeguard.
-      </div>
-    
-    </div>
+  <div style="width:90px;">
+    <input id="copy" name="copies" required type="number" min="1" max="30" style="width:80px;">
+  </div>
+
+  <div class="note" style="margin-top:6px;">
+    Orders are limited to 30 copies per transaction as a simple safeguard.
+  </div>
+
+</div>
 
 <p class="note" style="margin-top:6px;">
   If you require more copies you can place multiple orders or you are welcome to contact us at
