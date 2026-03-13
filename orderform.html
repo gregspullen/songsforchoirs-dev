@@ -133,11 +133,19 @@
     <input type="hidden" name="cancel_return" value="https://www.songsforchoirs.com/orderform.html">
     
     <!-- Regular form fields -->
-    <label for="title">Title of piece:</label>
-    <input id="title" name="title" required placeholder="e.g. The Lord Is My Shepherd">
+    <div style="display:flex; gap:20px;">
+
+      <div style="flex:1;">
+        <label for="title">Title of piece:</label>
+        <input id="title" name="title" required placeholder="e.g. The Lord Is My Shepherd">
+      </div>
     
-    <label for="choir">Organisation / Choir:</label>
-    <input id="choir" name="choir" class="choir-field" required>
+      <div style="flex:1;">
+        <label for="choir">Organisation / Choir:</label>
+        <input id="choir" name="choir" class="choir-field" required>
+      </div>
+    
+    </div>
     
     <label for="copy" class="inline-label">Number of copies:</label>
     <input id="copy" name="copies" class="inline-input" required type="number" min="1" max="30">
