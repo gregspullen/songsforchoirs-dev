@@ -692,9 +692,12 @@ button.price small {
   width: 90px;
   text-align: center;
   appearance: textfield;
+  -moz-appearance: textfield;
 }
-.inline-input[type="number"]::-webkit-inner-spin-button,
-.inline-input[type="number"]::-webkit-outer-spin-button {
+
+/* Remove spinner arrows */
+.inline-input[type="number"]::-webkit-outer-spin-button,
+.inline-input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
