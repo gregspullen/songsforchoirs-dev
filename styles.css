@@ -186,6 +186,8 @@ p em {
   margin-top: 0.05em !important;
   margin-bottom: 0.05em !important;
 }
+
+}
 /* Keep a nice pause under the thank-you heading */
 .receipt-panel h2 {
   margin-bottom: 0.8em;
@@ -691,15 +693,6 @@ button.price small {
 .inline-input[type="number"] {
   width: 90px;
   text-align: center;
-  appearance: textfield;
-  -moz-appearance: textfield;
-}
-
-/* Remove spinner arrows */
-.inline-input[type="number"]::-webkit-outer-spin-button,
-.inline-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 .success-note {
   color: var(--gold);
