@@ -58,9 +58,14 @@
 
     <div class="sheet-container">
       <iframe
-      src="/sheet-lavender.pdf?preview=true"
+        id="pdfFrame"
+        src=""
         title="Preview — Lavender's Blue">
       </iframe>
+      <script>
+        const path = window.location.pathname;
+        document.getElementById("pdfFrame").src = path + ".pdf?preview=true";
+      </script>
     </div>
   </main>
 
