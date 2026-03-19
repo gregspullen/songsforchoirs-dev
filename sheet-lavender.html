@@ -63,8 +63,10 @@
         title="Preview — Lavender's Blue">
       </iframe>
       <script>
-        const path = window.location.pathname;
-        document.getElementById("pdfFrame").src = path + ".pdf?preview=true";
+        window.addEventListener("DOMContentLoaded", function () {
+          const path = window.location.pathname;
+          document.getElementById("pdfFrame").src = path + ".pdf?preview=true";
+        });
       </script>
     </div>
   </main>
