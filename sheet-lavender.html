@@ -62,12 +62,6 @@
         src=""
         title="Preview — Lavender's Blue">
       </iframe>
-      <script>
-        window.addEventListener("DOMContentLoaded", function () {
-          const path = window.location.pathname;
-          document.getElementById("pdfFrame").src = path + ".pdf?preview=true";
-        });
-      </script>
     </div>
   </main>
 
@@ -79,6 +73,11 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  
+  <script>
+    const path = window.location.pathname;
+    document.getElementById("pdfFrame").src = path + ".pdf?preview=true";
   </script>
 </body>
 </html>
