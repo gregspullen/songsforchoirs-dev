@@ -58,8 +58,7 @@
 
     <div class="sheet-container">
       <iframe
-        id="pdfFrame"
-        src=""
+      src="https://sfc-watermark-worker.lyra-6b2.workers.dev/Lavender's-Blue.pdf?preview=true"
         title="Preview — Lavender's Blue">
       </iframe>
     </div>
@@ -73,11 +72,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-  
-  <script>
-    const path = window.location.pathname;
-    document.getElementById("pdfFrame").src = path + ".pdf?preview=true";
   </script>
 </body>
 </html>
