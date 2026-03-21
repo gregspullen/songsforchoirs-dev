@@ -70,5 +70,24 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+  <script>
+  const page = window.location.pathname.split("/").pop();
+
+  let name = page
+    .replace(".html", "")
+    .replace("sheet-", "");
+
+  // Capitalise first letter
+  name = name.charAt(0).toUpperCase() + name.slice(1);
+
+  const fileName = name + ".pdf";
+
+  const encoded = encodeURIComponent(fileName);
+
+  const src = `https://sfc-watermark-worker-dev.lyra-6b2.workers.dev/${encoded}?preview=true`;
+
+  document.getElementById("scorePreview").src = src;
+</script>
 </body>
 </html>
