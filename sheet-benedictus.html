@@ -73,9 +73,14 @@
   <script>
   const page = window.location.pathname.split("/").pop();
 
-  const fileName = page
+  let name = page
     .replace(".html", "")
-    .replace("sheet-", "") + ".pdf";
+    .replace("sheet-", "");
+
+  // Capitalise first letter
+  name = name.charAt(0).toUpperCase() + name.slice(1);
+
+  const fileName = name + ".pdf";
 
   const encoded = encodeURIComponent(fileName);
 
