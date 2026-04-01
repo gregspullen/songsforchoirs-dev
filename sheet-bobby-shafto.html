@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title id="page-title"></title>
+  <title>Songs for Choirs</title>
   <meta name="description" content="An English folk song arranged for SATB choir (a cappella). Listen, view sample pages, and order licensed copies instantly." />
   <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -52,8 +52,16 @@
 
   <script>
   const TITLE = "Bobby Shafto";
-  const SLUG = "bobby-shafto";
-  const PREVIEW_SCORE = "bobby shafto"; // worker expects spaces, not hyphens
+
+  const lower = TITLE.toLowerCase();
+  const SLUG = lower.replace(/'/g, "").replace(/\s+/g, "-");
+  const PREVIEW_SCORE = lower; // worker expects spaces
+
+  // Optional: safe encoded version if ever needed
+  const ENCODED = encodeURIComponent(TITLE);
+
+  // Set page title early (prevents flicker)
+  document.title = `${TITLE} — Sheet Music | Songs for Choirs`;
 </script>
 
 </head>
