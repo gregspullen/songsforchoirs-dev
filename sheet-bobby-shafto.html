@@ -64,9 +64,9 @@
 
     <div class="sheet-container">
       <iframe
-      src="https://sfc-watermark-worker-dev.lyra-6b2.workers.dev/preview?score=bobby%20shafto"
-        title="Preview — Bobby Shafto">
-      </iframe>
+      id="preview-frame"
+      title="">
+    </iframe>
     </div>
   </main>
 
@@ -79,5 +79,15 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+  <script>
+    const BASE = "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev";
+  
+    const frame = document.getElementById("preview-frame");
+  
+    frame.src = `${BASE}/preview?score=${encodeURIComponent(PREVIEW_SCORE)}`;
+    frame.title = `Preview — ${TITLE}`;
+  </script>
+  
 </body>
 </html>
