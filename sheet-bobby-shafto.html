@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bobby Shafto — Sheet Music | Songs for Choirs</title>
+  <title id="page-title"></title>
   <meta name="description" content="An English folk song arranged for SATB choir (a cappella). Listen, view sample pages, and order licensed copies instantly." />
   <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -60,7 +60,7 @@
 
 <body class="sheet">
   <main class="wrap">
-    <a href="opus-bobby-shafto.html" class="back-btn">← Back to Opus Page</a>
+    <a id="back-link" class="back-btn">← Back to Opus Page</a>
 
     <div class="sheet-container">
       <iframe
@@ -81,13 +81,21 @@
   </script>
 
   <script>
-    const BASE = "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev";
-  
-    const frame = document.getElementById("preview-frame");
-  
-    frame.src = `${BASE}/preview?score=${encodeURIComponent(PREVIEW_SCORE)}`;
-    frame.title = `Preview — ${TITLE}`;
-  </script>
+  const BASE = "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev";
+
+  const frame = document.getElementById("preview-frame");
+  frame.src = `${BASE}/preview?score=${encodeURIComponent(PREVIEW_SCORE)}`;
+  frame.title = `Preview — ${TITLE}`;
+
+  document.getElementById("page-title").textContent =
+    `${TITLE} — Sheet Music | Songs for Choirs`;
+
+  document.getElementById("back-link").href =
+    `opus-${SLUG}.html`;
+
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+</script>
   
 </body>
 </html>
