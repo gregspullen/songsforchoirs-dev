@@ -92,8 +92,12 @@
   <!-- 🔧 Wiring everything together -->
   <script>
     // Audio
-    document.getElementById("audioSrc").src =
+    const audio = document.querySelector("audio");
+
+document.getElementById("audioSrc").src =
   `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
+
+audio.load();
 
     // Sheet link
     document.getElementById("sheetLink").href =
