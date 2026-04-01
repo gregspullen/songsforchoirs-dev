@@ -85,18 +85,11 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <script>
   const BASE = "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev";
 
   const frame = document.getElementById("preview-frame");
   frame.src = `${BASE}/preview?score=${encodeURIComponent(PREVIEW_SCORE)}`;
   frame.title = `Preview — ${TITLE}`;
-
-  document.getElementById("page-title").textContent =
-    `${TITLE} — Sheet Music | Songs for Choirs`;
 
   document.getElementById("back-link").href =
     `opus-${SLUG}.html`;
