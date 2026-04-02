@@ -4,37 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- === PAGE DATA START === -->
+  <!-- DATA -->
   <script src="data.js"></script>
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("piece");
-  
-  const piece = PIECES[slug];
-  
-  if (!piece) {
-    document.body.innerHTML = "<h1>Piece not found</h1>";
-    throw new Error("Invalid piece");
-  }
+  <script>
+    const slug = "lavenders-blue";
 
-  const piece = PIECES[slug];
+    const piece = PIECES[slug];
 
-  if (!piece) {
-    console.error("Piece not found:", slug);
-  }
+    if (!piece) {
+      document.body.innerHTML = "<h1>Piece not found</h1>";
+      throw new Error("Invalid piece");
+    }
 
-  const TITLE = piece.title;
-  const DESCRIPTION = piece.description;
+    const TITLE = piece.title;
+    const DESCRIPTION = piece.description;
 
-  const lower = TITLE.toLowerCase();
-  const safeSlug = lower.replace(/'/g, "").replace(/\s+/g, "-");
-  const encoded = encodeURIComponent(TITLE);
+    const encoded = encodeURIComponent(TITLE);
 
-  document.title = `${TITLE} – Songs for Choirs`;
-</script>
-  <!-- === PAGE DATA END === -->
+    document.title = `${TITLE} – Songs for Choirs`;
+  </script>
 
+  <!-- META -->
   <meta name="description" content="">
 
   <script>
@@ -47,12 +38,13 @@
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Privacy-friendly analytics by Plausible -->
+  <!-- Analytics -->
   <script defer data-domain="songsforchoirs.com" src="https://plausible.io/js/script.js"></script>
 
 </head>
 
 <body class="opus-page">
+
   <header class="site-header">
     <h1 class="site-logo">
       songs<span class="gold">for</span>choirs
@@ -76,15 +68,14 @@
 
       <div class="score-grid single-opus">
         
-        <!-- Left: audio player -->
+        <!-- Audio -->
         <div class="opus-left">
           <audio controls>
             <source id="audioSrc" type="audio/mpeg">
-            Your browser does not support the audio element.
           </audio>
         </div>
         
-        <!-- Centre: cover -->
+        <!-- Cover -->
         <figure class="cover">
           <a id="sheetLink" class="cover-link">
             <img 
@@ -94,12 +85,10 @@
           <span class="hover-tag">VIEW SAMPLE</span>
         </figure>
 
-        <!-- Right: order button -->
+        <!-- Order -->
         <div class="opus-right">
           <div class="paypal-box">
-            <button class="price"
-              data-price="1.25"
-              id="orderBtn">
+            <button class="price" data-price="1.25" id="orderBtn">
               Order Here — £1.25 (<span class="eur"></span>, <span class="usd"></span>) per part
             </button> 
           </div>
@@ -112,40 +101,35 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <small>© 2026 <a href="https://www.songsforchoirs.com">www.songsforchoirs.com</a> — All rights reserved worldwide.</small>
+      <small>© 2026 <a href="https://www.songsforchoirs.com">www.songsforchoirs.com</a></small>
     </div>
   </footer>
 
   <script src="pricing.js"></script>
 
-  <!-- 🔧 Wiring everything together -->
+  <!-- WIRING -->
   <script>
-  console.log("🔥 script running");
+    console.log("🔥 script running");
 
-  const audio = document.querySelector("audio");
+    const audio = document.querySelector("audio");
 
-  // AUDIO
-  document.getElementById("audioSrc").src =
-    `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
-  audio.load();
+    document.getElementById("audioSrc").src =
+      `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
+    audio.load();
 
-  // SHEET LINK
-  const sheetLink = document.getElementById("sheetLink");
-  sheetLink.href = `sheet-${slug}.html`;
+    document.getElementById("sheetLink").href =
+      `sheet-${slug}.html`;
 
-  // COVER
-  const cover = document.getElementById("coverImg");
-  cover.src = `/images/Cover_png/${slug}.png`;
-  cover.alt = `${TITLE} cover`;
+    const cover = document.getElementById("coverImg");
+    cover.src = `/images/Cover_png/${slug}.png`;
+    cover.alt = `${TITLE} cover`;
 
-  // ORDER BUTTON
-  const btn = document.getElementById("orderBtn");
-  btn.onclick = () => {
-    window.location.href = `orderform?title=${encoded}`;
-  };
+    document.getElementById("orderBtn").onclick = () => {
+      window.location.href = `orderform?title=${encoded}`;
+    };
 
-  console.log("✅ wiring complete");
-</script>
+    console.log("✅ wiring complete");
+  </script>
 
 </body>
 </html>
