@@ -109,6 +109,8 @@
 
   <!-- WIRING -->
   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+
     console.log("🔥 script running");
 
     const audio = document.querySelector("audio");
@@ -124,12 +126,22 @@
     cover.src = `/images/Cover_png/${slug}.png`;
     cover.alt = `${TITLE} cover`;
 
-    document.getElementById("orderBtn").onclick = () => {
+    const btn = document.getElementById("orderBtn");
+
+    if (!btn) {
+      console.error("❌ orderBtn not found");
+      return;
+    }
+
+    btn.onclick = () => {
+      console.log("🟢 button clicked");
       window.location.href = `orderform?title=${encoded}`;
     };
 
     console.log("✅ wiring complete");
-  </script>
+
+  });
+</script>
 
 </body>
 </html>
