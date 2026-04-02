@@ -120,26 +120,31 @@
 
   <!-- 🔧 Wiring everything together -->
   <script>
+  console.log("🔥 script running");
+
   const audio = document.querySelector("audio");
 
-  // Audio
+  // AUDIO
   document.getElementById("audioSrc").src =
     `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
   audio.load();
 
-  // Sheet preview link
-  document.getElementById("sheetLink").href =
-    `sheet-${slug}.html`;
+  // SHEET LINK
+  const sheetLink = document.getElementById("sheetLink");
+  sheetLink.href = `sheet-${slug}.html`;
 
-  // Cover image
+  // COVER
   const cover = document.getElementById("coverImg");
   cover.src = `/images/Cover_png/${slug}.png`;
   cover.alt = `${TITLE} cover`;
 
-  // Order button (WORKING VERSION)
-  document.getElementById("orderBtn").onclick = () => {
+  // ORDER BUTTON
+  const btn = document.getElementById("orderBtn");
+  btn.onclick = () => {
     window.location.href = `orderform?title=${encoded}`;
   };
+
+  console.log("✅ wiring complete");
 </script>
 
 </body>
