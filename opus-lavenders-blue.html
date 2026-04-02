@@ -132,12 +132,7 @@
     cover.src = `/images/Cover_png/${slug}.png`;
     cover.alt = `${TITLE} cover`;
 
-    const btn = document.getElementById("orderBtn");
-
-    if (!btn) {
-      console.error("❌ orderBtn not found");
-    } else {
-      btn.onclick = () => {
+    
       window.location.href = `orderform?title=${encodeURIComponent(TITLE)}`;
     };
     }
