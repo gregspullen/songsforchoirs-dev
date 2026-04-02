@@ -130,16 +130,11 @@
 
     if (!btn) {
       console.error("❌ orderBtn not found");
-      return;
+    } else {
+      btn.onclick = () => {
+        alert("CLICK WORKS");
+      };
     }
-
-    const btn = document.getElementById("orderBtn");
-
-    btn.onclick = () => {
-      alert("CLICK WORKS");
-    };
-
-    console.log("✅ wiring complete");
 
   });
 </script>
