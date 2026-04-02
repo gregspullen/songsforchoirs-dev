@@ -121,45 +121,6 @@ print(f'const TITLE = "{title}";')
 print(f'const DESCRIPTION = "{data["meta_description"]}";')
 
 
-# 🐸 THIS LINE TRIGGERS THE MAGIC (VERY BOTTOM)
-update_data_js(data["slug"], title, data["meta_description"])
-
-def update_data_js(data):
-    import os
-
-    DATA_FILE = "data.js"
-
-    # Prepare new entry
-    entry = f'''  "{data["slug"]}": {{
-    title: "{data["title"]}",
-    description: "{data["description"]}"
-  }}'''
-
-    # If file doesn't exist, create it
-    if not os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "w") as f:
-            f.write("const PIECES = {\n")
-            f.write(entry + "\n};\n")
-        return
-
-    # Read existing file
-    with open(DATA_FILE, "r") as f:
-        content = f.read().strip()
-
-    # Insert before closing }
-    if content.endswith("};"):
-        content = content[:-2].rstrip()
-
-        # Add comma if needed
-        if not content.endswith("{"):
-            content += ",\n"
-
-        content += entry + "\n};"
-
-    else:
-        # fallback safety
-        content = "const PIECES = {\n" + entry + "\n};"
-
     # Write back
     with open(DATA_FILE, "w") as f:
         f.write(content)
