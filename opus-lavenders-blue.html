@@ -132,8 +132,8 @@
       console.error("❌ orderBtn not found");
     } else {
       btn.onclick = () => {
-        alert("CLICK WORKS");
-      };
+      window.location.href = `orderform?title=${encodeURIComponent(TITLE)}`;
+    };
     }
 
   });
