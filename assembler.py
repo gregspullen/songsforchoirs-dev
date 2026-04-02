@@ -1,6 +1,8 @@
 import json
 import os
 
+print("🚨 THIS IS THE VERSION RUNNING")
+
 DATA_FILE = "data.js"
 
 def create_slug(title):
