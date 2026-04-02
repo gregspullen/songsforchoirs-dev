@@ -132,9 +132,9 @@
     cover.src = `/images/Cover_png/${slug}.png`;
     cover.alt = `${TITLE} cover`;
 
-    
-      window.location.href = `orderform?title=${encodeURIComponent(TITLE)}`;
-    };
+    document.getElementById("orderBtn").href =
+      `orderform?title=${encodeURIComponent(TITLE)}`;
+     };
     }
 
   });
