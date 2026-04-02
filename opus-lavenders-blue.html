@@ -124,6 +124,14 @@
 
     });
   </script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  
+      const link = document.getElementById("orderBtn");
+  
+      link.href = `/orderform?title=${encodeURIComponent(TITLE)}`;
+  
+    });
+  </script>
 </body>
 </html>
