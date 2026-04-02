@@ -84,8 +84,11 @@
       cover.src = `/images/Cover_png/${slug}.png`;
 
       // 🔥 THIS IS THE IMPORTANT BIT
-      document.getElementById("orderBtn").href =
-        `orderform?title=${encodeURIComponent(TITLE)}`;
+      const btn = document.getElementById("orderBtn");
+
+      btn.addEventListener("click", () => {
+        window.location.href = `orderform?title=${encodeURIComponent(TITLE)}`;
+      });
 
     });
   </script>
