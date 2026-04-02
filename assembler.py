@@ -32,6 +32,33 @@ def build_metadata(title, description, voicing):
     }
 
 
+# 🐸 NEW FUNCTION (this is the fairy)
+def update_data_js(slug, title, description):
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, "r") as f:
+            content = f.read().strip()
+
+        if content.startswith("const PIECES ="):
+            json_part = content.replace("const PIECES =", "").strip().rstrip(";")
+            data = json.loads(json_part or "{}")
+        else:
+            data = {}
+    else:
+        data = {}
+
+    data[slug] = {
+        "title": title,
+        "description": description
+    }
+
+    with open(DATA_FILE, "w") as f:
+        f.write("const PIECES = ")
+        json.dump(data, f, indent=2)
+        f.write(";")
+
+    print(f"\n✅ Updated data.js with '{slug}'")
+
+
 # --- RUN IT ---
 
 while True:
@@ -80,3 +107,7 @@ print("\n================ PAGE INPUT ================\n")
 
 print(f'const TITLE = "{title}";')
 print(f'const DESCRIPTION = "{data["meta_description"]}";')
+
+
+# 🐸 THIS LINE TRIGGERS THE MAGIC (VERY BOTTOM)
+update_data_js(data["slug"], title, data["meta_description"])
