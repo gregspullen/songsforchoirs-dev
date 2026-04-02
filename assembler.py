@@ -68,8 +68,6 @@ while True:
 
     data = build_metadata(title, description, voicing)
 
-    update_data_js(data["slug"], title, data["meta_description"])
-
     print("\n================ PREVIEW ================\n")
     print(f"Slug: {data['slug']}")
     print(f"<title>{data['meta_title']}</title>")
@@ -78,6 +76,9 @@ while True:
     confirm = input("\nIs this correct? (y/n): ").lower()
 
     if confirm == "y":
+
+    update_data_js(data["slug"], title, data["meta_description"])
+        
         break
 
     print("\nLet’s try again...\n")
