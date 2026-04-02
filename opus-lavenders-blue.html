@@ -133,9 +133,10 @@
       return;
     }
 
+    const btn = document.getElementById("orderBtn");
+
     btn.onclick = () => {
-      console.log("🟢 button clicked");
-      window.location.href = `orderform?title=${encoded}`;
+      alert("CLICK WORKS");
     };
 
     console.log("✅ wiring complete");
