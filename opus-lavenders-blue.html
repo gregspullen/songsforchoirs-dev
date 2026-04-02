@@ -127,13 +127,12 @@
 
     audio.load();
 
-    document.getElementById("sheetLink").href =
-      `sheet-${slug}.html`;
+    document.getElementById("sheetLink").href = `sheet-${slug}.html`;
 
     const cover = document.getElementById("coverImg");
     cover.src = `/images/Cover_png/${slug}.png`;
     cover.alt = `${TITLE} cover`;
-
+    
     document.getElementById("orderBtn").onclick = () => {
       window.location.href = `orderform?title=${encoded}`;
     };
