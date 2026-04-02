@@ -5,16 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- === PAGE DATA START === -->
-  <script>
-    const TITLE = "Lavender's Blue";
-    const DESCRIPTION = "English folk song arranged for SATB choir and piano (optional). Listen, view sample pages, and order licensed copies instantly.";
+  <script src="data.js"></script>
 
-    const lower = TITLE.toLowerCase();
-    const slug = lower.replace(/'/g, "").replace(/\s+/g, "-");
-    const encoded = encodeURIComponent(TITLE);
+<script>
+  const slug = "lavenders-blue"; // ← only thing you set per page
 
-    document.title = `${TITLE} – Songs for Choirs`;
-  </script>
+  const piece = PIECES[slug];
+
+  if (!piece) {
+    console.error("Piece not found:", slug);
+  }
+
+  const TITLE = piece.title;
+  const DESCRIPTION = piece.description;
+
+  const lower = TITLE.toLowerCase();
+  const safeSlug = lower.replace(/'/g, "").replace(/\s+/g, "-");
+  const encoded = encodeURIComponent(TITLE);
+
+  document.title = `${TITLE} – Songs for Choirs`;
+</script>
   <!-- === PAGE DATA END === -->
 
   <meta name="description" content="">
