@@ -6,22 +6,24 @@
 
   <!-- DATA -->
   <script src="data.js"></script>
+
   <script>
     const slug = "lavenders-blue";
-    const piece = PIECES[slug];
 
-    const TITLE = piece.title;
-    const DESCRIPTION = piece.description;
+    const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
+
+    const TITLE = piece?.title || "Lavender's Blue";
+    const DESCRIPTION = piece?.description || "";
 
     document.title = `${TITLE} – Songs for Choirs`;
   </script>
 
   <meta name="description" content="">
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      document
-        .querySelector('meta[name="description"]')
-        .setAttribute("content", DESCRIPTION);
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute("content", DESCRIPTION);
     });
   </script>
 
@@ -73,13 +75,10 @@
           <span class="hover-tag">VIEW SAMPLE</span>
         </figure>
 
-        <!-- Order (NOW A LINK, keeps your style class) -->
+        <!-- Order -->
         <div class="opus-right">
           <div class="paypal-box">
             <a class="price"
-               data-price="1.25"
-               id="orderBtn"
-               <a class="price"
                data-price="1.25"
                id="orderBtn"
                href="#">
@@ -118,29 +117,14 @@
       cover.src = `/images/Cover_png/${slug}.png`;
       cover.alt = `${TITLE} cover`;
 
-      // ✅ Robust: set href once, let browser handle click
       const orderLink = document.getElementById("orderBtn");
-      orderLink.href = `orderform?title=${encodeURIComponent(TITLE)}`;
+
+      if (orderLink) {
+        orderLink.href = `/orderform?title=${encodeURIComponent(TITLE)}`;
+      }
 
     });
   </script>
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-  
-      console.log("TITLE is:", TITLE);
-  
-      const link = document.getElementById("orderBtn");
-  
-      if (!link) {
-        console.error("orderBtn not found");
-        return;
-      }
-  
-      link.href = `/orderform?title=${encodeURIComponent(TITLE)}`;
-  
-      console.log("link set to:", link.href);
-  
-    });
-  </script>
+
 </body>
 </html>
