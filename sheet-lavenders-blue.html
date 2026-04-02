@@ -51,11 +51,11 @@
   <script defer data-domain="songsforchoirs.com" src="https://plausible.io/js/script.js"></script>
 
   <script>
-  const TITLE = "Lavender's Blue";
+  const TITLE = "lavenders-blue";
 
   const lower = TITLE.toLowerCase();
   const SLUG = lower.replace(/'/g, "").replace(/\s+/g, "-");
-  const PREVIEW_SCORE = SLUG;
+  const PREVIEW_SCORE = `${SLUG}.pdf`;
 
   // Optional: safe encoded version if ever needed
   const ENCODED = encodeURIComponent(TITLE);
@@ -85,7 +85,7 @@
   </footer>
 
   <script>
-  const BASE = "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev";
+  const BASE = "";
 
   const frame = document.getElementById("preview-frame");
   frame.src = `${BASE}/preview?score=${encodeURIComponent(PREVIEW_SCORE)}`;
