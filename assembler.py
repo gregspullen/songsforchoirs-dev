@@ -76,7 +76,8 @@ while True:
     confirm = input("\nIs this correct? (y/n): ").lower()
 
     if confirm == "y":
-
+        
+    print("🔥 CALLING UPDATE FUNCTION")
     update_data_js(data["slug"], title, data["meta_description"])
         
         break
