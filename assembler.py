@@ -69,6 +69,12 @@ while True:
     data = build_metadata(title, description, voicing)
 
     update_data_js({
+        "slug": data["slug"],
+        "title": title,
+        "description": data["meta_description"]
+    })
+
+    update_data_js({
     "slug": data["slug"],
     "title": title,
     "description": data["meta_description"]
