@@ -124,12 +124,21 @@
 
     });
   </script>
-  <script>
+    <script>
     document.addEventListener("DOMContentLoaded", () => {
+  
+      console.log("TITLE is:", TITLE);
   
       const link = document.getElementById("orderBtn");
   
+      if (!link) {
+        console.error("orderBtn not found");
+        return;
+      }
+  
       link.href = `/orderform?title=${encodeURIComponent(TITLE)}`;
+  
+      console.log("link set to:", link.href);
   
     });
   </script>
