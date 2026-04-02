@@ -117,11 +117,9 @@
       cover.src = `/images/Cover_png/${slug}.png`;
       cover.alt = `${TITLE} cover`;
 
-      const orderLink = document.getElementById("orderBtn");
-
-      if (orderLink) {
-        orderLink.href = `/orderform?title=${encodeURIComponent(TITLE)}`;
-      }
+      document.getElementById("orderBtn").onclick = () => {
+      window.location.href = `orderform.html?title=${encodeURIComponent(TITLE)}`;
+    };
 
     });
   </script>
