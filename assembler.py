@@ -1,3 +1,8 @@
+import json
+import os
+
+DATA_FILE = "data.js"
+
 def create_slug(title):
     slug = title.lower()
     slug = slug.replace("’", "")   # remove curly apostrophes
