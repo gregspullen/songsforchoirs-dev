@@ -11,11 +11,22 @@
     const slug = lower.replace(/'/g, "").replace(/\s+/g, "-");
     const encoded = encodeURIComponent(TITLE);
 
-    // Set page title early
+    const DESCRIPTION = "English folk song arranged for SATB choir and piano (optional). Listen, view sample pages, and order licensed copies instantly.";
+
+    // Set page title
     document.title = `${TITLE} – Songs for Choirs`;
   </script>
 
-  <meta name="description" content="English folk song arranged for SATB choir and piano (optional). Listen, view sample pages, and order licensed copies instantly." />
+  <meta name="description" content="">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document
+        .querySelector('meta[name="description"]')
+        .setAttribute("content", DESCRIPTION);
+    });
+  </script>
+
   <link rel="stylesheet" href="styles.css">
 
   <!-- Privacy-friendly analytics by Plausible -->
@@ -91,24 +102,20 @@
 
   <!-- 🔧 Wiring everything together -->
   <script>
-    // Audio
     const audio = document.querySelector("audio");
 
-document.getElementById("audioSrc").src =
-  `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
+    document.getElementById("audioSrc").src =
+      `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
 
-audio.load();
+    audio.load();
 
-    // Sheet link
     document.getElementById("sheetLink").href =
-  `/sheet-${slug}.html`;
+      `/sheet-${slug}.html`;
 
-    // Cover image
     const cover = document.getElementById("coverImg");
     cover.src = `/images/Cover_png/${slug}.png`;
     cover.alt = `${TITLE} cover`;
 
-    // Order button
     document.getElementById("orderBtn").onclick = () => {
       window.location.href = `orderform.html?title=${encoded}`;
     };
