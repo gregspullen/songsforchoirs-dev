@@ -68,6 +68,8 @@ while True:
 
     data = build_metadata(title, description, voicing)
 
+    update_data_js(data["slug"], title, data["meta_description"])
+
     print("\n================ PREVIEW ================\n")
     print(f"Slug: {data['slug']}")
     print(f"<title>{data['meta_title']}</title>")
