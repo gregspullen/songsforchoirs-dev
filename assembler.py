@@ -109,8 +109,3 @@ print("\n================ PAGE INPUT ================\n")
 
 print(f'const TITLE = "{title}";')
 print(f'const DESCRIPTION = "{data["meta_description"]}";')
-
-
-    # Write back
-    with open(DATA_FILE, "w") as f:
-        f.write(content)
