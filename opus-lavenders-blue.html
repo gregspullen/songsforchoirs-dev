@@ -8,7 +8,15 @@
   <script src="data.js"></script>
 
 <script>
-  const slug = "lavenders-blue"; // ← only thing you set per page
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("piece");
+  
+  const piece = PIECES[slug];
+  
+  if (!piece) {
+    document.body.innerHTML = "<h1>Piece not found</h1>";
+    throw new Error("Invalid piece");
+  }
 
   const piece = PIECES[slug];
 
