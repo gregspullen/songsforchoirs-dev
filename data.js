@@ -22,5 +22,11 @@ window.PIECES = {
     "metaTitle": "Benedictus - Anthem for SATB choir with piano accompaniment | Songs for Choirs",
     "description": "Benedictus  an atmospheric and accessible choral setting for SATB choir. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true
+  },
+  "bobby-shafto": {
+    "title": "Bobby Shafto",
+    "metaTitle": "Bobby Shafto - English folk-song for SATB choir with optional piano accompaniment | Songs for Choirs",
+    "description": "Bobby Shafto  a light and humorous arrangement of the traditional folk song for SATB choir. Short, accessible, and full of character, it makes an ideal encore. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "hasScore": true
   }
 };
