@@ -1,10 +1,20 @@
-const PIECES = {
+window.PIECES = {
   "lavenders-blue": {
     "title": "Lavender's Blue",
-    "description": "English folk song. SATB choir and piano."
+    "metaTitle": "Lavender's Blue - for SATB Choir with Piano | Songs for Choirs",
+    "description": "Hmmm smelly",
+    "hasScore": true
   },
   "bathed-in-starlight": {
     "title": "Bathed In Starlight",
-    "description": "Nativity Carol. SSA or unison voices."
+    "metaTitle": "Bathed In Starlight - Nativity Carol for SSA or Unison Choir | Songs for Choirs",
+    "description": "Turn that light off!",
+    "hasScore": true
+  },
+  "froglets": {
+    "title": "Froglets",
+    "metaTitle": "Froglets  Very silly name | Songs for Choirs",
+    "description": "hop hop hop",
+    "hasScore": false
   }
 };
