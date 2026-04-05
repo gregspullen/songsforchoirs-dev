@@ -4,26 +4,37 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- DATA -->
+  <script src="data.js?v=1"></script>
+
   <script>
-    const TITLE = "The Lord Is My Shepherd";
+    const slug = "the-lord-is-my-shepherd";
 
-    const lower = TITLE.toLowerCase();
-    const slug = lower.replace(/'/g, "").replace(/\s+/g, "-");
-    const encoded = encodeURIComponent(TITLE);
+    const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
 
-    // Set page title early
+    const TITLE = piece?.title || "Lavender's Blue";
+    const DESCRIPTION = piece?.description || "";
+
     document.title = `${TITLE} – Songs for Choirs`;
   </script>
 
-  <meta name="description" content="English folk song arranged for SATB choir and piano (optional). Listen, view sample pages, and order licensed copies instantly." />
+  <meta name="description" content="">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute("content", DESCRIPTION);
+    });
+  </script>
+
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Privacy-friendly analytics by Plausible -->
+  <!-- Analytics -->
   <script defer data-domain="songsforchoirs.com" src="https://plausible.io/js/script.js"></script>
-
 </head>
 
 <body class="opus-page">
+
   <header class="site-header">
     <h1 class="site-logo">
       songs<span class="gold">for</span>choirs
@@ -47,15 +58,14 @@
 
       <div class="score-grid single-opus">
         
-        <!-- Left: audio player -->
+        <!-- Audio -->
         <div class="opus-left">
           <audio controls>
             <source id="audioSrc" type="audio/mpeg">
-            Your browser does not support the audio element.
           </audio>
         </div>
         
-        <!-- Centre: cover -->
+        <!-- Cover -->
         <figure class="cover">
           <a id="sheetLink" class="cover-link">
             <img 
@@ -65,14 +75,15 @@
           <span class="hover-tag">VIEW SAMPLE</span>
         </figure>
 
-        <!-- Right: order button -->
+        <!-- Order -->
         <div class="opus-right">
           <div class="paypal-box">
             <button class="price"
               data-price="1.25"
-              id="orderBtn">
+              id="orderBtn"
+              type="button">
               Order Here — £1.25 (<span class="eur"></span>, <span class="usd"></span>) per part
-            </button> 
+            </button>
           </div>
         </div>
 
@@ -83,35 +94,34 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <small>© 2026 <a href="https://www.songsforchoirs.com">www.songsforchoirs.com</a> — All rights reserved worldwide.</small>
+      <small>© 2026 <a href="https://www.songsforchoirs.com">www.songsforchoirs.com</a></small>
     </div>
   </footer>
 
   <script src="pricing.js"></script>
 
-  <!-- 🔧 Wiring everything together -->
+  <!-- WIRING -->
   <script>
-    // Audio
-    const audio = document.querySelector("audio");
+    document.addEventListener("DOMContentLoaded", () => {
 
-document.getElementById("audioSrc").src =
-  `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
+      const audio = document.querySelector("audio");
 
-audio.load();
+      document.getElementById("audioSrc").src =
+        `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
+      audio.load();
 
-    // Sheet link
-    document.getElementById("sheetLink").href =
-  `/sheet-${slug}.html`;
+      document.getElementById("sheetLink").href =
+        `sheet-${slug}.html`;
 
-    // Cover image
-    const cover = document.getElementById("coverImg");
-    cover.src = `/images/Cover_png/${slug}.png`;
-    cover.alt = `${TITLE} cover`;
+      const cover = document.getElementById("coverImg");
+      cover.src = `/images/Cover_png/${slug}.png`;
+      cover.alt = `${TITLE} cover`;
 
-    // Order button
-    document.getElementById("orderBtn").onclick = () => {
-      window.location.href = `orderform.html?title=${encoded}`;
+      document.getElementById("orderBtn").onclick = () => {
+      window.location.href = `orderform.html?title=${encodeURIComponent(TITLE)}`;
     };
+
+    });
   </script>
 
 </body>
