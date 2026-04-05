@@ -39,5 +39,15 @@ window.PIECES = {
     "title": "If I Was That Donkey",
     "metaTitle": "If I Was That Donkey - a tender and expressive lullaby in a contemporary pop ballad style, perfect for Nativity performances. Warm, gentle, and accessible for SATB choir. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true
+  },
+  "lover-and-his-lass": {
+    "title": "Lover And His Lass",
+    "metaTitle": "Lover And His Lass - a light and characterful madrigal setting of Thomas Morley’s lute song for three-part a cappella choir. Engaging, accessible, and full of Renaissance charm. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "hasScore": true
+  },
+  "magnificat": {
+    "title": "Magnificat",
+    "metaTitle": "Magnificat - a lively, rhythmic choral setting for SATB choir, with an optional two-part version. Fresh, characterful, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "hasScore": true
   }
 };
