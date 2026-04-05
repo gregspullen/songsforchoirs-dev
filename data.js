@@ -28,5 +28,11 @@ window.PIECES = {
     "metaTitle": "Bobby Shafto - English folk-song for SATB choir with optional piano accompaniment | Songs for Choirs",
     "description": "Bobby Shafto  a light and humorous arrangement of the traditional folk song for SATB choir. Short, accessible, and full of character, it makes an ideal encore. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true
+  },
+  "cello-go-bolero": {
+    "title": "Cello Go Bolero",
+    "metaTitle": "Cello Go Bolero - an intermediate concert piece for cello and piano | Songs for Choirs",
+    "description": "Cello Go Bolero  a lively and rhythmic piece for cello in a bolero style. Characterful and full of energy, it brings the cello to the party at last. View the score, listen, and download from Songs for Choirs.",
+    "hasScore": true
   }
 };
