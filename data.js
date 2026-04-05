@@ -34,5 +34,10 @@ window.PIECES = {
     "metaTitle": "Cello Go Bolero - an intermediate concert piece for cello and piano | Songs for Choirs",
     "description": "Cello Go Bolero  a lively and rhythmic piece for cello in a bolero style. Characterful and full of energy, it brings the cello to the party at last. View the score, listen, and download from Songs for Choirs.",
     "hasScore": true
+  },
+  "if-i-was-that-donkey": {
+    "title": "If I Was That Donkey",
+    "metaTitle": "If I Was That Donkey - a tender and expressive lullaby in a contemporary pop ballad style, perfect for Nativity performances. Warm, gentle, and accessible for SATB choir. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "hasScore": true
   }
 };
