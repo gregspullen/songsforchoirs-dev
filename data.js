@@ -31,7 +31,7 @@ window.PIECES = {
   },
   "cello-go-bolero": {
     "title": "Cello Go Bolero",
-    "metaTitle": "Cello Go Bolero - an intermediate concert piece for cello and piano | Songs for Choirs",
+    "metaTitle": "Cello Go Bolero - an intermediate, Latin-style concert piece for cello and piano | Songs for Choirs",
     "description": "Cello Go Bolero - a lively and rhythmic piece for cello in a bolero style. Characterful and full of energy, it brings the cello to the party at last. View the score, listen, and download from Songs for Choirs.",
     "hasScore": true
   },
@@ -55,13 +55,13 @@ window.PIECES = {
   },
   "pass-the-salsa": {
     "title": "Pass The Salsa",
-    "metaTitle": "Pass The Salsa - a rhythmic, latin style concert piece for intermediate cello with piano accompaniment | Songs for Choirs",
+    "metaTitle": "Pass The Salsa - a rhythmic, Latin-style concert piece for intermediate cello with piano accompaniment | Songs for Choirs",
     "description": "Pass The Salsa – a lively and rhythmic piece for cello and piano in a vibrant Latin style. Accessible yet exciting, it’s ideal for the intermediate cellist (around Grade 4). View the score, listen, and download from Songs for Choirs.",
     "hasScore": true
   },
   "tangissimo": {
     "title": "Tangissimo",
-    "metaTitle": "Tangissimo - a lyrical and rhythmic, latin style concert piece for intermediate cello with piano accompaniment | Songs for Choirs",
+    "metaTitle": "Tangissimo - a lyrical and rhythmic, Latin-style concert piece for intermediate cello with piano accompaniment | Songs for Choirs",
     "description": "Tangissimo - a lively and characterful tango-inspired piece for cello and piano, completing a set of three Latin dances. Playful and full of flair, it offers a step up in challenge while remaining accessible at around Grade 5. View the score, listen, and download from Songs for Choirs.",
     "hasScore": true
   },
