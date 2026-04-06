@@ -61,6 +61,11 @@
     const ENCODED = encodeURIComponent(TITLE);
   
     document.title = `${TITLE} — Sheet Music | Songs for Choirs`;
+  
+    const iframe = document.getElementById("preview-frame");
+    if (iframe) {
+      iframe.src = `pdf/${slug}.pdf`;
+    }
   }
 </script>
 
