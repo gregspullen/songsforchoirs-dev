@@ -12,9 +12,9 @@ window.PIECES = {
     "hasScore": true
   },
   "away-in-a-manger": {
-    "title": "Away in a Manger",
-    "metaTitle": "Away in a Manger - Nativity Carol for SATB with optional piano accompaniment | Songs for Choirs",
-    "description": "Away in a Manger - a fresh and inventive choral setting combining two traditional melodies. Originally conceived a cappella, with optional piano support. A lively concert piece for SATB choir with rich and rewarding part-writing. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "title": "Away In A Manger",
+    "metaTitle": "Away In A Manger - Nativity Carol for SATB with optional piano accompaniment | Songs for Choirs",
+    "description": "Away In A Manger - a fresh and inventive choral setting combining two traditional melodies. Originally conceived a cappella, with optional piano support. A lively concert piece for SATB choir with rich and rewarding part-writing. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true
   },
   "benedictus": {
@@ -26,13 +26,13 @@ window.PIECES = {
   "bobby-shafto": {
     "title": "Bobby Shafto",
     "metaTitle": "Bobby Shafto - English folk-song for SATB choir with optional piano accompaniment | Songs for Choirs",
-    "description": "Bobby Shafto  a light and humorous arrangement of the traditional folk song for SATB choir. Short, accessible, and full of character, it makes an ideal encore. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "description": "Bobby Shafto - a light and humorous arrangement of the traditional folk song for SATB choir. Short, accessible, and full of character, it makes an ideal encore. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true
   },
   "cello-go-bolero": {
     "title": "Cello Go Bolero",
     "metaTitle": "Cello Go Bolero - an intermediate concert piece for cello and piano | Songs for Choirs",
-    "description": "Cello Go Bolero  a lively and rhythmic piece for cello in a bolero style. Characterful and full of energy, it brings the cello to the party at last. View the score, listen, and download from Songs for Choirs.",
+    "description": "Cello Go Bolero - a lively and rhythmic piece for cello in a bolero style. Characterful and full of energy, it brings the cello to the party at last. View the score, listen, and download from Songs for Choirs.",
     "hasScore": true
   },
   "if-i-was-that-donkey": {
