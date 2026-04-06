@@ -61,11 +61,6 @@
     const ENCODED = encodeURIComponent(TITLE);
   
     document.title = `${TITLE} — Sheet Music | Songs for Choirs`;
-  
-    const iframe = document.getElementById("preview-frame");
-    if (iframe) {
-      iframe.src = `pdf/${slug}.pdf`;
-    }
   }
 </script>
 
@@ -90,15 +85,23 @@
   </footer>
 
   <script>
-  const BASE = "";
-
-  const frame = document.getElementById("preview-frame");
-  frame.src = `/preview?score=${encodeURIComponent(PREVIEW_SCORE)}`;
-  frame.title = `Preview — ${TITLE}`;
-
-  document.getElementById("back-link").href =
-    `opus-${SLUG}.html`;
-
+  const slug = "lavenders-blue";
+  const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
+  
+  if (piece) {
+    const TITLE = piece.title;
+    const PREVIEW_SCORE = `${slug}.pdf`;
+  
+    const frame = document.getElementById("preview-frame");
+    frame.src = `/preview?score=${encodeURIComponent(PREVIEW_SCORE)}`;
+    frame.title = `Preview — ${TITLE}`;
+  
+    document.title = `${TITLE} — Sheet Music | Songs for Choirs`;
+  
+    document.getElementById("back-link").href =
+      `opus-${slug}.html`;
+  }
+  
   document.getElementById('year').textContent =
     new Date().getFullYear();
 </script>
