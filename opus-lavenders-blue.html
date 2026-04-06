@@ -12,7 +12,7 @@
 
     const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
 
-    if (slug === "lavenders-blue" && piece) {
+    if (piece && piece.voicing && piece.accompaniment) {
     piece.metaTitle = `${piece.title} - for ${piece.voicing} Choir with optional ${piece.accompaniment} | Songs for Choirs`;
   }   
     const TITLE = piece?.title || "Lavender's Blue";
