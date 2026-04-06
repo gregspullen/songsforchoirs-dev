@@ -20,7 +20,7 @@ window.PIECES = {
   "benedictus": {
     "title": "Benedictus",
     "metaTitle": "Benedictus - Anthem for SATB choir with piano accompaniment | Songs for Choirs",
-    "description": "Benedictus  an atmospheric and accessible choral setting for SATB choir. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "description": "Benedictus - an atmospheric and accessible choral setting for SATB choir. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true
   },
   "bobby-shafto": {
@@ -68,7 +68,7 @@ window.PIECES = {
   "the-lords-prayer": {
     "title": "The Lord's Prayer",
     "metaTitle": "The Lord's Prayer - a short devotional anthem for SATB choir with piano accompaniment | Songs for Choirs.",
-    "description": "The Lord%27s Prayer - a dynamic, neo-baroque choral setting for SATB choir. Short and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "description": "The Lord's Prayer - a dynamic, neo-baroque choral setting for SATB choir. Short and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true
   },
   "the-lord-is-my-shepherd": {
