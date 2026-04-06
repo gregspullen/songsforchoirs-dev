@@ -55,8 +55,8 @@ window.PIECES = {
   },
   "pass-the-salsa": {
     "title": "Pass The Salsa",
-    "metaTitle": "Benedictus - Anthem for SATB choir with piano accompaniment | Songs for Choirs",
-    "description": "Benedictus  an atmospheric and accessible choral setting for SATB choir. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "metaTitle": "Pass The Salsa - a rhythmic and lively concert piece for intermediate cello with piano accompaniment | Songs for Choirs",
+    "description": "Pass The Salsa – a lively and rhythmic piece for cello and piano in a vibrant Latin style. Accessible yet exciting, it’s ideal for the intermediate cellist (around Grade 4). View the score, listen, and download from Songs for Choirs.",
     "hasScore": true
   },
   "tangissimo": {
