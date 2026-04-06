@@ -1,7 +1,7 @@
 window.PIECES = {
   "lavenders-blue": {
     "title": "Lavender's Blue",
-    "metaTitle": "Lavender's Blue - for SATB Choir with optional piano accompniment | Songs for Choirs",
+    "metaTitle": "Lavender's Blue - for SATB Choir with optional piano accompaniment | Songs for Choirs",
     "description": "Lavenders Blue - a light and humorous arrangement of the traditional folk song for SATB choir. Fun, accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true
   },
