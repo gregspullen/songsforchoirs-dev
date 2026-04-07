@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const cover = document.getElementById("coverImg");
       cover.src = `/images/Cover_png/${slug}.png`;
-      cover.alt = `${TITLE} cover`;
+      cover.alt = `${piece.title} cover`;
 
       document.getElementById("orderBtn").onclick = () => {
       window.location.href = `orderform.html?title=${encodeURIComponent(TITLE)}`;
