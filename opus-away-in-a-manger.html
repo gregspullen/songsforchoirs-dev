@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🐸 Get slug from URL (no hardcoding now)
   const path = window.location.pathname;
-  const filename = path.split("/").pop();
-  const slug = filename.replace(".html", "").replace("opus-", "");
+  const slug = path.split("/").pop().replace("opus-", "");
 
   // 🐸 Get piece
   const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
