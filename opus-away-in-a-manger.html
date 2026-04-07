@@ -8,27 +8,38 @@
   <script src="data.js?v=1"></script>
 
   <script>
-    const slug = "away-in-a-manger"; // slug = lowercase, hyphenated, no apostrophes
+document.addEventListener("DOMContentLoaded", () => {
 
-    const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
+  // 🐸 Get slug from URL (no hardcoding now)
+  const path = window.location.pathname;
+  const filename = path.split("/").pop();
+  const slug = filename.replace(".html", "").replace("opus-", "");
 
-    if (piece && piece.voicing && piece.accompaniment) {
-    piece.metaTitle = `${piece.title} - for ${piece.voicing} Choir with TEST ${piece.accompaniment} | Songs for Choirs`;
-  }   
-    const TITLE = piece?.title || "TITLE";
-    const DESCRIPTION = piece?.description || "";
+  // 🐸 Get piece
+  const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
 
-    document.title = piece.metaTitle || `${piece.title} — Songs for Choirs`;
-  </script>
+  // 🛑 Safety first
+  if (!piece) {
+    console.error("Piece not found:", slug);
+    return;
+  }
 
-  <meta name="description" content="">
+  // 🐸 Build metaTitle (your good idea, cleaned)
+  if (piece.voicing && piece.accompaniment) {
+    piece.metaTitle = `${piece.title} - for ${piece.voicing} Choir with ${piece.accompaniment} | Songs for Choirs`;
+  }
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) meta.setAttribute("content", DESCRIPTION);
-    });
-  </script>
+  // 🐸 Set title
+  document.title = piece.metaTitle || `${piece.title} — Songs for Choirs`;
+
+  // 🐸 Meta description
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && piece.description) {
+    metaDesc.setAttribute("content", piece.description);
+  }
+
+});
+</script>
 
   <link rel="stylesheet" href="styles.css">
 
