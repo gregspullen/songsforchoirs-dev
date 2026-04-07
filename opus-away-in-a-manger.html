@@ -126,29 +126,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <script src="pricing.js"></script>
 
-  <!-- WIRING -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-
-      const audio = document.querySelector("audio");
-
-      document.getElementById("audioSrc").src =
-        `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
-      audio.load();
-
-      document.getElementById("sheetLink").href =
-        `sheet-${slug}.html`;
-
-      const cover = document.getElementById("coverImg");
-      cover.src = `/images/Cover_png/${slug}.png`;
-      cover.alt = `${piece.title} cover`;
-
-      document.getElementById("orderBtn").onclick = () => {
-      window.location.href = `orderform.html?title=${encodeURIComponent(TITLE)}`;
-    };
-
-    });
-  </script>
-
 </body>
 </html>
