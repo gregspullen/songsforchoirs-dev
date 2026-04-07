@@ -50,19 +50,7 @@
   <!-- Privacy-friendly analytics by Plausible -->
   <script defer data-domain="songsforchoirs.com" src="https://plausible.io/js/script.js"></script>
 
-  <script>
-  const slug = "lavenders-blue";
-  const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
-  
-  if (piece) {
-    const TITLE = piece.title;
-  
-    const PREVIEW_SCORE = `${slug}.pdf`;
-    const ENCODED = encodeURIComponent(TITLE);
-  
-    document.title = `${TITLE} — Sheet Music | Songs for Choirs`;
-  }
-</script>
+  <script src="data.js"></script>
 
 </head>
 
