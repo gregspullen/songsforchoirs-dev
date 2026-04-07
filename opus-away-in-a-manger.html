@@ -12,12 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🐸 Get slug from URL (no hardcoding now)
   const path = window.location.pathname;
-  const slug = path
-    .split("/")
-    .pop()
-    .replace("opus-", "")
-    .replace(".html", "");
-
+  const slug = path.split("/").pop().replace("opus-", "");
   console.log("slug:", slug);
 
   // 🐸 Get piece
@@ -29,21 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // 🐸 Build metaTitle
+  // 🐸 Build metaTitle (your good idea, cleaned)
   if (piece.voicing && piece.accompaniment) {
     piece.metaTitle = `${piece.title} - for ${piece.voicing} Choir with ${piece.accompaniment} | Songs for Choirs`;
   }
 
   // 🐸 Set title
   document.title = piece.metaTitle || `${piece.title} — Songs for Choirs`;
-
-  // 🐸 Cover image (single, clean version)
+  // 🐸 Cover image
   const cover = document.getElementById("coverImg");
   if (cover) {
-    cover.src = `images/Cover_png/${slug}.png`;
+    cover.src = `/images/Cover_png/${slug}.png`;
     cover.alt = `${piece.title} cover`;
   }
-
+  
   // 🐸 Sheet link
   const sheetLink = document.getElementById("sheetLink");
   if (sheetLink) {
@@ -55,15 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (metaDesc && piece.description) {
     metaDesc.setAttribute("content", piece.description);
   }
-
   // 🎵 Audio
   const audio = document.querySelector("audio");
   const audioSrc = document.getElementById("audioSrc");
+  
   if (audio && audioSrc) {
     audioSrc.src = `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
     audio.load();
   }
-
+  
   // 🪄 Order button
   const orderBtn = document.getElementById("orderBtn");
   if (orderBtn) {
@@ -75,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css">
 
   <!-- Analytics -->
   <script defer data-domain="songsforchoirs.com" src="https://plausible.io/js/script.js"></script>
@@ -116,7 +110,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Cover -->
         <figure class="cover">
           <a id="sheetLink" class="cover-link">
-            <div id="coverCanvas"></div>
+            <img 
+              id="coverImg"
+              onerror="this.classList.add('placeholder'); this.src='images/placeholder.png';">
           </a>
           <span class="hover-tag">VIEW SAMPLE</span>
         </figure>
