@@ -22,7 +22,8 @@ window.PIECES = {
   },
   "benedictus": {
     "title": "Benedictus",
-    "metaTitle": "Benedictus - Anthem for SATB choir with piano accompaniment | Songs for Choirs",
+    "voicing": "SATB",
+    "accompaniment": "piano",
     "description": "Benedictus - an atmospheric and accessible choral setting for SATB choir. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true
   },
