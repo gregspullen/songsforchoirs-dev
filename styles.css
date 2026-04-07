@@ -896,4 +896,5 @@ button.price small {
 #coverCanvas {
   height: 300px;
   width: 100%;
+  background: rgba(200,200,200,0.3);
 }
