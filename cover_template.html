@@ -157,14 +157,8 @@ body {
 </div>
 
 <script>
-const data = {
-  title: "The Lord\nis my\nShepherd",
-  subtitle: "Psalm 23\nfor SATB choir and piano",
-  composer: "Gregory Pullen",
-  subcomposer: "Edited by Lyra Harker",
-  cp: "© 2026 www.songsforchoirs.com",
-  color: "rgba(120,160,255,0.28)" // blue 
-};
+const data = PIECES["away-in-a-manger"];
+if (!data) console.error("Piece not found");
 document.documentElement.style.setProperty(
   "--ray-color",
   data.color
