@@ -893,3 +893,7 @@ button.price small {
   }
 
 }
+#coverCanvas {
+  height: 300px;
+  width: 100%;
+}
