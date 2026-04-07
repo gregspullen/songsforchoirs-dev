@@ -82,6 +82,7 @@
 
   // Get data
   const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
+    document.title = piece.metaTitle || `${piece.title} — Sheet Music | Songs for Choirs`;
 
   if (!piece) {
     console.error("Piece not found:", slug);
