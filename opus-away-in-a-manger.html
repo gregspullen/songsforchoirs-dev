@@ -49,6 +49,22 @@ document.addEventListener("DOMContentLoaded", () => {
   if (metaDesc && piece.description) {
     metaDesc.setAttribute("content", piece.description);
   }
+  // 🎵 Audio
+  const audio = document.querySelector("audio");
+  const audioSrc = document.getElementById("audioSrc");
+  
+  if (audio && audioSrc) {
+    audioSrc.src = `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
+    audio.load();
+  }
+  
+  // 🪄 Order button
+  const orderBtn = document.getElementById("orderBtn");
+  if (orderBtn) {
+    orderBtn.onclick = () => {
+      window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}`;
+    };
+  }
 
 });
 </script>
