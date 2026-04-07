@@ -897,4 +897,6 @@ button.price small {
   height: 300px;
   width: 100%;
   background: rgba(200,200,200,0.3);
+.cover-link {
+  display: block;
 }
