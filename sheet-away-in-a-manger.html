@@ -87,25 +87,45 @@
   </footer>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
 
-  // no TITLE needed – handled by data system
+  // Get slug from URL
+  const path = window.location.pathname;
+  const filename = path.split("/").pop();
+  const slug = filename.replace(".html", "").replace("sheet-", "");
+
+  // Get data
   const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
 
-  if (piece) {
-    const TITLE = piece.title;
-    const PREVIEW_SCORE = `${slug}.pdf`;
-
-    const frame = document.getElementById("preview-frame");
-    frame.src = `/preview?score=${encodeURIComponent(PREVIEW_SCORE)}`;
-    frame.title = `Preview — ${TITLE}`;
-
-    document.title = `${TITLE} — Sheet Music | Songs for Choirs`;
-
-    document.getElementById("back-link").href =
-      `opus-${slug}.html`;
+  if (!piece) {
+    console.error("Piece not found:", slug);
+    return;
   }
 
+  // Meta
+  document.querySelector('meta[name="description"]')
+    .setAttribute("content", piece.description);
+
+  document.title = piece.metaTitle;
+
+  // PDF preview
+  const frame = document.getElementById("preview-frame");
+  const pdfFile = `${slug}.pdf`;
+
+  if (piece.hasScore) {
+    frame.src = `/preview?score=${encodeURIComponent(pdfFile)}`;
+  } else {
+    frame.src = "";
+    frame.title = "No preview available";
+  }
+
+  frame.title = `Preview — ${piece.title}`;
+
+  // Back link
+  document.getElementById("back-link").href =
+    `opus-${slug}.html`;
+
+  // Footer year
   document.getElementById('year').textContent =
     new Date().getFullYear();
 
