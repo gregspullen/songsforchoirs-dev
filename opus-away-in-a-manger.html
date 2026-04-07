@@ -31,6 +31,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🐸 Set title
   document.title = piece.metaTitle || `${piece.title} — Songs for Choirs`;
+  // 🐸 Cover image
+  const cover = document.getElementById("coverImg");
+  if (cover) {
+    cover.src = `/images/Cover_png/${slug}.png`;
+    cover.alt = `${piece.title} cover`;
+  }
+  
+  // 🐸 Sheet link
+  const sheetLink = document.getElementById("sheet-link");
+  if (sheetLink) {
+    sheetLink.href = `sheet-${slug}.html`;
+  }
 
   // 🐸 Meta description
   const metaDesc = document.querySelector('meta[name="description"]');
