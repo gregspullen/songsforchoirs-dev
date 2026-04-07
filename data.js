@@ -15,7 +15,8 @@ window.PIECES = {
   },
   "away-in-a-manger": {
     "title": "Away in a Manger",
-    "metaTitle": "Away in a Manger - Nativity Carol for SATB with optional piano accompaniment | Songs for Choirs",
+    "voicing": "SATB",
+    "accompaniment": "piano (optional)",
     "description": "Away in a Manger - a fresh and inventive choral setting combining two traditional melodies. Originally conceived a cappella, with optional piano support. A lively concert piece for SATB choir with rich and rewarding part-writing. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true
   },
