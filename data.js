@@ -101,4 +101,5 @@ window.PIECES = {
     "description": "Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
     "hasScore": true,
     "categories": ["choral"]
+   }
   };
