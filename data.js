@@ -13,7 +13,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "description": "Bathed in Starlight - a beautiful and expressive narrative choral work for young voices. For SSA or flexible two-part and unison choir, it moves from lyrical, flowing lines to rhythmic, percussive energy. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true,
-    "category": ["choral", "young-voices"]
+    "categories": ["choral", "young-voices"]
   },
   "away-in-a-manger": {
     "title": "Away in a Manger",
@@ -51,7 +51,7 @@ window.PIECES = {
     "metaTitle": "If I was that Donkey - a nativity lullaby in a 'pop ballad' style | Songs for Choirs",
     "description": "If I was that Donkey - a tender and expressive lullaby in a contemporary pop ballad style, perfect for Nativity performances. Warm, gentle, and accessible for SATB choir. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true,
-    "category": "young-voices"
+    "categories": ["young-voices"]
   },
   "lover-and-his-lass": {
     "title": "Lover and his Lass",
