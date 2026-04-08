@@ -106,6 +106,6 @@ window.PIECES = {
     "title": "Your Monster is your Friend",
     "metaTitle": "Your Monster is your Friend - a song for Hallowe'en | Songs for Choirs",
     "description": "Venite - a fun children's song for Hallowe'en with video from Songs for Choirs",
-    "hasScore": true,
+    "hasScore": false,
     "categories": ["young-voices"]
 };
