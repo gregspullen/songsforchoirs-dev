@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const piece = PIECES[slug];
 
     // 🐸 THIS is the only new bit
-    if (piece.category !== "choral") return;
+    if (!piece.categories || !piece.categories.includes("choral")) return;
 
     container.innerHTML += `
       <figure class="cover">
