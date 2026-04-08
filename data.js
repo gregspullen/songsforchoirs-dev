@@ -13,7 +13,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "description": "Bathed in Starlight - a beautiful and expressive narrative choral work for young voices. For SSA or flexible two-part and unison choir, it moves from lyrical, flowing lines to rhythmic, percussive energy. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true,
-    "category": "choral"
+    "category": ["choral", "young-voices"]
   },
   "away-in-a-manger": {
     "title": "Away in a Manger",
