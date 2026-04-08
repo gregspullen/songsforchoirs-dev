@@ -85,6 +85,21 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   });
 
+  // after the forEach finishes
+container.innerHTML += `
+  <figure class="cover">
+    <a href="opus-your-monster-is-your-friend.html" class="cover-link">
+      <div class="cover-image">
+        <img
+          src="images/Cover_png/your-monster-is-your-friend.png"
+          alt="Your Monster Is Your Friend cover"
+          onerror="this.onerror=null; this.src='images/placeholder.png';">
+      </div>
+      <span class="hover-tag">Watch Video</span>
+    </a>
+  </figure>
+`;
+
 });
 </script>
 </body>
