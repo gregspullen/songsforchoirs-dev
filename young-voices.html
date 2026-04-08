@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Object.keys(PIECES).forEach(slug => {
     const piece = PIECES[slug];
 
-    if (piece.category !== "young-voices") return;
+   if (!piece.categories || !piece.categories.includes("young-voices")) return;
 
     container.innerHTML += `
       <figure class="cover">
