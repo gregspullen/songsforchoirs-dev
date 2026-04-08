@@ -98,8 +98,14 @@ window.PIECES = {
   "venite": {
     "title": "Venite",
     "metaTitle": "Venite - a joyful anthem for SATB choir with piano accompaniment | Songs for Choirs",
-    "description": "Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "description": "Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
     "hasScore": true,
     "categories": ["choral"]
-  }
+  },
+  "your-monster-is-your-friend": {
+    "title": "Your Monster is your Friend",
+    "metaTitle": "Your Monster is your Friend - a song for Hallowe'en | Songs for Choirs",
+    "description": "Venite - a fun children's song for Hallowe'en with video from Songs for Choirs",
+    "hasScore": true,
+    "categories": ["young-voices"]
 };
