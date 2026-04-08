@@ -41,6 +41,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <small>© 2025 <a href="https://www.songsforchoirs.com">www.songsforchoirs.com</a> — All rights reserved worldwide.</small>
+      
     </div>
   </footer>
   <script src="pricing.js"></script>
@@ -70,6 +71,22 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   });
 
+  // after the forEach finishes
+container.innerHTML += `
+  <figure class="cover">
+    <a href="opus-your-monster-is-your-friend.html" class="cover-link">
+      <div class="cover-image">
+        <img
+          src="images/Cover_png/your-monster-is-your-friend.png"
+          alt="Your Monster Is Your Friend cover"
+          onerror="this.onerror=null; this.src='images/placeholder.png';">
+      </div>
+      <span class="hover-tag">Watch Video</span>
+    </a>
+  </figure>
+`;
+
+  
 });
 </script>
     
