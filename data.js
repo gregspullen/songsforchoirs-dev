@@ -53,14 +53,14 @@ window.PIECES = {
     "hasScore": true,
     "categories": ["young-voices"]
   },
-  "lover-and-his-lass": {
+  "it-was-a-lover-and-his-lass": {
     "title": "Lover and his Lass",
     "metaTitle": "Lover and his Lass - Anthem for SATB choir with piano accompaniment | Songs for Choirs",
     "description": "Lover and his Lass - a light and characterful madrigal setting of Thomas Morley’s lute song for three-part a cappella choir. Engaging, accessible, and full of Renaissance charm. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true,
     "categories": ["choral"]
   },
-  "magnificat": {
+  "my-soul-doth-magnify-the-lord": {
     "title": "Magnificat",
     "metaTitle": "Magnificat - joyful anthem for SATB choir with piano accompaniment | Songs for Choirs",
     "description": "Magnificat - a lively, rhythmic choral setting for SATB choir, with an optional two-part version. Fresh, characterful, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",
@@ -95,7 +95,7 @@ window.PIECES = {
     "hasScore": true,
     "categories": ["choral"]
   },
-  "venite": {
+  "make-a-joyful-noise": {
     "title": "Venite",
     "metaTitle": "Venite - a joyful anthem for SATB choir with piano accompaniment | Songs for Choirs",
     "description": "Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
