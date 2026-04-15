@@ -64,6 +64,11 @@
             <source id="audioSrc" type="audio/mpeg">
           </audio>
         </div>
+
+        <p style="margin-top: 1em;"><strong>Rehearsal track with a gentle guide vocal</strong></p>
+          <audio controls>
+            <source id="backingSrc" type="audio/mpeg">
+          </audio>
         
         <!-- Cover -->
         <figure class="cover">
@@ -109,6 +114,9 @@
       document.getElementById("audioSrc").src =
         `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
       audio.load();
+
+      document.getElementById("backingSrc").src =
+        `https://www.songsforchoirs.com/mp3/${slug}-backing.mp3`;
 
       document.getElementById("sheetLink").href =
         `sheet-${slug}.html`;
