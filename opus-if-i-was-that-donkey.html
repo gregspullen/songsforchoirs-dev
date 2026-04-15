@@ -111,14 +111,17 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
 
-      const audio = document.querySelector("audio");
-
+      // Set sources
       document.getElementById("audioSrc").src =
         `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
-      audio.load();
-
+      
       document.getElementById("backingSrc").src =
         `https://www.songsforchoirs.com/mp3/${slug}-backing.mp3`;
+      
+      // Force BOTH players to reload
+      document.querySelectorAll("audio").forEach(a => {
+        a.load();
+      });
 
       document.getElementById("sheetLink").href =
         `sheet-${slug}.html`;
