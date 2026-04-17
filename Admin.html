@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SFC Admin Tool</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; }
+  input, textarea { width: 100%; margin-bottom: 10px; padding: 8px; }
+  button { padding: 10px 15px; cursor: pointer; }
+  pre { background: #f4f4f4; padding: 10px; overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<h2>Songs for Choirs – Admin Tool</h2>
+
+<label>Slug</label>
+<input id="slug" placeholder="e.g. venite">
+
+<label>Title</label>
+<input id="title" placeholder="e.g. Make a Joyful Noise">
+
+<label>Meta Title</label>
+<input id="metaTitle">
+
+<label>Description</label>
+<textarea id="description" rows="4"></textarea>
+
+<button onclick="generate()">Generate</button>
+
+<h3>Output</h3>
+<pre id="output"></pre>
+
+<button onclick="copy()">Copy to Clipboard</button>
+
+<script>
+function generate() {
+  const slug = document.getElementById("slug").value.trim();
+  const title = document.getElementById("title").value.trim();
+  const metaTitle = document.getElementById("metaTitle").value.trim();
+  const description = document.getElementById("description").value.trim();
+
+  const output = `"${slug}": {
+  "title": "${title}",
+  "metaTitle": "${metaTitle}",
+  "description": "${description}",
+  "hasScore": true,
+  "categories": ["choral"]
+},`;
+
+  document.getElementById("output").textContent = output;
+}
+
+function copy() {
+  const text = document.getElementById("output").textContent;
+  navigator.clipboard.writeText(text);
+  alert("Copied!");
+}
+</script>
+
+</body>
+</html>
