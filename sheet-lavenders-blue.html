@@ -73,25 +73,58 @@
   </footer>
 
   <script>
-  const slug = "lavenders-blue";
+document.addEventListener("DOMContentLoaded", () => {
+
+  // 🐸 Get slug from URL
+  const path = window.location.pathname;
+  const filename = path.split("/").pop();
+  const slug = filename.replace(".html", "").replace("sheet-", "");
+
+  // 🐸 Get piece data
   const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
-  
-  if (piece) {
-    const TITLE = piece.title;
-    const PREVIEW_SCORE = `${slug}.pdf`;
-  
-    const frame = document.getElementById("preview-frame");
-    frame.src = `/preview?score=${encodeURIComponent(PREVIEW_SCORE)}`;
-    frame.title = `Preview — ${TITLE}`;
-  
-    document.title = `${TITLE} — Sheet Music | Songs for Choirs`;
-  
-    document.getElementById("back-link").href =
-      `opus-${slug}.html`;
+
+  // 🛑 Safety check FIRST
+  if (!piece) {
+    console.error("Piece not found:", slug);
+    return;
   }
-  
-  document.getElementById('year').textContent =
-    new Date().getFullYear();
+
+  // 🐸 Title (clean + safe)
+  document.title = piece.metaTitle || `${piece.title} — Sheet Music | Songs for Choirs`;
+
+  // 🐸 Meta description
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && piece.description) {
+    metaDesc.setAttribute("content", piece.description);
+  }
+
+  // 🐸 PDF preview
+  const frame = document.getElementById("preview-frame");
+  const pdfFile = `${slug}.pdf`;
+
+  if (frame) {
+    if (piece.hasScore) {
+      frame.src = `/preview?score=${encodeURIComponent(pdfFile)}`;
+      frame.title = `Preview — ${piece.title}`;
+    } else {
+      frame.src = "";
+      frame.title = "No preview available";
+    }
+  }
+
+  // 🐸 Back link
+  const backLink = document.getElementById("back-link");
+  if (backLink) {
+    backLink.href = `opus-${slug}.html`;
+  }
+
+  // 🐸 Footer year
+  const year = document.getElementById("year");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+
+});
 </script>
   
 </body>

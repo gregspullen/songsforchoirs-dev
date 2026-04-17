@@ -8,11 +8,14 @@
   <script src="data.js?v=1"></script>
 
   <script>
-    const slug = "ENTER_SLUG_HERE_(lowercase, hyphens, no apostrophes)";
+    const slug = "REPLACE_ME"; // slug = lowercase, hyphenated, no apostrophes
 
     const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
 
-    const TITLE = piece?.title || "Lavender's Blue";
+    if (piece && piece.voicing && piece.accompaniment) {
+    piece.metaTitle = `${piece.title} - for ${piece.voicing} Choir with optional ${piece.accompaniment} | Songs for Choirs`;
+  }   
+    const TITLE = piece?.title || "TITLE";
     const DESCRIPTION = piece?.description || "";
 
     document.title = `${TITLE} – Songs for Choirs`;
