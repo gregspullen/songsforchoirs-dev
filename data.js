@@ -97,7 +97,8 @@ window.PIECES = {
   },
   "make-a-joyful-noise": {
     "title": "Make a Joyful Noise",
-    "metaTitle": "make-a-joyful-noise (Venite) - a joyful anthem for SATB choir with piano accompaniment | Songs for Choirs",
+    'voicing": "SATB"
+    "accompaniment": "piano"
     "description": "make-a-joyful-noise (Venite) - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
     "hasScore": true,
     "categories": ["choral"]
