@@ -50,7 +50,19 @@
   <!-- Privacy-friendly analytics by Plausible -->
   <script defer data-domain="songsforchoirs.com" src="https://plausible.io/js/script.js"></script>
 
-  <script src="data.js"></script>
+  <script>
+  const TITLE = "Bobby Shafto";
+
+  const lower = TITLE.toLowerCase();
+  const SLUG = lower.replace(/'/g, "").replace(/\s+/g, "-");
+  const PREVIEW_SCORE = `${SLUG}.pdf`;
+
+  // Optional: safe encoded version if ever needed
+  const ENCODED = encodeURIComponent(TITLE);
+
+  // Set page title early (prevents flicker)
+  document.title = `${TITLE} — Sheet Music | Songs for Choirs`;
+</script>
 
 </head>
 
@@ -73,58 +85,17 @@
   </footer>
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
+  const BASE = "";
 
-  // 🐸 Get slug from URL
-  const path = window.location.pathname;
-  const filename = path.split("/").pop();
-  const slug = filename.replace(".html", "").replace("sheet-", "");
-
-  // 🐸 Get piece data
-  const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
-
-  // 🛑 Safety check FIRST
-  if (!piece) {
-    console.error("Piece not found:", slug);
-    return;
-  }
-
-  // 🐸 Title (clean + safe)
-  document.title = piece.metaTitle || `${piece.title} — Sheet Music | Songs for Choirs`;
-
-  // 🐸 Meta description
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc && piece.description) {
-    metaDesc.setAttribute("content", piece.description);
-  }
-
-  // 🐸 PDF preview
   const frame = document.getElementById("preview-frame");
-  const pdfFile = `${slug}.pdf`;
+  frame.src = `${BASE}/preview?score=${encodeURIComponent(PREVIEW_SCORE)}`;
+  frame.title = `Preview — ${TITLE}`;
 
-  if (frame) {
-    if (piece.hasScore) {
-      frame.src = `/preview?score=${encodeURIComponent(pdfFile)}`;
-      frame.title = `Preview — ${piece.title}`;
-    } else {
-      frame.src = "";
-      frame.title = "No preview available";
-    }
-  }
+  document.getElementById("back-link").href =
+    `opus-${SLUG}.html`;
 
-  // 🐸 Back link
-  const backLink = document.getElementById("back-link");
-  if (backLink) {
-    backLink.href = `opus-${slug}.html`;
-  }
-
-  // 🐸 Footer year
-  const year = document.getElementById("year");
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-
-});
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
 </script>
   
 </body>
