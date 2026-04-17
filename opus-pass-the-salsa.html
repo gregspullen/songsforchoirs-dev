@@ -8,24 +8,70 @@
   <script src="data.js?v=1"></script>
 
   <script>
-    const slug = "pass-the-salsa";
+document.addEventListener("DOMContentLoaded", () => {
 
-    const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
+  // 🐸 Get slug from URL (no hardcoding now)
+  const path = window.location.pathname;
+  const slug = path
+  .split("/")
+  .pop()
+  .replace(/^opus-/, "")
+  .replace(/\.html$/, "");
+  console.log("slug:", slug);
 
-    const TITLE = piece?.title || "Lavender's Blue";
-    const DESCRIPTION = piece?.description || "";
+  // 🐸 Get piece
+  const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
 
-    document.title = `${TITLE} – Songs for Choirs`;
-  </script>
+  // 🛑 Safety first
+  if (!piece) {
+    console.error("Piece not found:", slug);
+    return;
+  }
 
-  <meta name="description" content="">
+  // 🐸 Build metaTitle (your good idea, cleaned)
+  if (piece.voicing && piece.accompaniment) {
+    piece.metaTitle = `${piece.title} - for ${piece.voicing} Choir with ${piece.accompaniment} | Songs for Choirs`;
+  }
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) meta.setAttribute("content", DESCRIPTION);
-    });
-  </script>
+  // 🐸 Set title
+  document.title = piece.metaTitle || `${piece.title} — Songs for Choirs`;
+  // 🐸 Cover image
+  const cover = document.getElementById("coverImg");
+  if (cover) {
+    cover.src = `/images/Cover_png/${slug}.png`;
+    cover.alt = `${piece.title} cover`;
+  }
+  
+  // 🐸 Sheet link
+  const sheetLink = document.getElementById("sheetLink");
+  if (sheetLink) {
+    sheetLink.href = `sheet-${slug}.html`;
+  }
+
+  // 🐸 Meta description
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && piece.description) {
+    metaDesc.setAttribute("content", piece.description);
+  }
+  // 🎵 Audio
+  const audio = document.querySelector("audio");
+  const audioSrc = document.getElementById("audioSrc");
+  
+  if (audio && audioSrc) {
+    audioSrc.src = `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
+    audio.load();
+  }
+  
+  // 🪄 Order button
+  const orderBtn = document.getElementById("orderBtn");
+  if (orderBtn) {
+    orderBtn.onclick = () => {
+      window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}`;
+    };
+  }
+
+});
+</script>
 
   <link rel="stylesheet" href="styles.css">
 
@@ -99,30 +145,6 @@
   </footer>
 
   <script src="pricing.js"></script>
-
-  <!-- WIRING -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-
-      const audio = document.querySelector("audio");
-
-      document.getElementById("audioSrc").src =
-        `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
-      audio.load();
-
-      document.getElementById("sheetLink").href =
-        `sheet-${slug}.html`;
-
-      const cover = document.getElementById("coverImg");
-      cover.src = `/images/Cover_png/${slug}.png`;
-      cover.alt = `${TITLE} cover`;
-
-      document.getElementById("orderBtn").onclick = () => {
-      window.location.href = `orderform.html?title=${encodeURIComponent(TITLE)}`;
-    };
-
-    });
-  </script>
 
 </body>
 </html>
