@@ -4,7 +4,8 @@ window.PIECES = {
     "description": "Lavenders Blue - a light and humorous arrangement of the traditional folk song for SATB choir. Fun, accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
     "voicing": "SATB",
     "accompaniment": "piano (optional)",
-    "categories": ["choral"]
+    "categories": ["choral"],
+    "hasScore": true
   },
   "bathed-in-starlight": {
     "title": "Bathed in Starlight",
