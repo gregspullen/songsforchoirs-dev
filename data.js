@@ -93,13 +93,5 @@ window.PIECES = {
     "description": "The Lord is my Shepherd - a lyrical and devotional choral setting for SATB choir. Warm, flowing, and expressive. View the score, listen, and download licensed copies from Songs for Choirs.",
     "hasScore": true,
     "categories": ["choral"]
-  },
-  "make-a-joyful-noise": {
-    "title": "Make a Joyful Noise",
-    'voicing": "SATB"
-    "accompaniment": "piano"
-    "description": "make-a-joyful-noise (Venite) - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
-    "hasScore": true,
-    "categories": ["choral"]
    }
   };
