@@ -95,10 +95,10 @@ window.PIECES = {
     "hasScore": true,
     "categories": ["choral"]
   },
-  "make-a-joyful-noise": {
-    "title": "Venite",
-    "metaTitle": "Venite - a joyful anthem for SATB choir with piano accompaniment | Songs for Choirs",
-    "description": "Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
+  "venite": {
+    "title": "make-a-joyful-noise",
+    "metaTitle": "make-a-joyful-noise (Venite) - a joyful anthem for SATB choir with piano accompaniment | Songs for Choirs",
+    "description": "make-a-joyful-noise (Venite) - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
     "hasScore": true,
     "categories": ["choral"]
    }
