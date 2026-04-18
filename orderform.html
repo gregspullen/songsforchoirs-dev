@@ -326,9 +326,9 @@ function generateOrderNumber() {
   
   // incremental discount (always increases total)
  
-let total = document.getElementById("totalDisplay").textContent.replace("Total: £", "");
-
-total = total.toFixed(2);
+let total = parseFloat(
+  document.getElementById("totalDisplay").textContent.replace("Total: £", "")
+).toFixed(2);
 
 
   const orderNum = generateOrderNumber();
