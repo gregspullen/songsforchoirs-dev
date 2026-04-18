@@ -193,34 +193,25 @@ function generateOrderNumber() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("orderForm");
-  const submitBtn = document.getElementById("submitBtn");
 
-const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(window.location.search);
 
-// Price display
-const pricePerCopy = parseFloat(params.get("price")) || 1.25;
+  // Price
+  const pricePerCopy = parseFloat(params.get("price")) || 1.25;
 
-const priceDisplay = document.getElementById("priceDisplay");
-if (priceDisplay) {
-  priceDisplay.textContent = `Price per copy: £${pricePerCopy.toFixed(2)}`;
-}
+  const copyNote = document.getElementById("copyNote");
+  if (copyNote) {
+    copyNote.textContent = `Enter the number of copies you need — £${pricePerCopy.toFixed(2)} per copy`;
+  }
 
-const copyNote = document.getElementById("copyNote");
-if (copyNote) {
-  copyNote.textContent = `Enter the number of copies you need — £${pricePerCopy.toFixed(2)} per copy`;
-}
-  
-}
+  // Title autofill
+  const titleParam = params.get("title");
+  const titleField = document.getElementById("title");
 
-// Title autofill
-const titleParam = params.get("title");
-const titleField = document.getElementById("title");
-
-if (titleParam && titleField) {
-  titleField.value = decodeURIComponent(titleParam);
-  titleField.readOnly = true;
-}
+  if (titleParam && titleField) {
+    titleField.value = decodeURIComponent(titleParam);
+    titleField.readOnly = true;
+  }
 
 });
 
