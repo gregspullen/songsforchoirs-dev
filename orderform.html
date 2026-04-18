@@ -209,57 +209,55 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script>
+
   document.getElementById("orderForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-  
-    const title = document.getElementById("title").value.trim();
-const choir = document.getElementById("choir").value.trim();
-const copies = Math.min(100, Math.max(1, parseInt(document.getElementById("copy").value || "1", 10)));
-const params = new URLSearchParams(window.location.search);
-const pricePerCopy = parseFloat(params.get("price")) || 1.25;
-const total = (copies * pricePerCopy).toFixed(2);
-const orderNum = generateOrderNumber();
-const email = document.getElementById("email").value.trim();
+  e.preventDefault();
 
-const payload = {
-  title,
-  choir,
-  copies,
-  amount: total,
-  order: orderNum,
-  email
-};
+  const title = document.getElementById("title").value.trim();
+  const choir = document.getElementById("choir").value.trim();
+  const copies = Math.min(100, Math.max(1, parseInt(document.getElementById("copy").value || "1", 10)));
 
-        try {
-      const isLive = window.location.hostname === "songsforchoirs.com"
-                  || window.location.hostname === "www.songsforchoirs.com";
-    
-      const BASE_URL = isLive
-        ? ""
-        : "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev";
-    
-      const url = isLive
-        ? "/send-email"
-        : "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev/send-email";
-      
-      const res = await fetch(url, { 
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-    
-      if (res.ok) {
-        alert("We've sent you an email to verify your address. Please click the link in it to continue with your order.");
-      } else {
-        throw new Error("Email failed");
-      }
-    
-    } catch (err) {
-      alert("Sorry — something went wrong.\n\nPlease try again. If the problem continues, contact us at lyra@songsforchoirs.com.");
+  const params = new URLSearchParams(window.location.search);
+  const pricePerCopy = parseFloat(params.get("price")) || 1.25;
+  const total = (copies * pricePerCopy).toFixed(2);
+
+  const orderNum = generateOrderNumber();
+  const email = document.getElementById("email").value.trim();
+
+  const payload = {
+    title,
+    choir,
+    copies,
+    amount: total,
+    order: orderNum,
+    email
+  };
+
+  try {
+    const isLive = window.location.hostname === "songsforchoirs.com"
+                || window.location.hostname === "www.songsforchoirs.com";
+
+    const url = isLive
+      ? "/send-email"
+      : "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev/send-email";
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      alert("We've sent you an email to verify your address. Please click the link in it to continue with your order.");
+    } else {
+      throw new Error("Email failed");
     }
+
+  } catch (err) {
+    alert("Sorry — something went wrong.\n\nPlease try again. If the problem continues, contact us at lyra@songsforchoirs.com.");
+  }
+});
   
-    
-  });
   </script>
   
   <script>
