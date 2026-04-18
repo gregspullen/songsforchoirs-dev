@@ -208,7 +208,7 @@ const totalDisplay = document.getElementById("totalDisplay");
 
 function updateTotal() {
   const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
-  const total = (copies * pricePerCopy * (101 - copies) / 100).toFixed(2);
+  
 
   if (totalDisplay) {
     totalDisplay.textContent = `Total: £${total}`;
