@@ -54,13 +54,19 @@ document.addEventListener("DOMContentLoaded", () => {
     metaDesc.setAttribute("content", piece.description);
   }
   // 🎵 Audio
-  const audio = document.querySelector("audio");
-  const audioSrc = document.getElementById("audioSrc");
-  
-  if (audio && audioSrc) {
-    audioSrc.src = `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
-    audio.load();
-  }
+  const isLive = window.location.hostname === "songsforchoirs.com"
+            || window.location.hostname === "www.songsforchoirs.com";
+
+ const audioBase = isLive
+   ? "https://www.songsforchoirs.com"
+   : "https://dev.songsforchoirs.net";
+
+ if (audio && audioSrc) {
+   const src = `${audioBase}/mp3/${slug}.mp3`;
+   audioSrc.src = src;
+   audio.load();
+   console.log("Audio src:", src);
+ }
   
   // 🪄 Order button
   const orderBtn = document.getElementById("orderBtn");
