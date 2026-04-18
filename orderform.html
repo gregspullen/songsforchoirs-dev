@@ -213,7 +213,7 @@ function updateTotal() {
 
   for (let i = 1; i <= copies; i++) {
     const rate = i <= 30
-      ? 1 - i * 0.01
+      ? 1 - i * 0.015
       : 0.7;
 
     total += pricePerCopy * rate;
