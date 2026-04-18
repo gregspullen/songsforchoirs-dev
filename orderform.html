@@ -227,7 +227,10 @@ function updateTotal() {
     totalDisplay.textContent = `Total: £${total}`;
   }
 }
-  
+  if (copyInput) {
+  copyInput.addEventListener("input", updateTotal);
+  updateTotal(); // show total when page loads
+}
 
   const copyNote = document.getElementById("copyNote");
   if (copyNote) {
