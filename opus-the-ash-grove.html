@@ -74,8 +74,10 @@ if (audio && audioSrc) {
   // 🪄 Order button
   const orderBtn = document.getElementById("orderBtn");
   if (orderBtn) {
-    orderBtn.onclick = () => {
-      window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}`;
+        orderBtn.onclick = () => {
+      const price = parseFloat(orderBtn.dataset.price) || 1.25;
+    
+      window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&price=${price}`;
     };
   }
 
