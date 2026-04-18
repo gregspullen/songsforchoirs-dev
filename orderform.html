@@ -326,7 +326,7 @@ function generateOrderNumber() {
   
   // incremental discount (always increases total)
   const pricePerCopyTier = getTierPrice(copies);
-let total = copies * getTierPrice(copies);
+let total = calculateTotal(copies);
 
 // prevent price dropping
 if (copies > 1) {
