@@ -209,27 +209,25 @@ const totalDisplay = document.getElementById("totalDisplay");
 function updateTotal() {
   const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
 
-  let total = 0;
+  let pricePerCopyTier;
 
-  for (let i = 1; i <= copies; i++) {
-    const rate = i <= 30
-      ? 1 - i * 0.03
-      : 0.7;
-
-    total += pricePerCopy * rate;
+  if (copies <= 10) {
+    pricePerCopyTier = 1.25;
+  } else if (copies <= 20) {
+    pricePerCopyTier = 1.00;
+  } else if (copies <= 30) {
+    pricePerCopyTier = 0.85;
+  } else {
+    pricePerCopyTier = 0.75;
   }
 
-  total = total.toFixed(2);
+  const total = (copies * pricePerCopyTier).toFixed(2);
 
   if (totalDisplay) {
     totalDisplay.textContent = `Total: £${total}`;
   }
 }
-
-if (copyInput) {
-  copyInput.addEventListener("input", updateTotal);
-  updateTotal(); // initialise
-}
+  
 
   const copyNote = document.getElementById("copyNote");
   if (copyNote) {
