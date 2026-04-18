@@ -254,14 +254,18 @@ if (copyInput) {
   const params = new URLSearchParams(window.location.search);
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
   
-  // simple discount: 1% per copy up to 30, then stop
-  const baseTotal = copies * pricePerCopy;
+  // incremental discount (always increases total)
+  let total = 0;
   
-  const discountRate = copies <= 30
-    ? 1 - copies * 0.01
-    : 0.7;
-  
-  const total = (baseTotal * discountRate).toFixed(2);
+  for (let i = 1; i <= copies; i++) {
+    const rate = i <= 30
+      ? 1 - i * 0.01   // 1% discount per copy up to 30
+      : 0.7;           // cap at 30% discount
+
+  total += pricePerCopy * rate;
+}
+
+total = total.toFixed(2);
 
 
   const orderNum = generateOrderNumber();
