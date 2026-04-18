@@ -193,60 +193,45 @@ function generateOrderNumber() {
   const r = Math.floor(Math.random() * 900 + 100);
   return `SFC-${y}${m}${d}-${r}`;
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("orderForm");
-
-
-  const params = new URLSearchParams(window.location.search);
-
-  // Price
-  const pricePerCopy = parseFloat(params.get("price")) || 1.25;
+  document.addEventListener("DOMContentLoaded", () => {
 
   const copyInput = document.getElementById("copy");
-const totalDisplay = document.getElementById("totalDisplay");
+  const totalDisplay = document.getElementById("totalDisplay");
 
-  function getTierPrice(copies) {
-  if (copies <= 10) return 1.25;
-  if (copies <= 20) return 1.00;
-  if (copies <= 30) return 0.85;
-  return 0.75;
-}
+  function updateTotal() {
+    const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
 
-function updateTotal() {
-  const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
+    let total = 0;
+    let remaining = copies;
 
-  let total = 0;
-  let remaining = copies;
+    // copies 11–20 at £0.80
+    if (remaining > 10) {
+      const tierAmount = Math.min(remaining - 10, 10);
+      total += tierAmount * 0.80;
+      remaining -= tierAmount;
+    }
 
-  // copies 11–20 at £0.80
-  if (remaining > 10) {
-    const tierAmount = Math.min(remaining - 10, 10);
-    total += tierAmount * 0.80;
-    remaining -= tierAmount;
+    // copies 1–10 at £1.20
+    total += remaining * 1.20;
+
+    total = total.toFixed(2);
+
+    if (totalDisplay) {
+      totalDisplay.textContent = `Total: £${total}`;
+    }
   }
 
-  // copies 1–10 at £1.20
-  total += remaining * 1.20;
-
-  total = total.toFixed(2);
-
-  if (totalDisplay) {
-    totalDisplay.textContent = `Total: £${total}`;
-  }
-}
-  
   if (copyInput) {
-  copyInput.addEventListener("input", updateTotal);
-  updateTotal(); // show total when page loads
-}
+    copyInput.addEventListener("input", updateTotal);
+    updateTotal();
+  }
 
   const copyNote = document.getElementById("copyNote");
   if (copyNote) {
     copyNote.textContent = `Enter the number of copies you need`;
   }
 
-  // Title autofill
+  const params = new URLSearchParams(window.location.search);
   const titleParam = params.get("title");
   const titleField = document.getElementById("title");
 
