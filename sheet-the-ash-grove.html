@@ -104,12 +104,12 @@ const frame = document.getElementById("preview-frame");
 const pdfFile = `${slug}.pdf`;
 
 // 🐸 Environment-aware base
-const isDev = window.location.hostname.includes("songsforchoirs.net") 
-           || window.location.hostname.includes("pages.dev");
+const isLive = window.location.hostname === "songsforchoirs.com"
+            || window.location.hostname === "www.songsforchoirs.com";
 
-const BASE_URL = isDev
-  ? "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev"
-  : "";
+const BASE_URL = isLive
+  ? ""
+  : "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev";
 
 if (frame) {
   if (piece.hasScore) {
