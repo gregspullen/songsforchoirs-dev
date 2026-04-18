@@ -204,65 +204,65 @@ function generateOrderNumber() {
     let total = 0;
     let remaining = copies;
 
-    // copies 101+ at £0.01
-if (remaining > 100) {
-  const tierAmount = remaining - 100;
-  total += tierAmount * 0.01;
-  remaining -= tierAmount;
-}
+        // copies 101+ at £0.01
+    if (remaining > 100) {
+      const tierAmount = remaining - 100;
+      total += tierAmount * 0.01;
+      remaining -= tierAmount;
+    }
 
         // copies 91+ at £0.05
     if (remaining > 90) {
-      const tierAmount = remaining - 90;
+      const tierAmount = remaining - 90, 10;
       total += tierAmount * 0.05;
       remaining -= tierAmount;
     }
 
         // copies 81+ at £0.10
     if (remaining > 80) {
-      const tierAmount = remaining - 80;
+      const tierAmount = remaining - 80, 10;
       total += tierAmount * 0.10;
       remaining -= tierAmount;
     }
 
         // copies 71+ at £0.20
     if (remaining > 70) {
-      const tierAmount = remaining - 70;
+      const tierAmount = remaining - 70, 10;
       total += tierAmount * 0.20;
       remaining -= tierAmount;
     }
 
         // copies 61+ at £0.30
     if (remaining > 60) {
-      const tierAmount = remaining - 60;
+      const tierAmount = remaining - 60, 10;
       total += tierAmount * 0.30;
       remaining -= tierAmount;
     }
 
           // copies 51+ at £0.40
     if (remaining > 50) {
-      const tierAmount = remaining - 50;
+      const tierAmount = remaining - 50, 10;
       total += tierAmount * 0.40;
       remaining -= tierAmount;
     }
 
         // copies 41+ at £0.50
     if (remaining > 40) {
-      const tierAmount = remaining - 40;
+      const tierAmount = remaining - 40, 10;
       total += tierAmount * 0.50;
       remaining -= tierAmount;
     }
 
         // copies 31+ at £0.60
     if (remaining > 30) {
-      const tierAmount = remaining - 30;
+      const tierAmount = remaining - 30, 10;
       total += tierAmount * 0.60;
       remaining -= tierAmount;
     }
 
         // copies 21+ at £0.70
     if (remaining > 20) {
-      const tierAmount = remaining - 20;
+      const tierAmount = remaining - 20, 10;
       total += tierAmount * 0.70;
       remaining -= tierAmount;
     }
