@@ -202,80 +202,59 @@ function generateOrderNumber() {
     const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
 
     let total = 0;
-    let remaining = copies;
 
-        // copies 101+ at £0.01
-    if (remaining > 100) {
-      const tierAmount = remaining - 100;
-      total += tierAmount * 0.01;
-      remaining -= tierAmount;
-    }
+// 1–10
+total += Math.min(copies, 10) * 1.20;
 
-        // copies 91+ at £0.05
-    if (remaining > 90) {
-      const tierAmount = remaining - 90, 10;
-      total += tierAmount * 0.05;
-      remaining -= tierAmount;
-    }
+// 11–20
+if (copies > 10) {
+  total += Math.min(copies - 10, 10) * 0.80;
+}
 
-        // copies 81+ at £0.10
-    if (remaining > 80) {
-      const tierAmount = remaining - 80, 10;
-      total += tierAmount * 0.10;
-      remaining -= tierAmount;
-    }
+// 21–30
+if (copies > 20) {
+  total += Math.min(copies - 20, 10) * 0.70;
+}
 
-        // copies 71+ at £0.20
-    if (remaining > 70) {
-      const tierAmount = remaining - 70, 10;
-      total += tierAmount * 0.20;
-      remaining -= tierAmount;
-    }
+// 31–40
+if (copies > 30) {
+  total += Math.min(copies - 30, 10) * 0.60;
+}
 
-        // copies 61+ at £0.30
-    if (remaining > 60) {
-      const tierAmount = remaining - 60, 10;
-      total += tierAmount * 0.30;
-      remaining -= tierAmount;
-    }
+// 41–50
+if (copies > 40) {
+  total += Math.min(copies - 40, 10) * 0.50;
+}
 
-          // copies 51+ at £0.40
-    if (remaining > 50) {
-      const tierAmount = remaining - 50, 10;
-      total += tierAmount * 0.40;
-      remaining -= tierAmount;
-    }
+// 51–60
+if (copies > 50) {
+  total += Math.min(copies - 50, 10) * 0.40;
+}
 
-        // copies 41+ at £0.50
-    if (remaining > 40) {
-      const tierAmount = remaining - 40, 10;
-      total += tierAmount * 0.50;
-      remaining -= tierAmount;
-    }
+// 61–70
+if (copies > 60) {
+  total += Math.min(copies - 60, 10) * 0.30;
+}
 
-        // copies 31+ at £0.60
-    if (remaining > 30) {
-      const tierAmount = remaining - 30, 10;
-      total += tierAmount * 0.60;
-      remaining -= tierAmount;
-    }
+// 71–80
+if (copies > 70) {
+  total += Math.min(copies - 70, 10) * 0.20;
+}
 
-        // copies 21+ at £0.70
-    if (remaining > 20) {
-      const tierAmount = remaining - 20, 10;
-      total += tierAmount * 0.70;
-      remaining -= tierAmount;
-    }
+// 81–90
+if (copies > 80) {
+  total += Math.min(copies - 80, 10) * 0.10;
+}
 
-    // copies 11–20 at £0.80
-    if (remaining > 10) {
-      const tierAmount = Math.min(remaining - 10, 10);
-      total += tierAmount * 0.80;
-      remaining -= tierAmount;
-    }
+// 91–100
+if (copies > 90) {
+  total += Math.min(copies - 90, 10) * 0.05;
+}
 
-    // copies 1–10 at £1.20
-    total += remaining * 1.20;
+// 101+
+if (copies > 100) {
+  total += (copies - 100) * 0.01;
+}
 
     total = total.toFixed(2);
 
