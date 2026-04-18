@@ -263,7 +263,7 @@ const k = 12;
 const t = 1 - Math.exp(-billableCopies / k);
 
 // blend from base price toward target behaviour
-const shaped = baseTotal * (1 - t) + (targetAt20 * (copies / 20)) * t;
+const shaped = baseTotal * (1 - t) + (targetAt20 * (billableCopies / 20)) * t;
 
 // keep things sensible at very small numbers
 const total = Math.max(baseTotal * 0.9, shaped).toFixed(2);
