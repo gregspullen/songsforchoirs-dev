@@ -57,8 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
 const audio = document.querySelector("audio");
 const audioSrc = document.getElementById("audioSrc");
 
+const isLive = window.location.hostname === "songsforchoirs.com"
+            || window.location.hostname === "www.songsforchoirs.com";
+
+const audioBase = isLive
+  ? "https://www.songsforchoirs.com"
+  : "https://dev.songsforchoirs.net";
+
 if (audio && audioSrc) {
-  const src = "https://dev.songsforchoirs.net/mp3/the-ash-grove.mp3";
+  const src = `${audioBase}/mp3/${slug}.mp3`;
   audioSrc.src = src;
   audio.load();
   console.log("Audio src:", src);
