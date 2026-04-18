@@ -202,6 +202,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Price
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
 
+  const copyInput = document.getElementById("copy");
+const totalDisplay = document.getElementById("totalDisplay");
+
+function updateTotal() {
+  const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
+  const total = (copies * pricePerCopy).toFixed(2);
+
+  if (totalDisplay) {
+    totalDisplay.textContent = `Total: £${total}`;
+  }
+}
+
+if (copyInput) {
+  copyInput.addEventListener("input", updateTotal);
+  updateTotal(); // initialise
+}
+
   const copyNote = document.getElementById("copyNote");
   if (copyNote) {
     copyNote.textContent = `Enter the number of copies you need — £${pricePerCopy.toFixed(2)} per copy`;
