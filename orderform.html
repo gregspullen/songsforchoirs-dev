@@ -251,24 +251,14 @@ if (copyInput) {
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
   let total = 0;
 
-for (let i = 1; i <= copies; i++) {
-  let rate;
+const baseTotal = copies * pricePerCopy;
 
-  if (i <= 20) {
-    // Phase 1: starts discounting straight away (100% → ~60% by 20)
-    rate = 1 - (i - 1) * 0.02;
-  } else {
-    // Phase 2: slows down (60% → ~50% by 40, then gently)
-    rate = 0.6 - (i - 20) * 0.005;
-  }
+// simple two-speed discount
+const discount = copies <= 20
+  ? 1 - copies * 0.01       // 1% per copy up to 20
+  : 0.8 - (copies - 20) * 0.002; // then slower
 
-  // Safety floor so it never gets too cheap
-  rate = Math.max(0.4, rate);
-
-  total += pricePerCopy * rate;
-}
-
-total = total.toFixed(2);
+const total = (baseTotal * Math.max(0.6, discount)).toFixed(2);
 
   const orderNum = generateOrderNumber();
   const email = document.getElementById("email").value.trim();
