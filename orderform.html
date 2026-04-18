@@ -267,7 +267,17 @@ function updateTotal() {
   
   // incremental discount (always increases total)
   const pricePerCopyTier = getTierPrice(copies);
-const total = (copies * pricePerCopyTier).toFixed(2);
+let total = copies * getTierPrice(copies);
+
+// prevent price dropping
+if (copies > 1) {
+  const prevTotal = (copies - 1) * getTierPrice(copies - 1);
+  if (total < prevTotal) {
+    total = prevTotal + getTierPrice(copies);
+  }
+}
+
+total = total.toFixed(2);
 
 
   const orderNum = generateOrderNumber();
