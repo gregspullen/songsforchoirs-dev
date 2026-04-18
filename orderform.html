@@ -325,16 +325,8 @@ function generateOrderNumber() {
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
   
   // incremental discount (always increases total)
-  const pricePerCopyTier = getTierPrice(copies);
-let total = calculateTotal(copies);
-
-// prevent price dropping
-if (copies > 1) {
-  const prevTotal = (copies - 1) * getTierPrice(copies - 1);
-  if (total < prevTotal) {
-    total = prevTotal + getTierPrice(copies);
-  }
-}
+ 
+let total = document.getElementById("totalDisplay").textContent.replace("Total: £", "");
 
 total = total.toFixed(2);
 
