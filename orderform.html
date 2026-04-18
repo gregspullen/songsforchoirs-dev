@@ -226,24 +226,36 @@ const payload = {
   order: orderNum,
   email
 };
-  
-    try {
-      const res = await fetch(
-       "/send-email",
 
-        {
-
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        }
-      );
-  
-      const text = await res.text();
-      alert("We've sent you an email to verify your address. Please click the link in it to continue with your order.");
+        try {
+      const isLive = window.location.hostname === "songsforchoirs.com"
+                  || window.location.hostname === "www.songsforchoirs.com";
+    
+      const BASE_URL = isLive
+        ? ""
+        : "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev";
+    
+      const url = isLive
+        ? "/send-email"
+        : "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev/send-email";
+      
+      const res = await fetch(url, { 
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+    
+      if (res.ok) {
+        alert("We've sent you an email to verify your address. Please click the link in it to continue with your order.");
+      } else {
+        throw new Error("Email failed");
+      }
+    
     } catch (err) {
       alert("Sorry — something went wrong.\n\nPlease try again. If the problem continues, contact us at lyra@songsforchoirs.com.");
     }
+  
+    
   });
   </script>
   

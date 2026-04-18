@@ -99,18 +99,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 🐸 PDF preview
-  const frame = document.getElementById("preview-frame");
-  const pdfFile = `${slug}.pdf`;
+  // 🐸 PDF preview
+const frame = document.getElementById("preview-frame");
+const pdfFile = `${slug}.pdf`;
 
-  if (frame) {
-    if (piece.hasScore) {
-      frame.src = `/preview?score=${encodeURIComponent(pdfFile)}`;
-      frame.title = `Preview — ${piece.title}`;
-    } else {
-      frame.src = "";
-      frame.title = "No preview available";
-    }
+// 🐸 Environment-aware base
+const isLive = window.location.hostname === "songsforchoirs.com"
+            || window.location.hostname === "www.songsforchoirs.com";
+
+const BASE_URL = isLive
+  ? ""
+  : "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev";
+
+if (frame) {
+  if (piece.hasScore) {
+    frame.src = `${BASE_URL}/preview?score=${encodeURIComponent(pdfFile)}`;
+    frame.title = `Preview — ${piece.title}`;
+  } else {
+    frame.src = "";
+    frame.title = "No preview available";
   }
+}
 
   // 🐸 Back link
   const backLink = document.getElementById("back-link");
