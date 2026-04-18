@@ -249,7 +249,22 @@ if (copyInput) {
 
   const params = new URLSearchParams(window.location.search);
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
-  const total = (copies * pricePerCopy).toFixed(2);
+  const baseTotal = copies * pricePerCopy;
+
+// target shaping (noticeable by ~20 copies)
+const targetAt20 = 20; // what you want ~20 copies to feel like
+
+// strength of roll-off (tune this number)
+const k = 12;
+
+// smooth factor (0 → 1 as copies increase)
+const t = 1 - Math.exp(-copies / k);
+
+// blend from base price toward target behaviour
+const shaped = baseTotal * (1 - t) + (targetAt20 * (copies / 20)) * t;
+
+// keep things sensible at very small numbers
+const total = Math.max(baseTotal * 0.9, shaped).toFixed(2);
 
   const orderNum = generateOrderNumber();
   const email = document.getElementById("email").value.trim();
