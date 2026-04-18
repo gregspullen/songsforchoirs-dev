@@ -245,21 +245,23 @@ if (copyInput) {
 
   const title = document.getElementById("title").value.trim();
   const choir = document.getElementById("choir").value.trim();
-  const copies = Math.min(100, Math.max(1, parseInt(document.getElementById("copy").value || "1", 10)));
-
+  
+  const copies = Math.min(
+    100,
+    Math.max(1, parseInt(document.getElementById("copy").value || "1", 10))
+  );
+  
   const params = new URLSearchParams(window.location.search);
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
-  let total = 0;
-
-// simple two-speed discount
-const baseTotal = copies * pricePerCopy;
-
-// discount up to 30 copies, then stop
-const discountRate = copies <= 30
-  ? 1 - copies * 0.01   // 1% per copy
-  : 0.7;                // cap at 30% off
-
-const total = (baseTotal * discountRate).toFixed(2);
+  
+  // simple discount: 1% per copy up to 30, then stop
+  const baseTotal = copies * pricePerCopy;
+  
+  const discountRate = copies <= 30
+    ? 1 - copies * 0.01
+    : 0.7;
+  
+  const total = (baseTotal * discountRate).toFixed(2);
 
 
   const orderNum = generateOrderNumber();
