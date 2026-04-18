@@ -260,7 +260,7 @@ const targetAt20 = 20; // what you want ~20 copies to feel like
 const k = 12;
 
 // smooth factor (0 → 1 as copies increase)
-const t = 1 - Math.exp(-copies / k);
+const t = 1 - Math.exp(-billableCopies / k);
 
 // blend from base price toward target behaviour
 const shaped = baseTotal * (1 - t) + (targetAt20 * (copies / 20)) * t;
