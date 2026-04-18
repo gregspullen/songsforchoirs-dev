@@ -156,9 +156,9 @@
   <input id="copy" name="copies" required type="number" min="1" max="100"
          style="width:110px; text-align:center; padding:6px;">
 
-  <div style="font-size:0.85em; color:#b8964a; margin-top:6px;">
-    Enter the number of copies you need
-  </div>
+  <div id="copyNote" style="font-size:0.85em; color:#b8964a; margin-top:6px;">
+  Enter the number of copies you need
+</div>
 
 </div>
 
@@ -204,6 +204,13 @@ const priceDisplay = document.getElementById("priceDisplay");
 
 if (priceDisplay) {
   priceDisplay.textContent = `Price per copy: £${pricePerCopy.toFixed(2)}`;
+
+const copyNote = document.getElementById("copyNote");
+
+  if (copyNote) {
+    copyNote.textContent = `Enter the number of copies you need — £${pricePerCopy.toFixed(2)} per copy`;
+  }
+  
 }
 
 // Title autofill
