@@ -206,20 +206,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyInput = document.getElementById("copy");
 const totalDisplay = document.getElementById("totalDisplay");
 
+  function getTierPrice(copies) {
+  if (copies <= 10) return 1.25;
+  if (copies <= 20) return 1.00;
+  if (copies <= 30) return 0.85;
+  return 0.75;
+}
+
 function updateTotal() {
   const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
 
-  let pricePerCopyTier;
-
-  if (copies <= 10) {
-    pricePerCopyTier = 1.25;
-  } else if (copies <= 20) {
-    pricePerCopyTier = 1.00;
-  } else if (copies <= 30) {
-    pricePerCopyTier = 0.85;
-  } else {
-    pricePerCopyTier = 0.75;
-  }
+  const pricePerCopyTier = getTierPrice(copies);
 
   const total = (copies * pricePerCopyTier).toFixed(2);
 
@@ -227,6 +224,7 @@ function updateTotal() {
     totalDisplay.textContent = `Total: £${total}`;
   }
 }
+  
   if (copyInput) {
   copyInput.addEventListener("input", updateTotal);
   updateTotal(); // show total when page loads
@@ -268,18 +266,7 @@ function updateTotal() {
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
   
   // incremental discount (always increases total)
-  let pricePerCopyTier;
-
-if (copies <= 10) {
-  pricePerCopyTier = 1.25;
-} else if (copies <= 20) {
-  pricePerCopyTier = 1.00;
-} else if (copies <= 30) {
-  pricePerCopyTier = 0.85;
-} else {
-  pricePerCopyTier = 0.75;
-}
-
+  const pricePerCopyTier = getTierPrice(copies);
 const total = (copies * pricePerCopyTier).toFixed(2);
 
 
