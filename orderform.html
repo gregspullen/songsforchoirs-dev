@@ -216,13 +216,26 @@ const totalDisplay = document.getElementById("totalDisplay");
 function updateTotal() {
   const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
 
-  const pricePerCopyTier = getTierPrice(copies);
+  let total = 0;
+  let remaining = copies;
 
-  const total = (copies * pricePerCopyTier).toFixed(2);
+  // copies 11–20 at £0.80
+  if (remaining > 10) {
+    const tierAmount = Math.min(remaining - 10, 10);
+    total += tierAmount * 0.80;
+    remaining -= tierAmount;
+  }
+
+  // copies 1–10 at £1.20
+  total += remaining * 1.20;
+
+  total = total.toFixed(2);
 
   if (totalDisplay) {
     totalDisplay.textContent = `Total: £${total}`;
   }
+}
+  
 }
   
   if (copyInput) {
