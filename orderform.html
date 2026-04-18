@@ -247,26 +247,28 @@ if (copyInput) {
   const choir = document.getElementById("choir").value.trim();
   const copies = Math.min(100, Math.max(1, parseInt(document.getElementById("copy").value || "1", 10)));
 
-  const billableCopies = Math.min(copies, 50) + Math.max(0, copies - 50) * 0.2;
-
   const params = new URLSearchParams(window.location.search);
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
-  const baseTotal = billableCopies * pricePerCopy;
+  let total = 0;
 
-// target shaping (noticeable by ~20 copies)
-const targetAt20 = 20; // what you want ~20 copies to feel like
+for (let i = 1; i <= copies; i++) {
+  let rate;
 
-// strength of roll-off (tune this number)
-const k = 12;
+  if (i <= 20) {
+    // Phase 1: starts discounting straight away (100% → ~60% by 20)
+    rate = 1 - (i - 1) * 0.02;
+  } else {
+    // Phase 2: slows down (60% → ~50% by 40, then gently)
+    rate = 0.6 - (i - 20) * 0.005;
+  }
 
-// smooth factor (0 → 1 as copies increase)
-const t = 1 - Math.exp(-billableCopies / k);
+  // Safety floor so it never gets too cheap
+  rate = Math.max(0.4, rate);
 
-// blend from base price toward target behaviour
-const shaped = baseTotal * (1 - t) + (targetAt20 * (billableCopies / 20)) * t;
+  total += pricePerCopy * rate;
+}
 
-// keep things sensible at very small numbers
-const total = Math.max(baseTotal * 0.9, shaped).toFixed(2);
+total = total.toFixed(2);
 
   const orderNum = generateOrderNumber();
   const email = document.getElementById("email").value.trim();
