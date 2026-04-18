@@ -196,18 +196,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("orderForm");
   const submitBtn = document.getElementById("submitBtn");
 
-  const params = new URLSearchParams(window.location.search);
-const pricePerCopy = parseFloat(params.get("price")) || 1.25;
+const params = new URLSearchParams(window.location.search);
 
+// Price display
+const pricePerCopy = parseFloat(params.get("price")) || 1.25;
 const priceDisplay = document.getElementById("priceDisplay");
 
 if (priceDisplay) {
   priceDisplay.textContent = `Price per copy: £${pricePerCopy.toFixed(2)}`;
 }
 
-  // Autofill title from ?title= parameter
-  const params = new URLSearchParams(window.location.search);
-  const titleParam = params.get("title");
+// Title autofill
+const titleParam = params.get("title");
+const titleField = document.getElementById("title");
+
+if (titleParam && titleField) {
+  titleField.value = decodeURIComponent(titleParam);
+  titleField.readOnly = true;
+}
   const titleField = document.getElementById("title");
   if (titleParam && titleField) {
     titleField.value = decodeURIComponent(titleParam);
