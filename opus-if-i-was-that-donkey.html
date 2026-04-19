@@ -201,9 +201,21 @@ window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&
       <div class="score-grid single-opus">
         
         <div class="opus-left">
+
+          <!-- Main audio -->
           <audio controls>
             <source id="audioSrc" type="audio/mpeg">
           </audio>
+        
+          <!-- Backing track -->
+          <div style="margin-top:10px; text-align:center; font-size:0.8em;">
+            Backing track
+          </div>
+        
+          <audio controls>
+            <source src="/mp3/if-i-was-that-donkey-backing.mp3" type="audio/mpeg">
+          </audio>
+        
         </div>
         
         <figure class="cover">
