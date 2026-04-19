@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const price = piece.price || 1.25;
-
+  const copyInput = document.getElementById("copyInput");
   const eurSpan = document.querySelector(".eur");
 const usdSpan = document.querySelector(".usd");
 
@@ -82,11 +82,87 @@ if (eurSpan && usdSpan) {
     priceDisplayBtn.textContent = price.toFixed(2);
   }
 
+// === PRICE CALCULATOR ===
+
+const totalGBP = document.getElementById("totalGBP");
+const totalEUR = document.getElementById("totalEUR");
+const totalUSD = document.getElementById("totalUSD");
+
+function updateTotal() {
+  const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
+
+  let total = Math.min(copies, 10) * price;
+
+// 11–20
+if (copies > 10) {
+  total += Math.min(copies - 10, 10) * price * 0.67;
+}
+
+// 21–30
+if (copies > 20) {
+  total += Math.min(copies - 20, 10) * price * 0.58;
+}
+
+// 31–40
+if (copies > 30) {
+  total += Math.min(copies - 30, 10) * price * 0.50;
+}
+
+// 41–50
+if (copies > 40) {
+  total += Math.min(copies - 40, 10) * price * 0.42;
+}
+
+// 51–60
+if (copies > 50) {
+  total += Math.min(copies - 50, 10) * price * 0.33;
+}
+
+// 61–70
+if (copies > 60) {
+  total += Math.min(copies - 60, 10) * price * 0.25;
+}
+
+// 71–80
+if (copies > 70) {
+  total += Math.min(copies - 70, 10) * price * 0.17;
+}
+
+// 81–90
+if (copies > 80) {
+  total += Math.min(copies - 80, 10) * price * 0.08;
+}
+
+// 91–100
+if (copies > 90) {
+  total += Math.min(copies - 90, 10) * price * 0.04;
+}
+
+// 101+
+if (copies > 100) {
+  total += (copies - 100) * price * 0.01;
+}
+
+  const gbp = total.toFixed(2);
+  const eur = (total * 1.17).toFixed(2);
+  const usd = (total * 1.27).toFixed(2);
+
+  if (totalGBP) totalGBP.textContent = gbp;
+  if (totalEUR) totalEUR.textContent = `€${eur}`;
+  if (totalUSD) totalUSD.textContent = `$${usd}`;
+}
+
+if (copyInput) {
+  copyInput.addEventListener("input", updateTotal);
+  updateTotal();
+}
   // Order button
   const orderBtn = document.getElementById("orderBtn");
   if (orderBtn) {
     orderBtn.onclick = () => {
-      window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&price=${price}`;
+      const copies = copyInput ? copyInput.value : 12;
+
+window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&price=${price}&copies=${copies}`;
     };
   }
 
@@ -111,8 +187,8 @@ if (eurSpan && usdSpan) {
   <nav class="site-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="sacred.html">Sacred</a></li>
-      <li><a href="concert.html">Concert</a></li>
+      <li><a href="choral.html">Choral</a></li>
+      <li><a href="young-voices.html">Young-Voices</a></li>
       <li><a href="other.html">Other</a></li>
       <li><a href="news.html">News</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -140,18 +216,33 @@ if (eurSpan && usdSpan) {
         </figure>
 
         <div class="opus-right">
-        <div class="paypal-box">
-          <button class="price" id="orderBtn" type="button">
-            Order Here — £<span id="priceDisplayBtn"></span> (<span class="eur"></span>, <span class="usd"></span>) per part
-          </button>
-      
-          <p style="font-size:0.8em; color:#b8964a; margin-top:6px; text-align:center;">
-            Currency conversions are approximate.<br>
-            Final pricing is shown in PayPal.
-          </p>
-       
-        </div>
-      </div>
+
+            <div class="paypal-box">
+          
+              <label for="copyInput" style="display:block; text-align:center; margin-bottom:6px;">
+                How many singers?
+              </label>
+          
+              <input 
+                id="copyInput" 
+                type="number" 
+                value="12" 
+                min="1"
+                style="display:block; margin:0 auto 10px auto; text-align:center; width:80px;">
+          
+                <button class="price" id="orderBtn" type="button">
+                  Order — £<span id="totalGBP">0.00</span>
+                  (<span id="totalEUR"></span>, <span id="totalUSD"></span>) total
+                </button>
+          
+              <p style="font-size:0.8em; color:#b8964a; margin-top:6px; text-align:center;">
+                Currency conversions are approximate.<br>
+                Final pricing is shown in PayPal.
+              </p>
+          
+            </div>
+          
+          </div>
 
     </section>
   </main>
