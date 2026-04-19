@@ -187,7 +187,6 @@ p em {
   margin-bottom: 0.05em !important;
 }
 
-}
 /* Keep a nice pause under the thank-you heading */
 .receipt-panel h2 {
   margin-bottom: 0.8em;
@@ -317,7 +316,7 @@ p em {
 /* Disable hover lift for the noticeboard cover */
 .cover.noticeboard img:hover {
   transform: none;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.13);
 }
 
 /* =========================
@@ -891,5 +890,106 @@ button.price small {
     width: 100%;
     box-sizing: border-box;
   }
+}
 
+  .intro-card {
+    height: 460px;   /* ← fixed height wins here */
+  
+    max-width: 340px;
+    margin: 0.5rem auto;
+    width: 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+    position: relative;
+    overflow: hidden;
+  
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 3.5rem 2rem 2rem;
+  
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+
+/* === TRUE GOD RAYS === */
+.intro-card::before {
+  content: "";
+  position: absolute;
+  top: 42px;
+  left: 18px;
+  width: 50%;
+  height: 28%;
+
+  background:
+    linear-gradient(
+      to bottom right,
+      rgba(255,255,255,0) 10%,
+      rgba(255,255,255,0.3) 25%,
+      rgba(255,255,255,0.6) 45%,
+      rgba(255,255,255,0.85) 65%,
+      rgba(255,255,255,1) 85%
+    ),
+    repeating-conic-gradient(
+      from 45deg at -10% 2%,
+      rgba(255,255,255,0.65) 0deg 4deg,
+      rgba(120, 180, 120, 0.68) 4deg 12deg
+    );
+
+  opacity: 0.5;   /* adjust 0.25–0.35 if needed */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === CONTENT === */
+.intro-content {
+  margin-top: -65px;
+  position: relative;
+  z-index: 1;
+  max-width: 260px;
+}
+
+.intro-content h2 {
+  font-family: "Georgia", serif;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: #444;
+}
+
+/* === TEXT === */
+.intro-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+}
+
+.intro-content .sub {
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: 1.2rem;
+}
+
+/* === LINKS === */
+.intro-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.intro-links a {
+  color: #c9a84f;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.intro-links a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+.score-header {
+  height: 1.2rem;
 }
