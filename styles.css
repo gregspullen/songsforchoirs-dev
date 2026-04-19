@@ -993,8 +993,9 @@ button.price small {
 .score-header {
   height: 1.2rem;
 }
+
 @media (max-width: 700px) {
-  .intro-card {
-    max-width: 100%;
+  .score-grid {
+    grid-template-columns: 1fr;
   }
 }
