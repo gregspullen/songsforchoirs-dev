@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🐸 Get piece
   const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
 
+  const priceDisplayBtn = document.getElementById("priceDisplayBtn");
+  if (priceDisplayBtn && piece.price) {
+    priceDisplayBtn.textContent = piece.price.toFixed(2);
+  }
+
   const price = piece.price || 1.25;
 
 const priceDisplayBtn = document.getElementById("priceDisplayBtn");
