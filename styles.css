@@ -1001,10 +1001,10 @@ button.price small {
     gap: 1rem;
   }
 
-  .score-frame,
+}
+@media (max-width: 700px) {
   .intro-card {
-    max-width: 100%;
-    margin: 0 auto;
+    max-width: none;
+    width: 100%;
   }
-
 }
