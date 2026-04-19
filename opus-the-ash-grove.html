@@ -26,6 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const price = piece.price || 1.25;
 
+  const eurSpan = document.querySelector(".eur");
+const usdSpan = document.querySelector(".usd");
+
+if (eurSpan && usdSpan) {
+  const eur = (price * 1.17).toFixed(2); // approx conversion
+  const usd = (price * 1.27).toFixed(2); // approx conversion
+
+  eurSpan.textContent = `€${eur}`;
+  usdSpan.textContent = `$${usd}`;
+}
+
   // Title
   document.title = piece.metaTitle || `${piece.title} — Songs for Choirs`;
 
