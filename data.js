@@ -6,7 +6,7 @@ window.PIECES = {
     "accompaniment": "a cappella",
     "categories": ["choral"],
     "hasScore": true,
-    "price": 1.10
+    "price": 0.80
   },
   "lavenders-blue": {
     "title": "Lavender's Blue",
@@ -15,7 +15,7 @@ window.PIECES = {
     "accompaniment": "piano (optional)",
     "categories": ["choral"],
     "hasScore": true,
-    "price": 0.50
+    "price": 1.00
   },
   "bathed-in-starlight": {
     "title": "Bathed in Starlight",
@@ -33,7 +33,7 @@ window.PIECES = {
     "accompaniment": "piano (optional)",
     "categories": ["choral"],
     "hasScore": true,
-    "price": 0.90
+    "price": 1.10
   },
   "benedictus": {
     "title": "Benedictus",
@@ -42,7 +42,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["choral"],
     "hasScore": true,
-    "price": 0.90
+    "price": 1.00
   },
   "bobby-shafto": {
     "title": "Bobby Shafto",
@@ -51,7 +51,7 @@ window.PIECES = {
     "accompaniment": "piano (optional)",
     "categories": ["choral"],
     "hasScore": true,
-    "price": 0.80
+    "price": 1.00
   },
   "cello-go-bolero": {
     "title": "Cello Go Bolero",
@@ -60,7 +60,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["other"],
     "hasScore": true,
-    "price": 2.00
+    "price": 3.50
   },
   "if-i-was-that-donkey": {
     "title": "If I was that Donkey",
@@ -79,7 +79,7 @@ window.PIECES = {
     "accompaniment": "piano (optional)",
     "categories": ["choral"],
     "hasScore": true,
-    "price": 0.80
+    "price": 1.00
   },
   "my-soul-doth-magnify-the-lord": {
     "title": "Magnificat",
@@ -88,7 +88,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["choral"],
     "hasScore": true,
-    "price": 0.90
+    "price": 1.20
   },
   "pass-the-salsa": {
     "title": "Pass the Salsa",
@@ -97,7 +97,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["other"],
     "hasScore": true,
-    "price": 2.00
+    "price": 3.50
   },
   "tangissimo": {
     "title": "Tangissimo",
@@ -106,7 +106,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["other"],
     "hasScore": true,
-    "price": 2.00
+    "price": 3.50
   },
   "the-lords-prayer": {
     "title": "The Lord's Prayer",
@@ -115,7 +115,7 @@ window.PIECES = {
     "accompaniment": "piano (optional)",
     "categories": ["choral"],
     "hasScore": true,
-    "price": 1.00
+    "price": 0.90
   },
   "the-lord-is-my-shepherd": {
     "title": "The Lord is my Shepherd",
