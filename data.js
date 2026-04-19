@@ -82,7 +82,7 @@ window.PIECES = {
     "price": 0.80
   },
   "my-soul-doth-magnify-the-lord": {
-    "title": "Magnificat",
+    "title": "My Soul Doth Magnify The Lord",
     "description": "Magnificat - a lively, rhythmic choral setting for SATB choir, with an optional two-part version. Fresh, characterful, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",
     "voicing": "SATB amd SB",
     "accompaniment": "piano",
