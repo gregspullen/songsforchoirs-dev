@@ -204,7 +204,10 @@ function generateOrderNumber() {
   function updateTotal() {
     const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
 
-    let total = 0;
+  const params = new URLSearchParams(window.location.search);
+  const pricePerCopy = parseFloat(params.get("price")) || 1.25;
+  
+  let total = copies * pricePerCopy;
 
 // 1–10
 total += Math.min(copies, 10) * 1.20;
