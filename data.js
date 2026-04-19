@@ -6,7 +6,7 @@ window.PIECES = {
     "accompaniment": "a cappella",
     "categories": ["choral"],
     "hasScore": true,
-    "price": 1.02
+    "price": 1.10
   },
   "lavenders-blue": {
     "title": "Lavender's Blue",
