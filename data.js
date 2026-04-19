@@ -6,7 +6,7 @@ window.PIECES = {
     "accompaniment": "a cappella",
     "categories": ["choral"],
     "hasScore": true,
-    "price": 1.02
+    "price": 1.10
   },
   "lavenders-blue": {
     "title": "Lavender's Blue",
@@ -24,7 +24,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["choral", "young-voices"],
     "hasScore": true,
-    "price": 0.80
+    "price": 1.00
   },
   "away-in-a-manger": {
     "title": "Away in a Manger",
@@ -32,7 +32,8 @@ window.PIECES = {
     "voicing": "SATB",
     "accompaniment": "piano (optional)",
     "categories": ["choral"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 0.90
   },
   "benedictus": {
     "title": "Benedictus",
@@ -40,7 +41,8 @@ window.PIECES = {
     "voicing": "SATB",
     "accompaniment": "piano",
     "categories": ["choral"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 0.90
   },
   "bobby-shafto": {
     "title": "Bobby Shafto",
@@ -48,7 +50,8 @@ window.PIECES = {
     "voicing": "SATB",
     "accompaniment": "piano (optional)",
     "categories": ["choral"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 0.80
   },
   "cello-go-bolero": {
     "title": "Cello Go Bolero",
@@ -56,7 +59,8 @@ window.PIECES = {
     "voicing": "cello & piano",
     "accompaniment": "piano",
     "categories": ["other"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 2.00
   },
   "if-i-was-that-donkey": {
     "title": "If I was that Donkey",
@@ -64,7 +68,8 @@ window.PIECES = {
     "voicing": "unison voices",
     "accompaniment": "piano",
     "categories": ["young-voices"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 1.80
   },
   "it-was-a-lover-and-his-lass": {
     "title": "Lover and his Lass",
@@ -73,7 +78,8 @@ window.PIECES = {
     "voicing": "SATB",
     "accompaniment": "piano (optional)",
     "categories": ["choral"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 0.80
   },
   "my-soul-doth-magnify-the-lord": {
     "title": "Magnificat",
@@ -81,7 +87,8 @@ window.PIECES = {
     "voicing": "SATB amd SB",
     "accompaniment": "piano",
     "categories": ["choral"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 0.90
   },
   "pass-the-salsa": {
     "title": "Pass the Salsa",
@@ -89,7 +96,8 @@ window.PIECES = {
     "voicing": "cello & piano",
     "accompaniment": "piano",
     "categories": ["other"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 2.00
   },
   "tangissimo": {
     "title": "Tangissimo",
@@ -97,7 +105,8 @@ window.PIECES = {
     "voicing": "cello & piano",
     "accompaniment": "piano",
     "categories": ["other"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 2.00
   },
   "the-lords-prayer": {
     "title": "The Lord's Prayer",
@@ -105,7 +114,8 @@ window.PIECES = {
     "voicing": "SATB",
     "accompaniment": "piano (optional)",
     "categories": ["choral"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 1.00
   },
   "the-lord-is-my-shepherd": {
     "title": "The Lord is my Shepherd",
@@ -113,7 +123,8 @@ window.PIECES = {
     "voicing": "SATB",
     "accompaniment": "piano",
     "categories": ["choral"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 1.00
   },
   "make-a-joyful-noise": {
     "title": "Venite",
@@ -121,6 +132,7 @@ window.PIECES = {
     "voicing": "SATB",
     "accompaniment": "piano",
     "categories": ["choral"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 1.00
    }
   };

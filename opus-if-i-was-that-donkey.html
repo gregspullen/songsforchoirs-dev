@@ -8,24 +8,90 @@
   <script src="data.js?v=1"></script>
 
   <script>
-    const slug = "if-i-was-that-donkey";
+document.addEventListener("DOMContentLoaded", () => {
 
-    const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
+  const path = window.location.pathname;
+  const slug = path
+    .split("/")
+    .pop()
+    .replace(/^opus-/, "")
+    .replace(/\.html$/, "");
 
-    const TITLE = piece?.title || "Lavender's Blue";
-    const DESCRIPTION = piece?.description || "";
+  const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
 
-    document.title = `${TITLE} – Songs for Choirs`;
-  </script>
+  if (!piece) {
+    console.error("Piece not found:", slug);
+    return;
+  }
 
-  <meta name="description" content="">
+  const price = piece.price || 1.25;
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) meta.setAttribute("content", DESCRIPTION);
-    });
-  </script>
+  const eurSpan = document.querySelector(".eur");
+const usdSpan = document.querySelector(".usd");
+
+if (eurSpan && usdSpan) {
+  const eur = (price * 1.17).toFixed(2); // approx conversion
+  const usd = (price * 1.27).toFixed(2); // approx conversion
+
+  eurSpan.textContent = `€${eur}`;
+  usdSpan.textContent = `$${usd}`;
+}
+
+  // Title
+  document.title = piece.metaTitle || `${piece.title} — Songs for Choirs`;
+
+  // Cover
+  const cover = document.getElementById("coverImg");
+  if (cover) {
+    cover.src = `/images/Cover_png/${slug}.png`;
+    cover.alt = `${piece.title} cover`;
+  }
+
+  // Sheet link
+  const sheetLink = document.getElementById("sheetLink");
+  if (sheetLink) {
+    sheetLink.href = `sheet-${slug}.html`;
+  }
+
+  // Meta description
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && piece.description) {
+    metaDesc.setAttribute("content", piece.description);
+  }
+
+  // Audio
+  const audio = document.querySelector("audio");
+  const audioSrc = document.getElementById("audioSrc");
+
+  const isLive = window.location.hostname === "songsforchoirs.com"
+              || window.location.hostname === "www.songsforchoirs.com";
+
+  const audioBase = isLive
+    ? "https://www.songsforchoirs.com"
+    : "https://dev.songsforchoirs.net";
+
+  if (audio && audioSrc) {
+    const src = `${audioBase}/mp3/${slug}.mp3`;
+    audioSrc.src = src;
+    audio.load();
+  }
+
+  // Price display
+  const priceDisplayBtn = document.getElementById("priceDisplayBtn");
+  if (priceDisplayBtn) {
+    priceDisplayBtn.textContent = price.toFixed(2);
+  }
+
+  // Order button
+  const orderBtn = document.getElementById("orderBtn");
+  if (orderBtn) {
+    orderBtn.onclick = () => {
+      window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&price=${price}`;
+    };
+  }
+
+});
+</script>
 
   <link rel="stylesheet" href="styles.css">
 
@@ -42,7 +108,7 @@
     <p class="tagline">New accessible choral music.</p>
   </header>
 
-  <nav id="site-nav" class="site-nav">
+  <nav class="site-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="choral.html">Choral</a></li>
@@ -58,21 +124,12 @@
 
       <div class="score-grid single-opus">
         
-        <!-- Audio -->
         <div class="opus-left">
-        <p style="margin-top: 1em;"><strong>Listen to the track here</strong></p>
           <audio controls>
             <source id="audioSrc" type="audio/mpeg">
           </audio>
-        
-        <p style="margin-top: 1em;"><strong>Rehearsal track with a gentle guide vocal</strong></p>
-          <audio controls>
-            <source id="backingSrc" type="audio/mpeg">
-          </audio>
-
         </div>
         
-        <!-- Cover -->
         <figure class="cover">
           <a id="sheetLink" class="cover-link">
             <img 
@@ -82,18 +139,18 @@
           <span class="hover-tag">VIEW SAMPLE</span>
         </figure>
 
-        <!-- Order -->
         <div class="opus-right">
-          <div class="paypal-box">
-            <button class="price"
-              data-price="1.25"
-              id="orderBtn"
-              type="button">
-              Order Here — £1.25 (<span class="eur"></span>, <span class="usd"></span>) per part
-            </button>
-          </div>
+        <div class="paypal-box">
+          <button class="price" id="orderBtn" type="button">
+            Order Here — £<span id="priceDisplayBtn"></span> (<span class="eur"></span>, <span class="usd"></span>) per part
+          </button>
+      
+          <p style="font-size:0.8em; color:#b8964a; margin-top:6px; text-align:center;">
+            Currency conversions are approximate.<br>
+            Final pricing is shown in PayPal.
+          </p>
+       
         </div>
-
       </div>
 
     </section>
@@ -104,38 +161,6 @@
       <small>© 2026 <a href="https://www.songsforchoirs.com">www.songsforchoirs.com</a></small>
     </div>
   </footer>
-
-  <script src="pricing.js"></script>
-
-  <!-- WIRING -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-
-      // Set sources
-      document.getElementById("audioSrc").src =
-        `https://www.songsforchoirs.com/mp3/${slug}.mp3`;
-      
-      document.getElementById("backingSrc").src =
-        `https://www.songsforchoirs.com/mp3/${slug}-backing.mp3`;
-      
-      // Force BOTH players to reload
-      document.querySelectorAll("audio").forEach(a => {
-        a.load();
-      });
-
-      document.getElementById("sheetLink").href =
-        `sheet-${slug}.html`;
-
-      const cover = document.getElementById("coverImg");
-      cover.src = `/images/Cover_png/${slug}.png`;
-      cover.alt = `${TITLE} cover`;
-
-      document.getElementById("orderBtn").onclick = () => {
-      window.location.href = `orderform.html?title=${encodeURIComponent(TITLE)}`;
-    };
-
-    });
-  </script>
 
 </body>
 </html>
