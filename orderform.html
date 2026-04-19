@@ -281,6 +281,13 @@ if (totalDisplay) {
   const titleParam = params.get("title");
   const titleField = document.getElementById("title");
 
+  const copiesParam = params.get("copies");
+
+if (copiesParam && copyInput) {
+  copyInput.value = copiesParam;
+  updateTotal();   // ← THIS is the magic line
+}
+
   if (titleParam && titleField) {
     titleField.value = decodeURIComponent(titleParam);
     titleField.readOnly = true;
@@ -306,6 +313,12 @@ if (totalDisplay) {
   
   const params = new URLSearchParams(window.location.search);
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
+
+  const copiesParam = params.get("copies");
+
+if (copiesParam && copyInput) {
+  copyInput.value = copiesParam;
+}
   
   // incremental discount (always increases total)
  
