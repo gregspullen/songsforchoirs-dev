@@ -5,7 +5,8 @@ window.PIECES = {
     "voicing": "SAB",
     "accompaniment": "a cappella",
     "categories": ["choral"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 1.02
   },
   "lavenders-blue": {
     "title": "Lavender's Blue",
@@ -13,7 +14,8 @@ window.PIECES = {
     "voicing": "SATB",
     "accompaniment": "piano (optional)",
     "categories": ["choral"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 0.50
   },
   "bathed-in-starlight": {
     "title": "Bathed in Starlight",
@@ -21,7 +23,8 @@ window.PIECES = {
     "voicing": "SSA",
     "accompaniment": "piano",
     "categories": ["choral", "young-voices"],
-    "hasScore": true
+    "hasScore": true,
+    "price": 0.80
   },
   "away-in-a-manger": {
     "title": "Away in a Manger",
