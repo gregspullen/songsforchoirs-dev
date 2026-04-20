@@ -152,5 +152,14 @@ window.PIECES = {
     "categories": ["albums"],
     "hasScore": true,
     "price": 4.50
-   }
+   },
+  "four-british-songs": {
+    "title": "Four British Songs",
+    "description": "Four British Songs - light and humorous arrangements of traditional folk songs for SATB or SAB choir. Fun, accessible, and can all be sung a cappella. listen, and download licensed copies from Songs for Choirs.",
+    "voicing": "SATB",
+    "accompaniment": "piano (optional)",
+    "categories": ["Album"],
+    "hasScore": true,
+    "price": 3.00
+  },
   };
