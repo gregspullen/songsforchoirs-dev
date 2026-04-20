@@ -143,5 +143,14 @@ window.PIECES = {
     "categories": ["albums"],
     "hasScore": true,
     "price": 1.75
+   },
+  "three-latin-dances": {
+    "title": "Three Latin Dances",
+    "description": "Three Latin Dances - a lively and characterful suite of pieces for cello and piano. Playful and full of flair, these offer a step up in challenge while remaining accessible at around Grade 3 - 5. View the score, listen, and download from Songs for Choirs.",
+    "voicing": "SATB / SB",
+    "accompaniment": "piano",
+    "categories": ["albums"],
+    "hasScore": true,
+    "price": 4.50
    }
   };
