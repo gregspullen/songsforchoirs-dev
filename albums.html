@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Instrumental & Ensemble Sheet Music | Unique Works – Songs for Choirs</title>
-  <meta name="description" content="Discover instrumental, ensemble, and unique smaller works by Gregory Pullen and Lyra Harker—music beyond the main choral catalogue. Perfect for concerts, recitals, and creative programming." />
+  <title>Albums – Songs for Choirs</title>
+  <meta name="description" content="Collections of music for choir that work well together.">
 
   <meta name="theme-color" content="#ffffff" />
 
@@ -24,7 +24,7 @@
     <h1 class="site-logo">
       songs<span class="gold">for</span>choirs
     </h1>
-    <p class="tagline">Not choral music. — Just a few extra adventures.</p>
+    <p class="tagline">Collections of music that work well together.</p>
   </header>
 
   <nav id="site-nav" class="site-nav">
@@ -40,7 +40,7 @@
 
   <main class="wrap">
     <section class="panel">
-      <h2>"Three Latin Dances — Accessible and happy-sounding music for cello and piano (Grades 3-5).</h2>
+      <h2>Albums</h2>
 
       <div class="score-grid scroll" id="pieces-container">
     
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Object.keys(PIECES).forEach(slug => {
     const piece = PIECES[slug];
 
-    if (!piece.categories || !piece.categories.includes("other")) return;
+    if (!piece.categories || !piece.categories.includes("albums")) return;
 
     container.innerHTML += `
       <figure class="cover">
