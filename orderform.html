@@ -281,6 +281,13 @@ if (totalDisplay) {
   const titleParam = params.get("title");
   const titleField = document.getElementById("title");
 
+  const copiesParam = params.get("copies");
+
+if (copiesParam && copyInput) {
+  copyInput.value = copiesParam;
+  updateTotal();   // ← THIS is the magic line
+}
+
   if (titleParam && titleField) {
     titleField.value = decodeURIComponent(titleParam);
     titleField.readOnly = true;
@@ -309,9 +316,40 @@ if (totalDisplay) {
   
   // incremental discount (always increases total)
  
-let total = parseFloat(
-  document.getElementById("totalDisplay").textContent.replace("Total: £", "")
-).toFixed(2);
+  let total = Math.min(copies, 10) * pricePerCopy;
+
+if (copies > 10) {
+  total += Math.min(copies - 10, 10) * pricePerCopy * 0.67;
+}
+if (copies > 20) {
+  total += Math.min(copies - 20, 10) * pricePerCopy * 0.58;
+}
+if (copies > 30) {
+  total += Math.min(copies - 30, 10) * pricePerCopy * 0.50;
+}
+if (copies > 40) {
+  total += Math.min(copies - 40, 10) * pricePerCopy * 0.42;
+}
+if (copies > 50) {
+  total += Math.min(copies - 50, 10) * pricePerCopy * 0.33;
+}
+if (copies > 60) {
+  total += Math.min(copies - 60, 10) * pricePerCopy * 0.25;
+}
+if (copies > 70) {
+  total += Math.min(copies - 70, 10) * pricePerCopy * 0.17;
+}
+if (copies > 80) {
+  total += Math.min(copies - 80, 10) * pricePerCopy * 0.08;
+}
+if (copies > 90) {
+  total += Math.min(copies - 90, 10) * pricePerCopy * 0.04;
+}
+if (copies > 100) {
+  total += (copies - 100) * pricePerCopy * 0.01;
+}
+
+total = total.toFixed(2);
 
 
   const orderNum = generateOrderNumber();
