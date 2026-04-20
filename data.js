@@ -8,6 +8,24 @@ window.PIECES = {
     "hasScore": true,
     "price": 3.00
   },
+  "three-latin-dances": {
+    "title": "Three Latin Dances",
+    "description": "Three Latin Dances - a lively and characterful suite of pieces for cello and piano. Playful and full of flair, these offer a step up in challenge while remaining accessible at around Grade 3 - 5. View the score, listen, and download from Songs for Choirs.",
+    "voicing": "SATB / SB",
+    "accompaniment": "piano",
+    "categories": ["albums"],
+    "hasScore": true,
+    "price": 4.50
+  },
+  "magnificat-and-venite": {
+    "title": "Magnificat and Venite",
+    "description": "Magnificat and Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
+    "voicing": "SATB / SB",
+    "accompaniment": "piano",
+    "categories": ["albums"],
+    "hasScore": true,
+    "price": 1.75
+   },
   "the-ash-grove": {
     "title": "The Ash Grove",
     "description": "The Ash Grove - a light and flowing arrangement of the traditional folk song for SAB choir. accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
@@ -143,23 +161,5 @@ window.PIECES = {
     "categories": ["sacred"],
     "hasScore": true,
     "price": 1.00
-   },
-   "magnificat-and-venite": {
-    "title": "Magnificat and Venite",
-    "description": "Magnificat and Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
-    "voicing": "SATB / SB",
-    "accompaniment": "piano",
-    "categories": ["albums"],
-    "hasScore": true,
-    "price": 1.75
-   },
-  "three-latin-dances": {
-    "title": "Three Latin Dances",
-    "description": "Three Latin Dances - a lively and characterful suite of pieces for cello and piano. Playful and full of flair, these offer a step up in challenge while remaining accessible at around Grade 3 - 5. View the score, listen, and download from Songs for Choirs.",
-    "voicing": "SATB / SB",
-    "accompaniment": "piano",
-    "categories": ["albums"],
-    "hasScore": true,
-    "price": 4.50
    }
   };
