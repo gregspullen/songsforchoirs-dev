@@ -161,5 +161,5 @@ window.PIECES = {
     "categories": ["Album"],
     "hasScore": true,
     "price": 3.00
-  },
+  }
   };
