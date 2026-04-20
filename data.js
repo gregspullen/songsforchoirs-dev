@@ -1,4 +1,13 @@
 window.PIECES = {
+  "four-british-songs": {
+    "title": "Four British Songs",
+    "description": "Four British Songs - light and humorous arrangements of traditional folk songs for SATB or SAB choir. Fun, accessible, and can all be sung a cappella. listen, and download licensed copies from Songs for Choirs.",
+    "voicing": "SATB",
+    "accompaniment": "piano (optional)",
+    "categories": ["Album"],
+    "hasScore": true,
+    "price": 3.00
+  },
   "the-ash-grove": {
     "title": "The Ash Grove",
     "description": "The Ash Grove - a light and flowing arrangement of the traditional folk song for SAB choir. accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
@@ -152,14 +161,5 @@ window.PIECES = {
     "categories": ["albums"],
     "hasScore": true,
     "price": 4.50
-   },
-  "four-british-songs": {
-    "title": "Four British Songs",
-    "description": "Four British Songs - light and humorous arrangements of traditional folk songs for SATB or SAB choir. Fun, accessible, and can all be sung a cappella. listen, and download licensed copies from Songs for Choirs.",
-    "voicing": "SATB",
-    "accompaniment": "piano (optional)",
-    "categories": ["Album"],
-    "hasScore": true,
-    "price": 3.00
-  }
+   }
   };
