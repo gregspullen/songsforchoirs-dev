@@ -42,7 +42,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["sacred"],
     "hasScore": true,
-    "price": 0.90
+    "price": 1.00
   },
   "bobby-shafto": {
     "title": "Bobby Shafto",
