@@ -304,6 +304,13 @@ if (copiesParam && copyInput) {
   e.preventDefault();
 
   const title = document.getElementById("title").value.trim();
+
+  const slug = title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+  
   const choir = document.getElementById("choir").value.trim();
   
   const copies = Math.min(
