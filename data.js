@@ -1,4 +1,38 @@
 window.PIECES = {
+  "four-very-british-songs": {
+  "title": "Four Very British Songs",
+  "description": "Four Very British Songs - light and humorous arrangements of traditional folk songs for SATB or SAB choir. Fun, accessible, and can all be sung a cappella. Listen, and download licensed copies from Songs for Choirs.",
+  "voicing": "SATB / SAB",
+  "accompaniment": "piano (optional)",
+  "categories": ["albums"],
+  "type": "bundle",
+  "pieces": [
+    "the-ash-grove",
+    "bobby-shafto",
+    "lavenders-blue",
+    "it-was-a-lover-and-his-lass"
+  ],
+  "hasScore": true,
+  "price": 3.00
+},
+  "three-latin-dances": {
+    "title": "Three Latin Dances",
+    "description": "Three Latin Dances - a lively and characterful suite of pieces for cello and piano. Playful and full of flair, these offer a step up in challenge while remaining accessible at around Grade 3 - 5. View the score, listen, and download from Songs for Choirs.",
+    "voicing": "SATB / SB",
+    "accompaniment": "piano",
+    "categories": ["albums"],
+    "hasScore": false,
+    "price": 4.50
+  },
+  "magnificat-and-venite": {
+    "title": "Magnificat and Venite",
+    "description": "Magnificat and Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
+    "voicing": "SATB / SB",
+    "accompaniment": "piano",
+    "categories": ["albums"],
+    "hasScore": true,
+    "price": 1.75
+   },
   "the-ash-grove": {
     "title": "The Ash Grove",
     "description": "The Ash Grove - a light and flowing arrangement of the traditional folk song for SAB choir. accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
@@ -58,8 +92,8 @@ window.PIECES = {
     "description": "Cello Go Bolero - a lively and rhythmic piece for cello in a bolero style. Characterful and full of energy, it brings the cello to the party at last. View the score, listen, and download from Songs for Choirs.",
     "voicing": "cello & piano",
     "accompaniment": "piano",
-    "categories": ["other"],
-    "hasScore": true,
+    "categories": ["albums"],
+    "hasScore": false,
     "price": 3.50
   },
   "if-i-was-that-donkey": {
@@ -95,8 +129,8 @@ window.PIECES = {
     "description": "Pass the Salsa – a lively and rhythmic piece for cello and piano in a vibrant Latin style. Accessible yet exciting, it’s ideal for the intermediate cellist (around Grade 4). View the score, listen, and download from Songs for Choirs.",
     "voicing": "cello & piano",
     "accompaniment": "piano",
-    "categories": ["other"],
-    "hasScore": true,
+    "categories": ["albums"],
+    "hasScore": false,
     "price": 3.50
   },
   "tangissimo": {
@@ -104,8 +138,8 @@ window.PIECES = {
     "description": "Tangissimo - a lively and characterful tango-inspired piece for cello and piano, completing a set of three Latin dances. Playful and full of flair, it offers a step up in challenge while remaining accessible at around Grade 5. View the score, listen, and download from Songs for Choirs.",
     "voicing": "cello & piano",
     "accompaniment": "piano",
-    "categories": ["other"],
-    "hasScore": true,
+    "categories": ["albums"],
+    "hasScore": false,
     "price": 3.50
   },
   "the-lords-prayer": {
