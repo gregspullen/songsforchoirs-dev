@@ -187,7 +187,6 @@ p em {
   margin-bottom: 0.05em !important;
 }
 
-}
 /* Keep a nice pause under the thank-you heading */
 .receipt-panel h2 {
   margin-bottom: 0.8em;
@@ -314,10 +313,15 @@ p em {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 } 
 
-/* Disable hover lift for the noticeboard cover */
-.cover.noticeboard img:hover {
+/* Disable hover lift for the opus-pages */
+.opus-page .cover img:hover {
   transform: none;
   box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.opus-page .cover {
+  position: relative;
+  overflow: visible;
 }
 
 /* =========================
@@ -892,4 +896,46 @@ button.price small {
     box-sizing: border-box;
   }
 
+}
+/*
+#opus-preview {
+  margin-top: 15px;
+  text-align: center;
+}
+
+#opus-preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.opus-middle {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+.preview-controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.cover {
+  text-align: center;
+}
+
+.cover img {
+  display: block;
+  margin: 0 auto;
+}
+
+.preview-controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
