@@ -104,7 +104,7 @@ window.PIECES = {
     "voicing": "cello & piano",
     "accompaniment": "piano",
     "categories": ["albums"],
-    "hasScore": false,
+    "hasScore": true,
     "price": 3.50
   },
   "if-i-was-that-donkey": {
@@ -141,7 +141,7 @@ window.PIECES = {
     "voicing": "cello & piano",
     "accompaniment": "piano",
     "categories": ["albums"],
-    "hasScore": false,
+    "hasScore": true,
     "price": 3.50
   },
   "tangissimo": {
@@ -150,7 +150,7 @@ window.PIECES = {
     "voicing": "cello & piano",
     "accompaniment": "piano",
     "categories": ["albums"],
-    "hasScore": false,
+    "hasScore": true,
     "price": 3.50
   },
   "the-lords-prayer": {
