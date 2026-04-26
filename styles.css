@@ -258,8 +258,10 @@ p em {
 }
 
 .set-heading {
-  font-weight: 200;
+  font-weight: 500;      /* was 600 */
+  font-size: 0.95em;     /* slightly smaller */
   margin-bottom: 6px;
+  color: #444;           /* softer than full black */
 }
 
 .set-links {
