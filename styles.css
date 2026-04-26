@@ -267,6 +267,16 @@ p em {
   line-height: 1.6;
 }
 
+.set-links a {
+  color: #c9a646;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.set-links a:hover {
+  text-decoration: underline;
+}
+
   /* =========================
      Cover Cards (Home Page)
      ========================= */
