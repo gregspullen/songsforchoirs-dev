@@ -25,14 +25,19 @@ window.PIECES = {
     "price": 4.50
   },
   "magnificat-and-venite": {
-    "title": "Magnificat and Venite",
-    "description": "Magnificat and Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
-    "voicing": "SATB / SB",
-    "accompaniment": "piano",
-    "categories": ["albums"],
-    "hasScore": true,
-    "price": 1.75
-   },
+  "title": "Magnificat and Venite",
+  "description": "Magnificat and Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
+  "voicing": "SATB / SB",
+  "accompaniment": "piano",
+  "categories": ["albums"],
+  "type": "bundle",
+  "pieces": [
+    "magnificat",
+    "venite"
+  ],
+  "hasScore": true,
+  "price": 1.75
+}
   "the-ash-grove": {
     "title": "The Ash Grove",
     "description": "The Ash Grove - a light and flowing arrangement of the traditional folk song for SAB choir. accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
