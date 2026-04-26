@@ -37,7 +37,7 @@ window.PIECES = {
   ],
   "hasScore": true,
   "price": 1.75
-}
+},
   "the-ash-grove": {
     "title": "The Ash Grove",
     "description": "The Ash Grove - a light and flowing arrangement of the traditional folk song for SAB choir. accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
