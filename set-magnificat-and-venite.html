@@ -63,6 +63,12 @@ if (eurSpan && usdSpan) {
   const container = document.getElementById("set-links");
 
 if (container && piece.pieces) {
+
+  const heading = document.createElement("div");
+  heading.className = "set-heading";
+  heading.textContent = "Contents";
+  container.appendChild(heading);
+
   piece.pieces.forEach(p => {
     const item = document.createElement("div");
 
