@@ -26,7 +26,7 @@ window.PIECES = {
   },
   "magnificat-and-venite": {
   "title": "Magnificat and Venite",
-  "description": "Magnificat and Venite - a joyful and rhythmic choral setting for SATB choir, written in a similar style to the Magnificat. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
+  "description": "Magnificat and Venite - joyful and rhythmic choral settings for SATB choir, written in a similar styles. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
   "voicing": "SATB / SB",
   "accompaniment": "piano",
   "categories": ["albums"],
