@@ -228,6 +228,16 @@ p em {
     text-decoration: underline;
     color: #8b6a09;
   }
+
+/* Available in sets (opus pages) */
+.available-in-sets a {
+  color: #c9a646;
+  text-decoration: none;
+}
+
+.available-in-sets a:hover {
+  text-decoration: underline;
+}
   
   /* =========================
      Cover Cards (Home Page)
