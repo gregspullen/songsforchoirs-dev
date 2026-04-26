@@ -169,7 +169,7 @@ window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&
 });
 </script>
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css?v=999">
 
   <!-- Analytics -->
   <script defer data-domain="songsforchoirs.com" src="https://plausible.io/js/script.js"></script>
@@ -266,7 +266,36 @@ const hover = document.querySelector(".hover-tag");
 
 img.src = `images/Cover_png/${slug}.png`;
       const piece = PIECES[slug];
-      if (!piece.hasScore) {
+
+const inSets = Object.keys(PIECES).filter(s => {
+  const p = PIECES[s];
+  return p.type === "bundle" && p.pieces && p.pieces.includes(slug);
+});
+
+if (inSets.length) {
+  const box = document.createElement("div");
+  box.className = "available-in-sets";
+  box.style.marginTop = "16px";
+  box.innerHTML = "<strong>Also available in sets:</strong>";
+
+  const ul = document.createElement("ul");
+
+  inSets.forEach(s => {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+
+    link.href = `set-${s}.html`;
+    link.textContent = PIECES[s].title;
+
+    li.appendChild(link);
+    ul.appendChild(li);
+  });
+
+ box.appendChild(ul);
+ document.querySelector(".opus-left").appendChild(box);
+}
+
+if (!piece.hasScore) {
   img.src = `images/Cover_png/${slug}.png`;
   hover.textContent = "Preview not yet available";
   img.style.cursor = "default";
