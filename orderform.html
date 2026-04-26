@@ -363,15 +363,18 @@ total = total.toFixed(2);
   const orderNum = generateOrderNumber();
   const email = document.getElementById("email").value.trim();
 
-  const payload = {
-    title,
-    slug,
-    choir,
-    copies,
-    amount: total,
-    order: orderNum,
-    email
-  };
+  const piece = PIECES[slug];
+
+const payload = {
+  title,
+  slug,
+  items: piece.pieces || [slug],
+  choir,
+  copies,
+  amount: total,
+  order: orderNum,
+  email
+};
 
   try {
     const isLive = window.location.hostname === "songsforchoirs.com"
