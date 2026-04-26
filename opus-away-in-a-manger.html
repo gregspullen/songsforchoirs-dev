@@ -267,7 +267,7 @@ const hover = document.querySelector(".hover-tag");
 img.src = `images/Cover_png/${slug}.png`;
       const piece = PIECES[slug];
 
-const inSets = Object.keys(PICES).filter(s => {
+const inSets = Object.keys(PIECES).filter(s => {
   const p = PIECES[s];
   return p.type === "bundle" && p.pieces && p.pieces.includes(slug);
 });
@@ -295,7 +295,6 @@ if (inSets.length) {
 }
 
 if (!piece.hasScore) {
-      if (!piece.hasScore) {
   img.src = `images/Cover_png/${slug}.png`;
   hover.textContent = "Preview not yet available";
   img.style.cursor = "default";
