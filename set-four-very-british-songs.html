@@ -59,22 +59,26 @@ if (eurSpan && usdSpan) {
     metaDesc.setAttribute("content", piece.description);
   }
 
-  // Audio
-  const audio = document.querySelector("audio");
-  const audioSrc = document.getElementById("audioSrc");
+  // Links
+  const container = document.getElementById("set-links");
 
-  const isLive = window.location.hostname === "songsforchoirs.com"
-              || window.location.hostname === "www.songsforchoirs.com";
+if (container && piece.pieces) {
 
-  const audioBase = isLive
-    ? "https://www.songsforchoirs.com"
-    : "https://dev.songsforchoirs.net";
+  const heading = document.createElement("div");
+  heading.className = "set-heading";
+  heading.textContent = "Contents";
+  container.appendChild(heading);
 
-  if (audio && audioSrc) {
-    const src = `${audioBase}/mp3/${slug}.mp3`;
-    audioSrc.src = src;
-    audio.load();
-  }
+  piece.pieces.forEach(p => {
+    const item = document.createElement("div");
+
+    item.innerHTML = `
+      – <a href="opus-${p}.html">${PIECES[p].title}</a>
+    `;
+
+    container.appendChild(item);
+  });
+}
 
   // Price display
   const priceDisplayBtn = document.getElementById("priceDisplayBtn");
@@ -201,15 +205,13 @@ window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&
       <div class="score-grid single-opus">
         
         <div class="opus-left">
-          <audio controls>
-            <source id="audioSrc" type="audio/mpeg">
-          </audio>
+          <div id="set-links" class="set-links"></div>
         </div>
         
         <figure class="cover">
           <img id="opus-preview-page" src="" alt="Score preview">
         
-          <span id="hover-tag" class="hover-tag">Click to view</span>
+          <span id="hover-tag" class="hover-tag">Preview from contents</span>
         </figure>
 
         <div class="opus-right">
