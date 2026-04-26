@@ -252,13 +252,6 @@ window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&
   </footer>
 
   <script>
-    const path = window.location.pathname;
-    const slug = path.split("/").pop()
-      .replace("opus-", "")
-      .replace(".html", "");
-  </script>
-
-  <script>
     document.addEventListener("DOMContentLoaded", () => {
 
 let currentPage = 0;
