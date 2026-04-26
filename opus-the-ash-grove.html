@@ -274,6 +274,7 @@ const inSets = Object.keys(PIECES).filter(s => {
 
 if (inSets.length) {
   const box = document.createElement("div");
+  box.className = "available-in-sets";
   box.style.marginTop = "16px";
   box.innerHTML = "<strong>also available in sets:</strong>";
 
