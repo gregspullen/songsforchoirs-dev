@@ -257,6 +257,10 @@ p em {
   color: #c9a646;
 }
 
+.set-heading,
+.set-links {
+  font-family: Georgia, "Times New Roman", serif;
+}
 .set-heading {
   font-weight: 500;      /* was 600 */
   font-size: 0.95em;     /* slightly smaller */
