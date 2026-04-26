@@ -386,6 +386,8 @@ const payload = {
       ? "/send-email"
       : "https://sfc-watermark-worker-dev.lyra-6b2.workers.dev/send-email";
 
+    console.log("PAYLOAD:", payload);
+
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
