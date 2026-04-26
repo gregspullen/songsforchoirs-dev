@@ -232,13 +232,19 @@ p em {
 /* Available in sets (opus pages) */
 .available-in-sets a {
   color: #c9a646;
+  opacity: 0.9; 
   text-decoration: none;
 }
 
 .available-in-sets a:hover {
   text-decoration: underline;
 }
-  
+
+.available-in-sets {
+  text-align: center;
+  margin-top: 12px;
+}
+
   /* =========================
      Cover Cards (Home Page)
      ========================= */
