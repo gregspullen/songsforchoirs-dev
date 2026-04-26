@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .replace(/^opus-/, "")
     .replace(/\.html$/, "");
 
-  const piece = (typeof PIECES !== "undefined") ? PIECES[slug] : null;
 
   if (!piece) {
     console.error("Piece not found:", slug);
