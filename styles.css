@@ -260,7 +260,6 @@ p em {
 .set-heading {
   font-weight: 600;
   margin-bottom: 6px;
-  color: #222; /* or just remove color entirely */
 }
 
 .set-links {
