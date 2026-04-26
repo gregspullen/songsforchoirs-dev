@@ -18,10 +18,16 @@ window.PIECES = {
   "three-latin-dances": {
     "title": "Three Latin Dances",
     "description": "Three Latin Dances - a lively and characterful suite of pieces for cello and piano. Playful and full of flair, these offer a step up in challenge while remaining accessible at around Grade 3 - 5. View the score, listen, and download from Songs for Choirs.",
-    "voicing": "SATB / SB",
+    "voicing": "cello and piano",
     "accompaniment": "piano",
     "categories": ["albums"],
-    "hasScore": false,
+    "type": "bundle",
+    "pieces": [
+    "pass-the-salsa",
+    "cello-go-bolero",
+    "tangissimo"
+  ],
+    "hasScore": true,
     "price": 4.50
   },
   "magnificat-and-venite": {
