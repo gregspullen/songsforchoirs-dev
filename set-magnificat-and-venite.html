@@ -59,22 +59,20 @@ if (eurSpan && usdSpan) {
     metaDesc.setAttribute("content", piece.description);
   }
 
-  // Audio
-  const audio = document.querySelector("audio");
-  const audioSrc = document.getElementById("audioSrc");
+  // Links
+  const container = document.getElementById("set-links");
 
-  const isLive = window.location.hostname === "songsforchoirs.com"
-              || window.location.hostname === "www.songsforchoirs.com";
+if (container && piece.pieces) {
+  piece.pieces.forEach(p => {
+    const item = document.createElement("div");
 
-  const audioBase = isLive
-    ? "https://www.songsforchoirs.com"
-    : "https://dev.songsforchoirs.net";
+    item.innerHTML = `
+      – <a href="opus-${p}.html">${PIECES[p].title}</a>
+    `;
 
-  if (audio && audioSrc) {
-    const src = `${audioBase}/mp3/${slug}.mp3`;
-    audioSrc.src = src;
-    audio.load();
-  }
+    container.appendChild(item);
+  });
+}
 
   // Price display
   const priceDisplayBtn = document.getElementById("priceDisplayBtn");
@@ -201,9 +199,7 @@ window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&
       <div class="score-grid single-opus">
         
         <div class="opus-left">
-          <audio controls>
-            <source id="audioSrc" type="audio/mpeg">
-          </audio>
+          <div id="set-links"></div>
         </div>
         
         <figure class="cover">
