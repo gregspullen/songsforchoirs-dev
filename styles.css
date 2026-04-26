@@ -257,6 +257,16 @@ p em {
   color: #c9a646;
 }
 
+.set-heading {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #c9a646; /* your brand gold */
+}
+
+.set-links {
+  line-height: 1.6;
+}
+
   /* =========================
      Cover Cards (Home Page)
      ========================= */
@@ -966,8 +976,4 @@ button.price small {
   display: flex;
   justify-content: center;
   gap: 10px;
-}
-
-   body {
-  outline: 5px solid red;
 }
