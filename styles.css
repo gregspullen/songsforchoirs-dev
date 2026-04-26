@@ -260,7 +260,7 @@ p em {
 .set-heading {
   font-weight: 600;
   margin-bottom: 6px;
-  color: #c9a646; /* your brand gold */
+  color: #222; /* or just remove color entirely */
 }
 
 .set-links {
@@ -269,7 +269,6 @@ p em {
 
 .set-links a {
   color: #c9a646;
-  opacity: 0.9;
   text-decoration: none;
 }
 
