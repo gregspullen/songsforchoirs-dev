@@ -956,3 +956,7 @@ button.price small {
   justify-content: center;
   gap: 10px;
 }
+
+   body {
+  outline: 5px solid red;
+}
