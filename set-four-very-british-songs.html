@@ -253,11 +253,16 @@ window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&
   <script>
     document.addEventListener("DOMContentLoaded", () => {
 
-let currentPage = 0;
-const img = document.getElementById("opus-preview-page");
-const hover = document.querySelector(".hover-tag");
+  let currentPage = 0;
+  const img = document.getElementById("opus-preview-page");
+  const hover = document.querySelector(".hover-tag");
 
-const piece = PIECES[slug];
+  const piece = PIECES[slug];
+
+  if (!piece) {
+    console.error("Piece not found:", slug);
+    return;
+  }
 
 // Always set the cover first
 if (img) {
