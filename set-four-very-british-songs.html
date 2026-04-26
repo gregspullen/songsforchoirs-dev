@@ -265,14 +265,18 @@ let currentPage = 0;
 const img = document.getElementById("opus-preview-page");
 const hover = document.querySelector(".hover-tag");
 
-img.src = `images/Cover_png/${slug}.png`;
-      const piece = PIECES[slug];
-      if (!piece.hasScore) {
+const piece = PIECES[slug];
+const img = document.getElementById("opus-preview-page");
+
+// Always set the cover first
+if (img) {
   img.src = `images/Cover_png/${slug}.png`;
+}
+
+// Then handle “no score”
+if (!piece.hasScore) {
   hover.textContent = "Preview not yet available";
   img.style.cursor = "default";
-
-  // STOP everything else from running
   return;
 }
 
