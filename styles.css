@@ -246,6 +246,17 @@ p em {
   width: 100%;
 }
 
+.available-in-sets ul {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0 0;
+}
+
+.available-in-sets li::before {
+  content: "– ";
+  color: #c9a646;
+}
+
   /* =========================
      Cover Cards (Home Page)
      ========================= */
