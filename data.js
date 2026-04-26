@@ -12,7 +12,7 @@ window.PIECES = {
     "lavenders-blue",
     "it-was-a-lover-and-his-lass"
   ],
-  "hasScore": true,
+  "hasScore": false,
   "price": 3.00
 },
   "three-latin-dances": {
