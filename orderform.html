@@ -363,12 +363,12 @@ total = total.toFixed(2);
   const orderNum = generateOrderNumber();
   const email = document.getElementById("email").value.trim();
 
-  const piece = PIECES[slug];
+  const piece = window.PIECES ? PIECES[slug] : null;
 
 const payload = {
   title,
   slug,
-  items: piece.pieces || [slug],
+  items: piece && piece.pieces ? piece.pieces : [slug],
   choir,
   copies,
   amount: total,
