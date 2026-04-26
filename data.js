@@ -32,8 +32,8 @@ window.PIECES = {
   "categories": ["albums"],
   "type": "bundle",
   "pieces": [
-    "magnificat",
-    "venite"
+    "my-soul-doth-magnify-the-lord",
+    "make-a-joyful-noise"
   ],
   "hasScore": true,
   "price": 1.75
