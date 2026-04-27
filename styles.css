@@ -510,7 +510,7 @@ p em {
   font-size: 0.9em;   /* slightly smaller */
   color: #555;         /* softer than black */
   opacity: 0.9;       /* gentle fade */
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   white-space: nowrap;
 }
 
