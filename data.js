@@ -44,6 +44,21 @@ window.PIECES = {
   "hasScore": true,
   "price": 1.75
 },
+  "three-nativity-tunes": {
+  "title": "Three Nativity Tunes",
+  "description": "Three Nativity Tunes - celebrate Christmas with three nativity settings. View the score, listen, and download licensed copies from Songs for Choirs.",    
+  "voicing": "SATB / SSA / unison",
+  "accompaniment": "piano",
+  "categories": ["albums"],
+  "type": "bundle",
+  "pieces": [
+    "bathed-in-starlight",
+    "away-in-a-manger",
+    "if-i-was-that-donkey"
+  ],
+  "hasScore": true,
+  "price": 2.75
+},
   "the-ash-grove": {
     "title": "The Ash Grove",
     "description": "The Ash Grove - a light and flowing arrangement of the traditional folk song for SAB choir. accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
