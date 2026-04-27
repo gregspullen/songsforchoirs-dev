@@ -61,6 +61,9 @@ const piece = PIECES[slug];
   }
 }
 
+  copyInput.addEventListener("input", updatePrice);
+updatePrice();
+
   // Title
   document.title = piece.metaTitle || `${piece.title} — Songs for Choirs`;
 
