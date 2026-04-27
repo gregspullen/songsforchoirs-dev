@@ -525,14 +525,8 @@ p em {
   flex: 0 0 auto;
 }
 
-.copy-line {
-  font-size: 0.9em;
-  color: #555;
-  opacity: 0.85;
-}
-
 .per-part {
-  font-size: 0.85em;
+  font-size: 0.25em;
   opacity: 0.7;
 }
   
