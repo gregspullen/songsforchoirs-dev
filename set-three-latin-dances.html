@@ -151,11 +151,19 @@ if (copies > 100) {
   const eur = (total * 1.17).toFixed(2);
   const usd = (total * 1.27).toFixed(2);
 
+  const pricePerPartEl = document.getElementById("pricePerPart");
+
+  const perPart = total / copies;
+
+  if (pricePerPartEl) {
+    pricePerPartEl.textContent = perPart.toFixed(2);
+  }
+
   if (totalGBP) totalGBP.textContent = gbp;
   if (totalEUR) totalEUR.textContent = `€${eur}`;
   if (totalUSD) totalUSD.textContent = `$${usd}`;
 }
-
+  
 if (copyInput) {
   copyInput.addEventListener("input", updateTotal);
   updateTotal();
@@ -218,21 +226,19 @@ window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&
 
             <div class="paypal-box">
           
-              <label for="copyInput" style="display:block; text-align:center; margin-bottom:6px;">
-                How many singers?
-              </label>
-          
-              <input 
-                id="copyInput" 
-                type="number" 
-                value="12" 
-                min="1"
-                style="display:block; margin:0 auto 10px auto; text-align:center; width:80px;">
-          
+              <div style="text-align:center; margin-bottom:10px;">
+                <div class="copy-line">
+                  <span class="lead-text">I need</span> 
+                  <input id="copyInput" type="number" value="12" min="1">
+                  <span class="parts-word">parts</span> 
+                  <span class="per-part">(@ £<span id="pricePerPart">0.00</span> per part)</span>
+                </div>
+              
                 <button class="price" id="orderBtn" type="button">
                   Order — £<span id="totalGBP">0.00</span>
                   (<span id="totalEUR"></span>, <span id="totalUSD"></span>) total
                 </button>
+              </div>
           
               <p style="font-size:0.8em; color:#b8964a; margin-top:6px; text-align:center;">
                 Currency conversions are approximate.<br>
