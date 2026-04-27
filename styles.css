@@ -503,18 +503,19 @@ p em {
 }
 
 .copy-line {
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   font-size: 1em;
   margin-bottom: 10px;
+}argin-bottom: 10px;
 }
 
 .copy-line input {
-  display: inline-block !important;
   width: 50px;
   text-align: center;
-  margin: 0 6px;
   font-size: 1.05em;
-  height: 32px;
 }
 
   
