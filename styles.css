@@ -516,6 +516,11 @@ p em {
   width: 50px;
   text-align: center;
   font-size: 1.05em;
+
+  /* kill the chunky form look */
+  padding: 4px 6px;
+  height: auto;
+  border-radius: 6px;
 }
 
   
