@@ -494,6 +494,14 @@ p em {
   appearance: textfield;
 }
 
+.per-copy {
+  font-size: 0.8em;
+  color: #888;
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
   
 /* =========================
    Sample Note (under cover image)
