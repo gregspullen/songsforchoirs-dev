@@ -504,10 +504,10 @@ p em {
 
 .copy-line {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;  /* ← this is the key change */
   justify-content: center;
   gap: 6px;
-  font-size: 0.95em;   /* slightly smaller */
+  font-size: 0.9em;   /* slightly smaller */
   color: #555;         /* softer than black */
   opacity: 0.9;       /* gentle fade */
   margin-bottom: 10px;
