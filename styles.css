@@ -542,7 +542,7 @@ p em {
 
 .lead-text {
   display: inline-block;
-  transform: translateY(1px);
+  transform: translateY(2px);
 }
 /* =========================
    Sample Note (under cover image)
