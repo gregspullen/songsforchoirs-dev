@@ -502,6 +502,19 @@ p em {
   margin-bottom: 8px;
 }
 
+.copy-line {
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.copy-line input {
+  width: 50px;
+  text-align: center;
+  margin: 0 6px;
+  font-size: 1.05em;
+}
+
   
 /* =========================
    Sample Note (under cover image)
