@@ -462,26 +462,38 @@ p em {
   /* =========================
      Opus Layout
      ========================= */
-  .opus-layout {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 20px;
-    align-items: center;
-    justify-items: center;
-    margin-top: 20px;
+.opus-layout {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.panel .opus-layout {
+  background: transparent;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .opus-layout, .panel .opus-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  
-  .panel .opus-layout {
-    background: transparent;
-    padding: 0;
-  }
-  
-  @media (max-width: 900px) {
-    .opus-layout, .panel .opus-layout {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-  }
+}
+
+/* Hide number input arrows (clean input) */
+#copyInput::-webkit-inner-spin-button,
+#copyInput::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#copyInput {
+  appearance: textfield;
+}
+
   
 /* =========================
    Sample Note (under cover image)
