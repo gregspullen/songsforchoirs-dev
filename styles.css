@@ -1058,14 +1058,10 @@ button.price small {
 }
 
 @media (min-width: 700px) {
+  #copyNote { white-space: nowrap; }
+  #totalDisplay { white-space: nowrap; margin-left: auto; }
+}
 
-  #copyNote {
-    white-space: nowrap;
-  }
-
-  #totalDisplay {
-    white-space: nowrap;
-    margin-left: auto;
-  }
-
+   #totalDisplay {
+  background: red !important;
 }
