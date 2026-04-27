@@ -509,7 +509,7 @@ p em {
   gap: 6px;
   font-size: 0.95em;   /* slightly smaller */
   color: #555;         /* softer than black */
-  opacity: 0.85;       /* gentle fade */
+  opacity: 0.9;       /* gentle fade */
   margin-bottom: 10px;
   white-space: nowrap;
 }
@@ -526,7 +526,7 @@ p em {
 }
 
 .per-part {
-  font-size: 0.25em;
+  font-size: 0.7em;
   opacity: 0.7;
 }
   
