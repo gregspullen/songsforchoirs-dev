@@ -542,7 +542,7 @@ p em {
 
 .lead-text {
   display: inline-block;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 /* =========================
    Sample Note (under cover image)
@@ -552,7 +552,7 @@ p em {
     color: var(--gold);
     font-weight: 500;
     font-size: 0.95em;
-    margin-top: -0.75em;
+    margin-top: -0.5em;
   }
   
 
