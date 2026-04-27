@@ -24,45 +24,18 @@ const piece = PIECES[slug];
     return;
   }
 
-  const price = piece.price || 1.00;
-
+  const price = piece.price || 1.25;
   const copyInput = document.getElementById("copyInput");
-  
-  const pricePerPartEl = document.getElementById("pricePerPart");
-  const totalGBPEl = document.getElementById("totalGBP");
-  
   const eurSpan = document.querySelector(".eur");
-  const usdSpan = document.querySelector(".usd");
+const usdSpan = document.querySelector(".usd");
 
-  function updatePrice() {
+if (eurSpan && usdSpan) {
+  const eur = (price * 1.17).toFixed(2); // approx conversion
+  const usd = (price * 1.27).toFixed(2); // approx conversion
 
-  const copies = Math.max(1, parseInt(copyInput.value) || 1);
-
-  const total = copies * price;
-  const perPart = total / copies;
-
-  // update per-part
-  if (pricePerPartEl) {
-    pricePerPartEl.textContent = perPart.toFixed(2);
-  }
-
-  // update total
-  if (totalGBPEl) {
-    totalGBPEl.textContent = total.toFixed(2);
-  }
-
-  // update conversions (based on total, not unit price)
-  if (eurSpan && usdSpan) {
-    const eur = (total * 1.17).toFixed(2);
-    const usd = (total * 1.27).toFixed(2);
-
-    eurSpan.textContent = `€${eur}`;
-    usdSpan.textContent = `$${usd}`;
-  }
+  eurSpan.textContent = `€${eur}`;
+  usdSpan.textContent = `$${usd}`;
 }
-
-  copyInput.addEventListener("input", updatePrice);
-updatePrice();
 
   // Title
   document.title = piece.metaTitle || `${piece.title} — Songs for Choirs`;
