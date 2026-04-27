@@ -517,10 +517,8 @@ p em {
   text-align: center;
   font-size: 1.05em;
 
-  /* kill the chunky form look */
-  padding: 4px 6px;
-  height: auto;
-  border-radius: 6px;
+  padding: 2px 4px !important;
+  height: 28px !important;
 }
 
   
