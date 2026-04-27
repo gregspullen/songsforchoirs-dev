@@ -541,8 +541,8 @@ p em {
 }
 
 .lead-text {
-  position: relative;
-  top: -1px;
+  display: inline-block;
+  transform: translateY(-1px);
 }
 /* =========================
    Sample Note (under cover image)
