@@ -509,7 +509,7 @@ p em {
 }
 
 .copy-line input {
-  display: inline-block;
+  display: inline-block !important;
   width: 50px;
   text-align: center;
   margin: 0 6px;
