@@ -27,15 +27,20 @@ const piece = PIECES[slug];
   const price = piece.price || 1.25;
   const copyInput = document.getElementById("copyInput");
   const eurSpan = document.querySelector(".eur");
-const usdSpan = document.querySelector(".usd");
+  const usdSpan = document.querySelector(".usd");
+  const pricePerPartEl = document.getElementById("pricePerPart");
+  
+  if (eurSpan && usdSpan) {
+    const eur = (price * 1.17).toFixed(2); // approx conversion
+    const usd = (price * 1.27).toFixed(2); // approx conversion
+  
+    eurSpan.textContent = `€${eur}`;
+    usdSpan.textContent = `$${usd}`;
+  }
 
-if (eurSpan && usdSpan) {
-  const eur = (price * 1.17).toFixed(2); // approx conversion
-  const usd = (price * 1.27).toFixed(2); // approx conversion
-
-  eurSpan.textContent = `€${eur}`;
-  usdSpan.textContent = `$${usd}`;
-}
+  if (pricePerPartEl) {
+    pricePerPartEl.textContent = price.toFixed(2);
+  }
 
   // Title
   document.title = piece.metaTitle || `${piece.title} — Songs for Choirs`;
