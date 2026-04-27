@@ -509,10 +509,12 @@ p em {
 }
 
 .copy-line input {
+  display: inline-block;
   width: 50px;
   text-align: center;
   margin: 0 6px;
   font-size: 1.05em;
+  height: 32px;
 }
 
   
