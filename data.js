@@ -44,9 +44,9 @@ window.PIECES = {
   "hasScore": true,
   "price": 1.75
 },
-  "three-nativity-tunes": {
-  "title": "Three Nativity Tunes",
-  "description": "Three Nativity Tunes - celebrate Christmas with three nativity settings. View the score, listen, and download licensed copies from Songs for Choirs.",    
+  "songs-for-the-nativity": {
+  "title": "Songs for the Nativity",
+  "description": "Songs for the Nativity - celebrate Christmas with three nativity settings. View the score, listen, and download licensed copies from Songs for Choirs.",    
   "voicing": "SATB / SSA / unison",
   "accompaniment": "piano",
   "categories": ["albums"],
