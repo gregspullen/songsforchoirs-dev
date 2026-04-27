@@ -484,6 +484,7 @@ p em {
 }
 
 /* Hide number input arrows (clean input) */
+/*
 #copyInput::-webkit-inner-spin-button,
 #copyInput::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -493,6 +494,7 @@ p em {
 #copyInput {
   appearance: textfield;
 }
+*/
 
 .per-copy {
   font-size: 0.8em;
@@ -537,7 +539,11 @@ p em {
   position: relative;
   top: 0px;
 }
-  
+
+.lead-text {
+  position: relative;
+  top: -1px;
+}
 /* =========================
    Sample Note (under cover image)
    ========================= */
