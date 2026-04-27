@@ -24,11 +24,15 @@ const piece = PIECES[slug];
     return;
   }
 
-  const price = piece.price || 1.25;
+  const price = piece.price || 1.00;
+
   const copyInput = document.getElementById("copyInput");
+  
+  const pricePerPartEl = document.getElementById("pricePerPart");
+  const totalGBPEl = document.getElementById("totalGBP");
+  
   const eurSpan = document.querySelector(".eur");
   const usdSpan = document.querySelector(".usd");
-  const pricePerPartEl = document.getElementById("pricePerPart");
   
   if (eurSpan && usdSpan) {
     const eur = (price * 1.17).toFixed(2); // approx conversion
@@ -36,10 +40,6 @@ const piece = PIECES[slug];
   
     eurSpan.textContent = `€${eur}`;
     usdSpan.textContent = `$${usd}`;
-  }
-
-  if (pricePerPartEl) {
-    pricePerPartEl.textContent = price.toFixed(2);
   }
 
   // Title
