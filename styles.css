@@ -528,6 +528,8 @@ p em {
 .per-part {
   font-size: 0.85em;
   color: #777;
+  position: relative;
+  top: 3px;
 }
   
 /* =========================
