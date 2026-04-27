@@ -28,7 +28,7 @@ window.PIECES = {
     "tangissimo"
   ],
     "hasScore": true,
-    "price": 4.50
+    "price": 4.75
   },
   "magnificat-and-venite": {
   "title": "Magnificat and Venite",
@@ -57,7 +57,7 @@ window.PIECES = {
     "if-i-was-that-donkey"
   ],
   "hasScore": true,
-  "price": 2.75
+  "price": 2.50
 },
   "sacred-songs-for-reflection": {
   "title": "Sacred Songs for Reflection",
@@ -72,7 +72,7 @@ window.PIECES = {
     "benedictus"
   ],
   "hasScore": true,
-  "price": 2.75
+  "price": 2.20
   },
   "the-ash-grove": {
     "title": "The Ash Grove",
@@ -135,7 +135,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["albums"],
     "hasScore": true,
-    "price": 3.50
+    "price": 3.00
   },
   "if-i-was-that-donkey": {
     "title": "If I was that Donkey",
@@ -154,7 +154,7 @@ window.PIECES = {
     "accompaniment": "piano (optional)",
     "categories": ["concert"],
     "hasScore": true,
-    "price": 1.00
+    "price": 0.85
   },
   "my-soul-doth-magnify-the-lord": {
     "title": "My Soul Doth Magnify The Lord",
@@ -163,7 +163,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["sacred"],
     "hasScore": true,
-    "price": 1.20
+    "price": 1.00
   },
   "pass-the-salsa": {
     "title": "Pass the Salsa",
@@ -172,7 +172,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["albums"],
     "hasScore": true,
-    "price": 3.50
+    "price": 3.00
   },
   "tangissimo": {
     "title": "Tangissimo",
@@ -181,7 +181,7 @@ window.PIECES = {
     "accompaniment": "piano",
     "categories": ["albums"],
     "hasScore": true,
-    "price": 3.50
+    "price": 3.00
   },
   "the-lords-prayer": {
     "title": "The Lord's Prayer",
@@ -190,7 +190,7 @@ window.PIECES = {
     "accompaniment": "piano (optional)",
     "categories": ["sacred"],
     "hasScore": true,
-    "price": 0.90
+    "price": 0.85
   },
   "the-lord-is-my-shepherd": {
     "title": "The Lord is my Shepherd",
