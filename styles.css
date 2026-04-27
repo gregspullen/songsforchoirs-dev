@@ -518,8 +518,8 @@ p em {
 
 .copy-line input {
   display: inline-block;
-  width: 48px;
-  max-width: 48px !important;
+  width: 64px;
+  max-width: 64px !important;
   text-align: center;
   margin: 0 6px;
   font-size: 1.05em;
