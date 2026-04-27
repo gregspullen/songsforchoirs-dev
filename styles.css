@@ -523,6 +523,12 @@ p em {
   font-size: 1.05em;
   padding: 2px 4px;
   flex: 0 0 auto;
+  vertical-align: baseline;   /* ← key */
+}
+
+.copy-line input {
+  position: relative;
+  top: 1px;
 }
 
 .per-part {
