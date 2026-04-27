@@ -67,9 +67,9 @@ window.PIECES = {
   "categories": ["albums"],
   "type": "bundle",
   "pieces": [
-    "bathed-in-starlight",
-    "away-in-a-manger",
-    "if-i-was-that-donkey"
+    "the-lords-prayer",
+    "the-lord-is-my-shepherd",
+    "benedictus"
   ],
   "hasScore": true,
   "price": 2.75
