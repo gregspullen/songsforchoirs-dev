@@ -520,6 +520,7 @@ p em {
   margin: 0 6px;
   font-size: 1.05em;
   padding: 2px 4px;
+  flex: 0 0 auto;
 }
 
   
