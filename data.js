@@ -78,7 +78,7 @@ window.PIECES = {
     "accompaniment": "piano (optional)",
     "categories": ["sacred"],
     "hasScore": true,
-    "price": 1.10
+    "price": 1.00
   },
   "benedictus": {
     "title": "Benedictus",
