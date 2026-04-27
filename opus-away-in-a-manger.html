@@ -143,6 +143,14 @@ if (copies > 100) {
   total += (copies - 100) * price * 0.01;
 }
 
+  const copies = parseInt(copyInput.value, 10) || 1;
+  const perPart = total / copies;
+  const perPartEl = document.getElementById("pricePerPart");
+  
+  if (perPartEl) {
+    perPartEl.textContent = perPart.toFixed(2);
+}
+
   const gbp = total.toFixed(2);
   const eur = (total * 1.17).toFixed(2);
   const usd = (total * 1.27).toFixed(2);
@@ -219,13 +227,8 @@ window.location.href = `orderform.html?title=${encodeURIComponent(piece.title)}&
               <div style="text-align:center; margin-bottom:10px;">
                 <div class="copy-line">
                   I need 
-                  <input 
-                    id="copyInput" 
-                    type="number" 
-                    value="12" 
-                    min="1"
-                  >
-                  parts @ £1.00 per part
+                  <input id="copyInput" type="number" value="12" min="1">
+                  parts (@ £<span id="pricePerPart">0.00</span> per part)
                 </div>
           
                 <button class="price" id="orderBtn" type="button">
