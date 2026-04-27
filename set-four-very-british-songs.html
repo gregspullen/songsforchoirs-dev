@@ -151,6 +151,8 @@ if (copies > 100) {
   const eur = (total * 1.17).toFixed(2);
   const usd = (total * 1.27).toFixed(2);
 
+  const pricePerPartEl = document.getElementById("pricePerPart");
+
   const perPart = total / copies;
 
   if (pricePerPartEl) {
@@ -163,7 +165,6 @@ if (copies > 100) {
 }
 const perPart = total / copies;
 
-const pricePerPartEl = document.getElementById("pricePerPart");
   if (pricePerPartEl) {
     pricePerPartEl.textContent = perPart.toFixed(2);
   }
