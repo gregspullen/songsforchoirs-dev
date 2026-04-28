@@ -230,6 +230,12 @@ function generateOrderNumber() {
 
   const params = new URLSearchParams(window.location.search);
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
+
+  const priceDisplayEl = document.getElementById("pricePerPart");
+
+if (priceDisplayEl) {
+  priceDisplayEl.textContent = pricePerCopy.toFixed(2);
+}
   
 // 1–10
 let total = Math.min(copies, 10) * pricePerCopy;
