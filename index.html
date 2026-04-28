@@ -33,11 +33,12 @@
   }
 
   .score-grid .cover-image img {
-    width: 100%;
-    height: 170px;        /* ← force fill (NOT auto) */
-    object-fit: cover;    /* ← prevents shrinking */
-    object-position: 50% 20%;  /* ← trims top a bit */
-  }
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 20% !important;
+  display: block;
+ }
 
 }
 
