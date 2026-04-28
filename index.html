@@ -12,11 +12,9 @@
   <link rel="stylesheet" href="styles.css?v=14">
   <script defer data-domain="songsforchoirs.com" src="https://plausible.io/js/script.js"></script>
 
-  <style>
+<style>
 
-
-  @media (max-width: 1024px) {
-
+@media (max-width: 1024px) {
 
   .score-grid {
     display: flex;
@@ -24,25 +22,26 @@
     align-items: center;
   }
 
-  .score-grid figure.cover img {
-  width: 100%;
-  display: block;
-  position: relative;
-  transform: translateY(-10%);
+  .score-grid figure.cover {
+    width: 70%;
+    margin: 0.3rem 0;
+  }
+
+  .score-grid .cover-image {
+    height: 100px;          /* ← controls bottom cut */
+    overflow: hidden;
+  }
+
+  .score-grid .cover-image img {
+    width: 100%;
+    display: block;
+    transform: translateY(-10%);  /* ← controls top trim */
+  }
+
 }
 
-.score-grid figure.cover {
-  width: 70%;
-  height: 120px;
-  overflow: hidden;
-  margin: 0.3rem 0;
-  border: 5px solid green;
-}
-
-}
-
-    
 </style>
+  
 </head>
 <body>
   <header class="site-header">
