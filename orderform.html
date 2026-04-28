@@ -231,10 +231,6 @@ function generateOrderNumber() {
 
   const params = new URLSearchParams(window.location.search);
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
-
-  if (priceDisplayEl) {
-  priceDisplayEl.textContent = effectivePrice;
-}
   
 // 1–10
 let total = Math.min(copies, 10) * pricePerCopy;
