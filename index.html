@@ -23,10 +23,10 @@
     padding: 0 10px;
   }
 
-  /* The ONLY frame */
   .score-grid figure.cover {
     width: 100%;
-    height: 55px;        /* ← adjust this ONE number */
+    height: 70px;
+    aspect-ratio: auto;   /* ← critical fix */
     margin: 0.3rem 0;
     overflow: hidden;
   }
@@ -43,20 +43,12 @@
     height: 100%;
   }
 
-  /* Clean image behaviour */
   .score-grid .cover-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top;   /* ← keeps title visible, cuts bottom */
+    object-position: top;
     display: block;
-  }
-
-  .score-grid .hover-tag {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
   }
 
 }
