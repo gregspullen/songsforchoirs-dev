@@ -900,9 +900,15 @@ button.price small {
   }
  
   .single-opus .paypal-box {
-    text-align: right;
-    margin-right: 0; /* gentle outward nudge to mirror the player */
+  text-align: right;
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+  .single-opus .paypal-box {
+    margin-right: -5rem;
   }
+}
   
   .single-opus .price {
     padding: 0.6em 1.35em;  /* slightly roomier sides */
