@@ -23,9 +23,10 @@
     padding: 0 10px;
   }
 
+  /* THE ONLY FRAME */
   .score-grid figure.cover {
     width: 100%;
-    height: 70px;            /* ← controls how much is visible */
+    height: 70px;          /* ← adjust this ONE number */
     margin: 0.3rem 0;
     overflow: hidden;
   }
@@ -37,18 +38,18 @@
     height: 100%;
   }
 
+  /* NOT a second frame — just fills the first */
   .score-grid .cover-image {
     width: 100%;
-    height: 70%;
-    overflow: hidden;
+    height: 100%;
   }
 
   .score-grid .cover-image img {
     width: 100%;
-    height: 140%;
+    height: 130%;          /* ← makes image taller than frame */
     object-fit: cover;
     display: block;
-    transform: translateY(-5%);   /* ← shifts image UP to cut bottom */
+    transform: translateY(-6%);  /* ← small upward shift */
   }
 
   .score-grid .hover-tag {
@@ -68,7 +69,7 @@
     <h1 class="site-logo">
       songs<span class="gold">for</span>choirs
     </h1>
-    <p class="tagline">New accessible choral musJHGic.</p>
+    <p class="tagline">New accessible choral music.</p>
   </header>
   <nav id="site-nav" class="site-nav">
     <ul>
