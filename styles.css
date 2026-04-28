@@ -901,7 +901,7 @@ button.price small {
  
   .single-opus .paypal-box {
     text-align: right;
-    margin-right: -5rem; /* gentle outward nudge to mirror the player */
+    margin-right: 0; /* gentle outward nudge to mirror the player */
   }
   
   .single-opus .price {
