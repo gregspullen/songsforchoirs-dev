@@ -14,6 +14,8 @@
 
 <style>
 
+<style>
+
 @media (max-width: 1024px) {
 
   .score-grid {
@@ -28,15 +30,20 @@
   }
 
   .score-grid .cover-image {
-    height: 180px;          /* ← controls bottom cut */
+    height: 180px;       /* ← good usable size */
     overflow: hidden;
   }
 
   .score-grid .cover-image img {
     width: 100%;
+    height: auto;        /* ← THIS fixes the tiny image issue */
     display: block;
-    transform: translateY(-10%);  /* ← controls top trim */
+    transform: translateY(-10%);  /* ← gentle top trim */
   }
+
+}
+
+</style>
 
 }
 
