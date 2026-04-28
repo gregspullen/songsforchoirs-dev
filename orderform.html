@@ -81,6 +81,36 @@
   body.order-page section {
     max-width: 100% !important;
   }
+
+  body.order-page label {
+  margin-top: 16px;
+}
+
+body.order-page input {
+  margin-top: 4px;
+}
+
+body.order-page .note {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.copies-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.copies-line input {
+  width: 70px;
+  text-align: center;
+}
+body.order-page .copies-line input {
+  width: 70px;
+}
+
+
 </style>
 
 
@@ -133,38 +163,32 @@
     <input type="hidden" name="cancel_return" value="https://www.songsforchoirs.com/orderform.html">
     
     <!-- Regular form fields -->
-    <div style="display:flex; gap:20px;">
+    <label for="title">Title of piece:</label>
+    <input type="text" id="title" name="title" required placeholder="e.g. The Lord Is My Shepherd">
 
-      <div style="flex:1;">
-        <label for="title">Title of piece:</label>
-        <input id="title" name="title" required placeholder="e.g. The Lord Is My Shepherd">
-      </div>
-    
-      <div style="flex:1;">
-        <label for="choir">Organisation / Choir:</label>
-        <input id="choir" name="choir" class="choir-field" required>
-      </div>
-    
-    </div>
+<label for="choir">Organisation / Choir:</label>
+<input type="text" id="choir" name="choir" required>
 
     <p id="priceDisplay" class="note"></p>
 
-    <label for="copy">Number of copies:</label>
 
-<div style="display:flex; align-items:center; gap:16px; margin-top:6px;">
 
-  <input id="copy" name="copies" required type="number" min="1" max="100"
-         style="width:110px; text-align:center; padding:6px;">
 
-  <div id="copyNote" style="font-size:0.85em; color:#b8964a; white-space:nowrap;">
-    Enter the number of copies you need
-  </div>
+    <div class="copies-line">
+      <span>I need</span>
+    
+      <input id="copy" name="copies" required type="number" min="1" max="100">
+    
+      <span>
+        parts (@ £<span id="pricePerPart">1.25</span> per part)
+        <strong id="totalDisplay"></strong>
+      </span>
+    </div>
 
-  <div style="flex:1;"></div>
 
-  <p id="totalDisplay" class="note" style="margin:0; white-space:nowrap;"></p>
 
-</div>
+    
+
 
 
 <p class="note" style="margin-top:6px;">
