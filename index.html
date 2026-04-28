@@ -37,9 +37,7 @@
 
 .score-grid figure.cover img {
   width: 100%;
-  height: 180%;
-  object-fit: cover;
-  object-position: 50% 30%;
+  transform: translateY(-50%);  /* ← moves image UP (cuts bottom) */
 }
 
 }
@@ -52,7 +50,7 @@
     <h1 class="site-logo">
       songs<span class="gold">for</span>choirs
     </h1>
-    <p class="tagline">New accessible choral musIC.</p>
+    <p class="tagline">New accessible choral music.</p>
   </header>
   <nav id="site-nav" class="site-nav">
     <ul>
