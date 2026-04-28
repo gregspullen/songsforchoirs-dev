@@ -224,6 +224,7 @@ function generateOrderNumber() {
 
   const copyInput = document.getElementById("copy");
   const totalDisplay = document.getElementById("totalDisplay");
+  const priceDisplayEl = document.getElementById("pricePerPart");
 
   function updateTotal() {
     const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
@@ -231,10 +232,8 @@ function generateOrderNumber() {
   const params = new URLSearchParams(window.location.search);
   const pricePerCopy = parseFloat(params.get("price")) || 1.25;
 
-  const priceDisplayEl = document.getElementById("pricePerPart");
-
-if (priceDisplayEl) {
-  priceDisplayEl.textContent = pricePerCopy.toFixed(2);
+  if (priceDisplayEl) {
+  priceDisplayEl.textContent = effectivePrice;
 }
   
 // 1–10
@@ -294,6 +293,13 @@ total = total.toFixed(2);
 
 if (totalDisplay) {
   totalDisplay.textContent = `Total: £${total}`;
+}
+
+const effectivePrice = (total / copies).toFixed(2);
+
+const priceDisplayEl = document.getElementById("pricePerPart");
+if (priceDisplayEl) {
+  priceDisplayEl.textContent = effectivePrice;
 }
   }
 
