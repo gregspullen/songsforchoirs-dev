@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8">
+  <title>Order Receipt — Songs for Choirs</title>
+  <meta name="description" content="Thank you for your order from Songs for Choirs. Download your licensed scores.">
+  <meta property="og:title" content="Order Receipt — Songs for Choirs">
+  <meta property="og:description" content="Thank you for your order from Songs for Choirs. Download your licensed scores.">
+  <link rel="stylesheet" href="styles.css?v=999">
+</head>
+
+<body class="receipt-page">
+
+  <!-- Consistent header -->
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="site-logo">songs<span class="gold">for</span>choirs</h1>
+      <p class="tagline">Secure licensed downloads — trusted by choirs.</p>
+    </div>
+  </header>
+
+  <!-- Main navigation -->
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sacred.html">Sacred</a></li>
+      <li><a href="concert.html">Concert</a></li>
+      <li><a href="albums.html">Sets</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Receipt panel -->
+<div class="panel">  
+  <h2>Thank you <span class="gold">for</span> your order</h2>
+
+    <p><strong>Title:</strong> <span id="title"></span></p>
+<p><strong>Choir:</strong> <span id="choir"></span></p>
+<p><strong>Order number:</strong> <span id="order"></span></p>
+<p><strong>Amount:</strong> £<span id="amount"></span></p>
+<p><strong>Copies:</strong> <span id="copies"></span></p>
+
+    <p><em>Your sheet music is being delivered to your email as a ZIP file containing your licensed PDF and receipt.  
+Your licence covers the number of copies selected above. If you need additional copies please place another order.</em></p>
+
+  <button class="price" onclick="window.location.href='/'">
+  Your music has been delivered — Continue browsing
+</button>
+
+<p><em>Tip: For best results, check the page numbers and print a single test copy before committing to a full run (and before you run out of ink… or patience)</em></p>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 <a href="https://www.songsforchoirs.com">www.songsforchoirs.com</a> — All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+      const params = new URLSearchParams(window.location.search);
+      const order = params.get("order");
+      if (!order) return;
+    
+      fetch(`/get-order?order=${order}`)
+        .then(res => {
+          if (!res.ok) throw new Error("Order not found");
+          return res.json();
+        })
+        .then(data => {
+    
+          // Populate receipt fields
+          document.getElementById("title").textContent = data.title;
+          document.getElementById("choir").textContent = data.choir;
+          document.getElementById("order").textContent = order;
+          document.getElementById("amount").textContent = data.amount;
+          document.getElementById("copies").textContent = data.copies;
+    
+          // Trigger fulfilment once per order
+          const emailSentKey = `emailSent_${order}`;
+    
+          if (!localStorage.getItem(emailSentKey)) {
+    
+            fetch("/fulfil", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    title: data.title,
+    choir: data.choir,
+    copies: data.copies,
+    amount: data.amount,
+    order: order,
+    email: data.email
+  })
+})
+              .then(res => {
+                if (!res.ok) throw new Error("Fulfil failed");
+                return res.json();
+              })
+              .then(() => {
+                localStorage.setItem(emailSentKey, "true");
+                console.log("Fulfilment triggered");
+              })
+              .catch(err => {
+                console.error("Fulfilment error:", err);
+              });
+    
+          }
+    
+        })
+        .catch(err => {
+          console.error(err);
+          document.body.innerHTML = "<h2>Unable to load receipt.</h2>";
+        });
+    
+    });
+    </script>
+    
