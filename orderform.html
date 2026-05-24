@@ -442,13 +442,13 @@ const payload = {
     const host = window.location.hostname;
     const businessField = form.querySelector('input[name="business"]');
   
-  if (host.includes("dev"))
-      form.action = "https://www.sandbox.paypal.com/cgi-bin/webscr";
-      businessField.value = "sb-6bkuc46652199@business.example.com";
-    } else {
-      form.action = "https://www.paypal.com/cgi-bin/webscr";
-      businessField.value = "8LF2NJAGZW5EG";
-    }
+  if (host.includes("dev")) {
+    form.action = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+    businessField.value = "sb-6bkuc46652199@business.example.com";
+  } else {
+    form.action = "https://www.paypal.com/cgi-bin/webscr";
+    businessField.value = "8LF2NJAGZW5EG";
+  }
   </script>
   
     
