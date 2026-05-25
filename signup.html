@@ -110,5 +110,35 @@ Notifications of new works
 
 </div>
 
+  <script>
+
+document
+  .getElementById("signupButton")
+  .addEventListener("click", async (event) => {
+
+    event.preventDefault();
+
+    const email =
+      document.getElementById("email").value;
+
+    const response = await fetch(
+      "https://friends.songsforchoirs.net/send-login-link",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email })
+      }
+    );
+
+    const result = await response.json();
+
+    alert(result.message);
+
+});
+
+</script>
+
 </body>
 </html>
