@@ -138,5 +138,14 @@
     </div>
   </footer>
   <script src="pricing.js"></script>
+
+  <script>
+  const email =
+    new URLSearchParams(window.location.search).get("email");
+  
+  if (email) {
+    document.getElementById("userEmail").textContent = email;
+  }
+  </script>
 </body>
 </html>
