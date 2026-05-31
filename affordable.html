@@ -1,95 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Affordable Music for Every Choir | Songs for Choirs</title>
 
-  <meta name="description" content="Discover how Songs for Choirs helps make new choral music affordable through volume discounts, discounted sets, patron pricing and free music." />
-
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Affordable Music for Every Choir. Discover how Songs for Choirs helps choirs reduce the cost of purchasing new music.">
 
   <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-
-  <link rel="stylesheet" href="styles.css?v=14">
-
-  <script defer data-domain="songsforchoirs.com" src="https://plausible.io/js/script.js"></script>
 
   <style>
 
-    .affordable-panel {
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f7f7f5;
       text-align: center;
     }
 
-    .affordable-poster {
+    .poster-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .poster {
       display: block;
       width: 100%;
-      max-width: 900px;
+      max-width: 1000px;
       height: auto;
       margin: 0 auto;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
 
     @media (max-width: 1024px) {
-
-      .affordable-poster {
-        max-width: 100%;
+      body {
+        padding: 10px;
       }
 
+      .poster {
+        max-width: 100%;
+      }
     }
 
   </style>
-
 </head>
 
 <body>
 
-  <header class="site-header">
-    <h1 class="site-logo">
-      songs<span class="gold">for</span>choirs
-    </h1>
-
-    <p class="tagline">New accessible choral music.</p>
-  </header>
-
-  <nav id="site-nav" class="site-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="sacred.html">Sacred</a></li>
-      <li><a href="concert.html">Concert</a></li>
-      <li><a href="albums.html">Sets</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main class="wrap">
-
-    <section class="panel affordable-panel">
-
-      <img
-        src="images/Cover_png/welcome.png"
-        alt="Affordable Music for Every Choir"
-        class="affordable-poster"
-        onerror="this.onerror=null; this.src='images/placeholder.png';">
-
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <small>
-        © 2025
-        <a href="https://www.songsforchoirs.com">www.songsforchoirs.com</a>
-        — All rights reserved worldwide.
-      </small>
-    </div>
-  </footer>
-
-  <script src="pricing.js"></script>
+  <a href="index.html" class="poster-link">
+    <img
+      src="images/Cover_png/welcome.png"
+      alt="Affordable Music for Every Choir"
+      class="poster"
+      onerror="this.onerror=null; this.src='images/placeholder.png';">
+  </a>
 
 </body>
 </html>
