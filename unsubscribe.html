@@ -127,18 +127,9 @@ document
       document.getElementById("email").value;
 
     const response = await fetch(
-      "https://friends.songsforchoirs.net/send-login-link",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-        email,
-        type: "patron"
-      })
-      }
-    );
+  "https://friends.songsforchoirs.net/send-unsubscribe?email=" +
+    encodeURIComponent(email)
+);
 
     const result = await response.json();
 
