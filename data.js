@@ -259,5 +259,11 @@ window.PIECES = {
     "categories": ["albums"],
     "hasScore": true,
     "price": 3.00
+  },
+  "patron": {
+    "title": "Patron Membership",
+    "description": "Support the creation of new choral music and receive 50% discounts on all score purchases for one year.",
+   "categories": ["membership"], 
+    "price": 12.00
   }
   };
