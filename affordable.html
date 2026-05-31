@@ -26,24 +26,26 @@
     }
 
     .poster {
-      display: block;
-      width: 70%;
-      max-width: 900px;
-      height: auto;
-      margin: 0 auto;
-      cursor: pointer;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
+    display: block;
+    width: 70%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
 
-    @media (max-width: 1024px) {
-      body {
+@media (max-width: 1024px) {
+
+    body {
         padding: 10px;
-      }
-
-      .poster {
-        max-width: 100%;
-      }
     }
+
+    .poster {
+        width: 95%;
+        max-width: none;
+    }
+}
 
   </style>
 </head>
