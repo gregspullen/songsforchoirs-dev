@@ -146,6 +146,10 @@ p em {
   body.children .site-nav { padding: 0.3rem 0.6rem; }
   body.children .site-nav a { padding: 0.3rem 0.7rem; font-size: 0.95rem; }
 
+.site-nav ul {
+  scroll-padding-left: 0;
+}
+
 @media (max-width: 700px) {
   .site-nav {
     padding: 0.35rem 0.35rem;
