@@ -155,7 +155,7 @@ p em {
     gap: 6px;
     flex-wrap: nowrap;
     overflow-x: auto;
-    justify-content: center;
+    justify-content: flex-start;
     -webkit-overflow-scrolling: touch;
   }
 
