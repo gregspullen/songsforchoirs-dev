@@ -142,10 +142,6 @@ p em {
   
   .site-nav.is-stuck { box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
   
-  /* Slim nav (Children only) */
-  body.children .site-nav { padding: 0.3rem 0.6rem; }
-  body.children .site-nav a { padding: 0.3rem 0.7rem; font-size: 0.95rem; }
-
 .site-nav ul {
   scroll-padding-left: 0;
 }
