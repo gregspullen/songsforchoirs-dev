@@ -81,6 +81,36 @@
   body.order-page section {
     max-width: 100% !important;
   }
+
+  body.order-page label {
+  margin-top: 16px;
+}
+
+body.order-page input {
+  margin-top: 4px;
+}
+
+body.order-page .note {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.copies-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.copies-line input {
+  width: 70px;
+  text-align: center;
+}
+body.order-page .copies-line input {
+  width: 70px;
+}
+
+
 </style>
 
 
@@ -98,7 +128,7 @@
   <header class="site-header">
     <div class="wrap">
       <h1 class="site-logo">songs<span class="gold">for</span>choirs</h1>
-      <p class="tagline">Secure licensed downloads — trusted by choirs.</p>
+      <p class="tagline">Secure licensed downloads — instant delivery to your email</p>
     </div>
   </header>
 
@@ -106,11 +136,11 @@
   <nav class="site-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="choral.html">Choral</a></li>
-      <li><a href="children.html">Children</a></li>
-      <li><a href="other.html">Other</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="sacred.html">Sacred</a></li>
+      <li><a href="concert.html">Concert</a></li>
+      <li><a href="albums.html">Sets</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Patrons & Us</a></li>
     </ul>
   </nav>
 
@@ -133,35 +163,42 @@
     <input type="hidden" name="cancel_return" value="https://www.songsforchoirs.com/orderform.html">
     
     <!-- Regular form fields -->
-    <div style="display:flex; gap:20px;">
+    <label for="title">Title of piece:</label>
+    <input type="text" id="title" name="title" required placeholder="e.g. The Lord Is My Shepherd">
 
-      <div style="flex:1;">
-        <label for="title">Title of piece:</label>
-        <input id="title" name="title" required placeholder="e.g. The Lord Is My Shepherd">
-      </div>
+<label for="choir">Organisation / Choir:</label>
+<input type="text" id="choir" name="choir" required>
+
+
+    <p style="font-size:0.9em; margin-top:8px;">
+  <a href="https://staging.songsforchoirs.net/invite"><strong>Patron?</strong></a>
+Your 50% discount will be applied automatically before checkout.
     
-      <div style="flex:1;">
-        <label for="choir">Organisation / Choir:</label>
-        <input id="choir" name="choir" class="choir-field" required>
-      </div>
+
+    <p id="priceDisplay" class="note"></p>
+
+
+
+
+    <div class="copies-line">
+      <span>I need</span>
     
+      <input id="copy" name="copies" required type="number" min="1" max="100">
+    
+      <span>
+        parts (@ £<span id="pricePerPart">1.25</span> per part)
+        <strong id="totalDisplay"></strong>
+      </span>
     </div>
 
-    <label for="copy">Number of copies:</label>
 
-<div style="display:flex; align-items:flex-start; gap:16px; margin-top:6px;">
-  
-  <input id="copy" name="copies" required type="number" min="1" max="30"
-         style="width:110px; text-align:center; padding:6px;">
 
-  <div style="font-size:0.85em; color:#b8964a; margin-top:6px;">
-    Orders are limited to 30 copies per transaction as a simple safeguard.
-  </div>
+    
 
-</div>
+
 
 <p class="note" style="margin-top:6px;">
-  If you require more copies you can place multiple orders or you are welcome to contact us at
+  If you prefer, you can order directly - contact us at
   <a href="mailto:lyra@songsforchoirs.com">lyra@songsforchoirs.com</a>.
 </p>
 <label for="email">Where would you like your music to be delivered?</label>
@@ -189,76 +226,235 @@ function generateOrderNumber() {
   const r = Math.floor(Math.random() * 900 + 100);
   return `SFC-${y}${m}${d}-${r}`;
 }
+  document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("orderForm");
-  const submitBtn = document.getElementById("submitBtn");
+  const copyInput = document.getElementById("copy");
+  const totalDisplay = document.getElementById("totalDisplay");
+  const priceDisplayEl = document.getElementById("pricePerPart");
 
-  // Autofill title from ?title= parameter
+  function updateTotal() {
+    const copies = Math.max(1, parseInt(copyInput.value || "1", 10));
+
+  const params = new URLSearchParams(window.location.search);
+  const pricePerCopy = parseFloat(params.get("price")) || 1.25;
+  
+// 1–10
+let total = Math.min(copies, 10) * pricePerCopy;
+
+// 11–20
+if (copies > 10) {
+  total += Math.min(copies - 10, 10) * pricePerCopy * 0.67;
+}
+
+// 21–30
+if (copies > 20) {
+  total += Math.min(copies - 20, 10) * pricePerCopy * 0.58;
+}
+
+// 31–40
+if (copies > 30) {
+  total += Math.min(copies - 30, 10) * pricePerCopy * 0.50;
+}
+
+// 41–50
+if (copies > 40) {
+  total += Math.min(copies - 40, 10) * pricePerCopy * 0.42;
+}
+
+// 51–60
+if (copies > 50) {
+  total += Math.min(copies - 50, 10) * pricePerCopy * 0.33;
+}
+
+// 61–70
+if (copies > 60) {
+  total += Math.min(copies - 60, 10) * pricePerCopy * 0.25;
+}
+
+// 71–80
+if (copies > 70) {
+  total += Math.min(copies - 70, 10) * pricePerCopy * 0.17;
+}
+
+// 81–90
+if (copies > 80) {
+  total += Math.min(copies - 80, 10) * pricePerCopy * 0.08;
+}
+
+// 91–100
+if (copies > 90) {
+  total += Math.min(copies - 90, 10) * pricePerCopy * 0.04;
+}
+
+// 101+
+if (copies > 100) {
+  total += (copies - 100) * pricePerCopy * 0.01;
+}
+
+total = total.toFixed(2);
+
+if (totalDisplay) {
+  totalDisplay.textContent = `Total: £${total}`;
+}
+
+const effectivePrice = (total / copies).toFixed(2);
+
+const priceDisplayEl = document.getElementById("pricePerPart");
+if (priceDisplayEl) {
+  priceDisplayEl.textContent = effectivePrice;
+}
+  }
+
+  if (copyInput) {
+    copyInput.addEventListener("input", updateTotal);
+    updateTotal();
+  }
+
+  const copyNote = document.getElementById("copyNote");
+  if (copyNote) {
+    copyNote.textContent = `Enter the number of copies you need`;
+  }
+
   const params = new URLSearchParams(window.location.search);
   const titleParam = params.get("title");
   const titleField = document.getElementById("title");
+
+  const copiesParam = params.get("copies");
+
+if (copiesParam && copyInput) {
+  copyInput.value = copiesParam;
+  updateTotal();   // ← THIS is the magic line
+}
+
   if (titleParam && titleField) {
     titleField.value = decodeURIComponent(titleParam);
     titleField.readOnly = true;
   }
+
 });
 
 </script>
 
+  <script src="data.js?v=3"></script>
+
 <script>
-  document.getElementById("orderForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
+  document.addEventListener("DOMContentLoaded", () => {
   
-    const title = document.getElementById("title").value.trim();
-const choir = document.getElementById("choir").value.trim();
-const copies = Math.min(30, Math.max(1, parseInt(document.getElementById("copy").value || "1", 10)));
-const pricePerCopy = 1.25;
-const total = (copies * pricePerCopy).toFixed(2);
-const orderNum = generateOrderNumber();
-const email = document.getElementById("email").value.trim();
+    document.getElementById("orderForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const title = document.getElementById("title").value.trim();
+
+  const slug = title
+    .toLowerCase()
+    .replace(/'/g, "")  
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+  
+  const choir = document.getElementById("choir").value.trim();
+  
+  const copies = Math.min(
+    100,
+    Math.max(1, parseInt(document.getElementById("copy").value || "1", 10))
+  );
+  
+  const params = new URLSearchParams(window.location.search);
+  const pricePerCopy = parseFloat(params.get("price")) || 1.25;
+  
+  // incremental discount (always increases total)
+ 
+  let total = Math.min(copies, 10) * pricePerCopy;
+
+if (copies > 10) {
+  total += Math.min(copies - 10, 10) * pricePerCopy * 0.67;
+}
+if (copies > 20) {
+  total += Math.min(copies - 20, 10) * pricePerCopy * 0.58;
+}
+if (copies > 30) {
+  total += Math.min(copies - 30, 10) * pricePerCopy * 0.50;
+}
+if (copies > 40) {
+  total += Math.min(copies - 40, 10) * pricePerCopy * 0.42;
+}
+if (copies > 50) {
+  total += Math.min(copies - 50, 10) * pricePerCopy * 0.33;
+}
+if (copies > 60) {
+  total += Math.min(copies - 60, 10) * pricePerCopy * 0.25;
+}
+if (copies > 70) {
+  total += Math.min(copies - 70, 10) * pricePerCopy * 0.17;
+}
+if (copies > 80) {
+  total += Math.min(copies - 80, 10) * pricePerCopy * 0.08;
+}
+if (copies > 90) {
+  total += Math.min(copies - 90, 10) * pricePerCopy * 0.04;
+}
+if (copies > 100) {
+  total += (copies - 100) * pricePerCopy * 0.01;
+}
+
+total = total.toFixed(2);
+
+
+  const orderNum = generateOrderNumber();
+  const email = document.getElementById("email").value.trim();
+
+  const piece = window.PIECES ? PIECES[slug] : null;
 
 const payload = {
   title,
+  slug,
+  items: piece && piece.pieces ? piece.pieces : [slug],
   choir,
   copies,
   amount: total,
   order: orderNum,
   email
 };
-  
-    try {
-      const res = await fetch(
-       "/send-email",
 
-        {
+  try {
+    const isLive = window.location.hostname === "songsforchoirs.com"
+                || window.location.hostname === "www.songsforchoirs.com";
 
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        }
-      );
-  
-      const text = await res.text();
+    const url = "/send-email";
+
+    console.log("PAYLOAD:", payload);
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
       alert("We've sent you an email to verify your address. Please click the link in it to continue with your order.");
-    } catch (err) {
-      alert("Sorry — something went wrong.\n\nPlease try again. If the problem continues, contact us at lyra@songsforchoirs.com.");
+    } else {
+      throw new Error("Email failed");
     }
-  });
-  </script>
+
+  } catch (err) {
+    alert("Sorry — something went wrong.\n\nPlease try again. If the problem continues, contact us at lyra@songsforchoirs.com.");
+  }
+});
+});
+</script>
   
   <script>
     const form = document.getElementById("orderForm");
     const host = window.location.hostname;
     const businessField = form.querySelector('input[name="business"]');
   
-    if (host.startsWith("dev.")) {
-      form.action = "https://www.sandbox.paypal.com/cgi-bin/webscr";
-      businessField.value = "sb-6bkuc46652199@business.example.com";
-    } else {
-      form.action = "https://www.paypal.com/cgi-bin/webscr";
-      businessField.value = "8LF2NJAGZW5EG";
-    }
+  if (host.includes("dev")) {
+    form.action = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+    businessField.value = "sb-6bkuc46652199@business.example.com";
+  } else {
+    form.action = "https://www.paypal.com/cgi-bin/webscr";
+    businessField.value = "8LF2NJAGZW5EG";
+  }
   </script>
   
     
