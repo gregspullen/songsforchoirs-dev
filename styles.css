@@ -81,7 +81,7 @@ p em {
   letter-spacing: 0.04em;
   color: #000;
   margin: 0; /* remove h1’s default spacing */
-  padding: 0.25em 0; /* smaller breathing space */
+  padding: 0.1em 0; /* smaller breathing space */
   text-transform: lowercase;
 }
 
@@ -182,7 +182,7 @@ p em {
     border-radius: 14px;
     box-shadow: 0 6px 24px rgba(0,0,0,0.05);
     padding: 16px 20px;
-    margin: 18px 0;
+    margin: 12px 0;
     scroll-margin-top: 96px;
   }
   
