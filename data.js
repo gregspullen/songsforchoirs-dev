@@ -1,10 +1,11 @@
 window.PIECES = {
   "patron": {
-    "title": "Patron Membership",
-    "description": "Support the creation of new choral music and receive 50% discounts on all score purchases for one year.",
-   "categories": ["concert"], 
-    "price": 12.00
-  },
+  "title": "Patron Membership",
+  "description": "Support the creation of new choral music and receive 50% discounts on all score purchases for one year.",
+  "categories": ["concert"],
+  "price": 12.00,
+  "link": "invite"
+},
   "songs-of-thanksgiving": {
   "title": "Songs of Thanksgiving",
   "description": "Songs of Thanksgiving - joyful and rhythmic choral settings for SATB choir, written in a similar styles. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
@@ -19,6 +20,21 @@ window.PIECES = {
   ],
   "hasScore": true,
   "price": 2.50
+},
+  "three-short-concert-pieces-for-sab-choir": {
+  "title": "Three Short Concert Pieces for SAB Choir",
+  "description": "Three Short Concert Pieces for SAB Choir - light arrangements of traditional folk songs for SAB choir and piano. Fun, accessible. Listen, and download licensed copies from Songs for Choirs.",
+  "voicing": "SAB",
+  "accompaniment": "piano",
+  "categories": ["albums"],
+  "type": "bundle",
+  "pieces": [
+    "the-ash-grove",
+    "apple-wassail",
+    "it-was-a-lover-and-his-lass"
+  ],
+  "hasScore": true,
+  "price": 2.00
 },
   "songs-of-advent": {
   "title": "Songs of Advent",
@@ -35,6 +51,20 @@ window.PIECES = {
   ],
   "hasScore": true,
   "price": 3.00
+},
+  "two-pieces-for-treble-voices": {
+  "title": "Two Pieces for Treble Voices",
+  "description": "Two Pieces for Treble Voices - joyful and atmospheric choral settings for treble voices. Energetic, engaging, and accessible. View the score, listen, and download licensed copies from Songs for Choirs.",    
+  "voicing": "Treble Voices",
+  "accompaniment": "piano and a cappella",
+  "categories": ["albums"],
+  "type": "bundle",
+  "pieces": [
+    "non-erit-impossibile",
+    "bathed-in-starlight"
+  ],
+  "hasScore": true,
+  "price": 1.75
 },
   "sacred-songs-for-reflection": {
   "title": "Sacred Songs for Reflection",
@@ -153,6 +183,15 @@ window.PIECES = {
     "hasScore": true,
     "price": 0.85
   },
+  "apple-wassail": {
+    "title": "Apple Wassail",
+    "description": "Apple Wassail - an accessible, light and flowing arrangement of the traditional folk song for SAB choir. accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "voicing": "SAB",
+    "accompaniment": "piano",
+    "categories": ["concert"],
+    "hasScore": true,
+    "price": 0.85
+  },
     "lavenders-blue": {
     "title": "Lavender's Blue",
     "description": "Lavenders Blue - a light and humorous arrangement of the traditional folk song for SATB choir. Fun, accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
@@ -161,6 +200,15 @@ window.PIECES = {
     "categories": ["concert"],
     "hasScore": true,
     "price": 1.00
+  },
+  "summer-is-acomin-in": {
+    "title": "Summer is acomin in",
+    "description": "Summer is acomin in - a short arrangement of the medieval round for mixed voices. Fun, accessible, and full of charm, it makes an ideal short concert item. View the score, listen, and download licensed copies from Songs for Choirs.",
+    "voicing": "mixed voices",
+    "accompaniment": "a cappella",
+    "categories": ["concert"],
+    "hasScore": true,
+    "price": 0.50
   },
     "bathed-in-starlight": {
     "title": "Bathed in Starlight",
@@ -217,8 +265,8 @@ window.PIECES = {
     "type": "bundle",
     "pieces": [
     "the-ash-grove",
-    "bobby-shafto",
     "lavenders-blue",
+    "bobby-shafto",
     "it-was-a-lover-and-his-lass"
   ],
     "hasScore": true,
